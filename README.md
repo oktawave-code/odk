@@ -4,7 +4,7 @@ This library provides SDK for Oktawave API. Written in Golang.
 
 ## Usage
 ```go
-import "github.com/oktawave-code/odk.git"
+import "github.com/oktawave-code/odk"
 ```
 
 ## Examples
