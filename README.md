@@ -15,7 +15,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/oktawave-code/odk.git"
+	"github.com/oktawave-code/odk"
 )
 
 func main() {
