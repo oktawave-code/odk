@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ServiceType** | [***DictionaryItem**](DictionaryItem.md) | Service type (HTTP, SMTP, Port...) | [optional] [default to null]
 **PortNumber** | **int32** | Port number for \&quot;Port\&quot; service type | [optional] [default to null]
 **TargetPortNumber** | **int32** | Port number for \&quot;TargetPort\&quot; service type | [optional] [default to null]
+**SslTargetPortNumber** | **int32** | Ssl port number for \&quot;TargetPort\&quot; service type | [optional] [default to null]
 **SessionPersistenceType** | [***DictionaryItem**](DictionaryItem.md) | Session persistence type | [optional] [default to null]
 **Algorithm** | [***DictionaryItem**](DictionaryItem.md) | Algorithm | [optional] [default to null]
 **IpVersion** | [***DictionaryItem**](DictionaryItem.md) | IP version | [optional] [default to null]

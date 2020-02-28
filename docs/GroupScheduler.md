@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **CreationDate** | [**time.Time**](time.Time.md) | Creation date | [optional] [default to null]
 **LastChangeDate** | [**time.Time**](time.Time.md) | Last change date | [optional] [default to null]
 **StartDate** | [**time.Time**](time.Time.md) | Start date | [optional] [default to null]
+**TimeZoneName** | **string** | Time zone name | [optional] [default to null]
 **Name** | **string** | Scheduler name | [optional] [default to null]
 **Status** | [***DictionaryItem**](DictionaryItem.md) | Status | [optional] [default to null]
 **Type_** | [***DictionaryItem**](DictionaryItem.md) | Type | [optional] [default to null]

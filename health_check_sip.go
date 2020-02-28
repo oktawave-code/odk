@@ -72,4 +72,7 @@ type HealthCheckSip struct {
 
 	// Last valid check
 	LastValidCheck time.Time `json:"LastValidCheck,omitempty"`
+
+	// Description
+	Description string `json:"Description,omitempty"`
 }

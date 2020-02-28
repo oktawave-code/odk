@@ -1,4 +1,4 @@
-# \AccountApi
+# odk\AccountApi
 
 All URIs are relative to *https://api.oktawave.com/beta*
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 > ApiCollectionSshKey AccountGetSshKeys(ctx, optional)
 Returns SSH keys
 
-Acceptable order values are: OwnerUser, Name
+Acceptable order values are: OwnerUser, Name, Id
 
 ### Required Parameters
 

@@ -1,4 +1,4 @@
-# \TicketsApi
+# odk\TicketsApi
 
 All URIs are relative to *https://api.oktawave.com/beta*
 

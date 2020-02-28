@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ServiceType** | **int32** | Load balancer service type | [default to null]
 **PortNumber** | **int32** | Port number for \&quot;Port\&quot; load balancer service type | [optional] [default to null]
 **TargetPortNumber** | **int32** | Port number for \&quot;TargetPort\&quot; load balancer service type | [optional] [default to null]
+**SslTargetPortNumber** | **int32** | Ssl port number for \&quot;TargetPort\&quot; load balancer service type | [optional] [default to null]
 **SessionPersistenceType** | **int32** | Session persistence type | [default to null]
 **LoadBalancerAlgorithm** | **int32** | Load balancing algorithm | [default to null]
 **IpVersion** | **int32** | Ip version for load balancing | [default to null]

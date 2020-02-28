@@ -22,6 +22,9 @@ type CreateUpdateGroupSchedulerCommand struct {
 	// Start date
 	StartDate time.Time `json:"StartDate"`
 
+	// Timezone name
+	TimeZoneName string `json:"TimeZoneName"`
+
 	// Instance Id
 	InstanceId int32 `json:"InstanceId"`
 

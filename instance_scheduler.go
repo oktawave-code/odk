@@ -43,6 +43,9 @@ type InstanceScheduler struct {
 	// Start date
 	StartDate time.Time `json:"StartDate,omitempty"`
 
+	// Time zone name
+	TimeZoneName string `json:"TimeZoneName,omitempty"`
+
 	// Cycle type
 	CycleType *DictionaryItem `json:"CycleType,omitempty"`
 
