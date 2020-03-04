@@ -33,6 +33,9 @@ type LoadBalancer struct {
 	// Port number for \"TargetPort\" service type
 	TargetPortNumber int32 `json:"TargetPortNumber,omitempty"`
 
+	// Ssl port number for \"TargetPort\" service type
+	SslTargetPortNumber int32 `json:"SslTargetPortNumber,omitempty"`
+
 	// Session persistence type
 	SessionPersistenceType *DictionaryItem `json:"SessionPersistenceType,omitempty"`
 

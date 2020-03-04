@@ -59,4 +59,7 @@ type CreateUpdateHealthCheckHttpCommand struct {
 
 	// Time when notification is sent
 	NotificationTimeId int32 `json:"NotificationTimeId"`
+
+	// Description
+	Description string `json:"Description,omitempty"`
 }

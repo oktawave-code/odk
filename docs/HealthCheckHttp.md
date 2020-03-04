@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **Suspended** | **bool** | Is suspended | [optional] [default to null]
 **LastInvalidCheck** | [**time.Time**](time.Time.md) | Last invalid check | [optional] [default to null]
 **LastValidCheck** | [**time.Time**](time.Time.md) | Last valid check | [optional] [default to null]
+**Description** | **string** | Description | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

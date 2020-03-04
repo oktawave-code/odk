@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Scheduler name | [default to null]
 **StartDate** | [**time.Time**](time.Time.md) | Start date | [default to null]
+**TimeZoneName** | **string** | Timezone name | [default to null]
 **InstanceId** | **int32** | Instance Id | [default to null]
 **ActionTypeId** | **int32** | Action type id | [default to null]
 **SchedulerTypeId** | **int32** | Scheduler type id | [default to null]

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **MonitStatus** | [***DictionaryItem**](DictionaryItem.md) | Monitoring status | [optional] [default to null]
 **TemplateType** | [***DictionaryItem**](DictionaryItem.md) | Template type eg marketplace, oci instance | [optional] [default to null]
 **IpAddress** | **string** | IP address | [optional] [default to null]
+**PrivateIpAddress** | **string** | Private IP address | [optional] [default to null]
 **DnsAddress** | **string** | DNS address | [optional] [default to null]
 **TotalDisksCapacity** | **int32** | Total disks capacity in GB | [optional] [default to null]
 **PaymentType** | [***DictionaryItem**](DictionaryItem.md) | Payment type | [optional] [default to null]

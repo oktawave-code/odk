@@ -1,4 +1,4 @@
-# \OCIEventsApi
+# odk\OCIEventsApi
 
 All URIs are relative to *https://api.oktawave.com/beta*
 

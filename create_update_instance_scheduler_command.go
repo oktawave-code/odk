@@ -25,6 +25,9 @@ type CreateUpdateInstanceSchedulerCommand struct {
 	// Start date
 	StartDate time.Time `json:"StartDate"`
 
+	// Timezone name
+	TimeZoneName string `json:"TimeZoneName"`
+
 	// Cycle type id
 	CycleTypeId int32 `json:"CycleTypeId,omitempty"`
 

@@ -233,7 +233,7 @@ func (a *AccountApiService) AccountGetSshKey(ctx context.Context, sshKeyId int32
 }
 
 /* AccountApiService Returns SSH keys
- Acceptable order values are: OwnerUser, Name
+ Acceptable order values are: OwnerUser, Name, Id
  * @param ctx context.Context for authentication, logging, tracing, etc.
  @param optional (nil or map[string]interface{}) with one or more of:
      @param "pageSize" (int32) Page size

@@ -64,6 +64,9 @@ type Instance struct {
 	// IP address
 	IpAddress string `json:"IpAddress,omitempty"`
 
+	// Private IP address
+	PrivateIpAddress string `json:"PrivateIpAddress,omitempty"`
+
 	// DNS address
 	DnsAddress string `json:"DnsAddress,omitempty"`
 

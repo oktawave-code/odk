@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **NotificationTypeIds** | **[]int32** | Notification types enabled for a health check | [optional] [default to null]
 **NotificationEventTypeIds** | **[]int32** | Event types with enabled notification | [optional] [default to null]
 **NotificationTimeId** | **int32** | Time when notification is sent | [default to 1594]
+**Description** | **string** | Description | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

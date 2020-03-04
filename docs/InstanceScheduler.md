@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Type_** | [***DictionaryItem**](DictionaryItem.md) | Type | [optional] [default to null]
 **Status** | [***DictionaryItem**](DictionaryItem.md) | Status | [optional] [default to null]
 **StartDate** | [**time.Time**](time.Time.md) | Start date | [optional] [default to null]
+**TimeZoneName** | **string** | Time zone name | [optional] [default to null]
 **CycleType** | [***DictionaryItem**](DictionaryItem.md) | Cycle type | [optional] [default to null]
 **CycleNumber** | **int32** | Cycle number beetwen scheduler launch | [optional] [default to null]
 **ActionType** | [***DictionaryItem**](DictionaryItem.md) | Action type | [optional] [default to null]

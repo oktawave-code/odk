@@ -37,6 +37,9 @@ type GroupScheduler struct {
 	// Start date
 	StartDate time.Time `json:"StartDate,omitempty"`
 
+	// Time zone name
+	TimeZoneName string `json:"TimeZoneName,omitempty"`
+
 	// Scheduler name
 	Name string `json:"Name,omitempty"`
 
