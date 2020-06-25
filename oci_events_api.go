@@ -10,14 +10,15 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
-	"time"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+	"time"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -27,17 +28,16 @@ var (
 
 type OCIEventsApiService service
 
-
 /* OCIEventsApiService Deletes event
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Event id
- @return */
-func (a *OCIEventsApiService) EventsDelete(ctx context.Context, id int32) ( *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Event id
+@return */
+func (a *OCIEventsApiService) EventsDelete(ctx context.Context, id int32) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
 	)
 
 	// create path and map variables
@@ -48,9 +48,8 @@ func (a *OCIEventsApiService) EventsDelete(ctx context.Context, id int32) ( *htt
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -59,8 +58,7 @@ func (a *OCIEventsApiService) EventsDelete(ctx context.Context, id int32) ( *htt
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -86,18 +84,18 @@ func (a *OCIEventsApiService) EventsDelete(ctx context.Context, id int32) ( *htt
 }
 
 /* OCIEventsApiService Returns instance event
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Event id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionInstanceEvent*/
-func (a *OCIEventsApiService) EventsGetEvent(ctx context.Context, id int64, localVarOptionals map[string]interface{}) (ApiCollectionInstanceEvent,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Event id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionInstanceEvent*/
+func (a *OCIEventsApiService) EventsGetEvent(ctx context.Context, id int64, localVarOptionals map[string]interface{}) (ApiCollectionInstanceEvent, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionInstanceEvent
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionInstanceEvent
 	)
 
 	// create path and map variables
@@ -116,7 +114,7 @@ func (a *OCIEventsApiService) EventsGetEvent(ctx context.Context, id int64, loca
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -130,7 +128,7 @@ func (a *OCIEventsApiService) EventsGetEvent(ctx context.Context, id int64, loca
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -156,29 +154,28 @@ func (a *OCIEventsApiService) EventsGetEvent(ctx context.Context, id int64, loca
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIEventsApiService Returns all instances events
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "typeIds" (string) Type IDs
-     @param "statusIds" (string) Status IDs
-     @param "dateFrom" (time.Time) Date from
-     @param "dateTo" (time.Time) Date to
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionInstanceEvent*/
-func (a *OCIEventsApiService) EventsGetEvents(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionInstanceEvent,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "typeIds" (string) Type IDs
+    @param "statusIds" (string) Status IDs
+    @param "dateFrom" (time.Time) Date from
+    @param "dateTo" (time.Time) Date to
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionInstanceEvent*/
+func (a *OCIEventsApiService) EventsGetEvents(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionInstanceEvent, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionInstanceEvent
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionInstanceEvent
 	)
 
 	// create path and map variables
@@ -238,7 +235,7 @@ func (a *OCIEventsApiService) EventsGetEvents(ctx context.Context, localVarOptio
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -252,7 +249,7 @@ func (a *OCIEventsApiService) EventsGetEvents(ctx context.Context, localVarOptio
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -278,21 +275,20 @@ func (a *OCIEventsApiService) EventsGetEvents(ctx context.Context, localVarOptio
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIEventsApiService Deletes instance events
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @param command Delete events command
- @return */
-func (a *OCIEventsApiService) InstancesDeleteEvents(ctx context.Context, id int32, command DeleteEventsCommand) ( *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@param command Delete events command
+@return */
+func (a *OCIEventsApiService) InstancesDeleteEvents(ctx context.Context, id int32, command DeleteEventsCommand) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
 	)
 
 	// create path and map variables
@@ -303,9 +299,8 @@ func (a *OCIEventsApiService) InstancesDeleteEvents(ctx context.Context, id int3
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -314,8 +309,7 @@ func (a *OCIEventsApiService) InstancesDeleteEvents(ctx context.Context, id int3
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -343,26 +337,26 @@ func (a *OCIEventsApiService) InstancesDeleteEvents(ctx context.Context, id int3
 }
 
 /* OCIEventsApiService Returns instance events
- Acceptable order values are: OperationType, User, Date, Instance, OperationStatus
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance identifier
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "userId" (int32) User id
-     @param "dateFrom" (time.Time) Date from
-     @param "dateTo" (time.Time) Date to
-     @param "operationTypeId" (int32) Operation type id
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionInstanceEvent*/
-func (a *OCIEventsApiService) InstancesGetEvents(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionInstanceEvent,  *http.Response, error) {
+Acceptable order values are: OperationType, User, Date, Instance, OperationStatus
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance identifier
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "userId" (int32) User id
+    @param "dateFrom" (time.Time) Date from
+    @param "dateTo" (time.Time) Date to
+    @param "operationTypeId" (int32) Operation type id
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionInstanceEvent*/
+func (a *OCIEventsApiService) InstancesGetEvents(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionInstanceEvent, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionInstanceEvent
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionInstanceEvent
 	)
 
 	// create path and map variables
@@ -423,7 +417,7 @@ func (a *OCIEventsApiService) InstancesGetEvents(ctx context.Context, id int32, 
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -437,7 +431,7 @@ func (a *OCIEventsApiService) InstancesGetEvents(ctx context.Context, id int32, 
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -463,7 +457,5 @@ func (a *OCIEventsApiService) InstancesGetEvents(ctx context.Context, id int32, 
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-

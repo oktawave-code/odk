@@ -10,13 +10,14 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -26,17 +27,16 @@ var (
 
 type AccountApiService service
 
-
 /* AccountApiService Deletes SSH key
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param sshKeyId SSH key id
- @return */
-func (a *AccountApiService) AccountDeleteSshKey(ctx context.Context, sshKeyId int32) ( *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param sshKeyId SSH key id
+@return */
+func (a *AccountApiService) AccountDeleteSshKey(ctx context.Context, sshKeyId int32) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
 	)
 
 	// create path and map variables
@@ -47,9 +47,8 @@ func (a *AccountApiService) AccountDeleteSshKey(ctx context.Context, sshKeyId in
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -58,8 +57,7 @@ func (a *AccountApiService) AccountDeleteSshKey(ctx context.Context, sshKeyId in
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -85,17 +83,17 @@ func (a *AccountApiService) AccountDeleteSshKey(ctx context.Context, sshKeyId in
 }
 
 /* AccountApiService Returns account details
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return Account*/
-func (a *AccountApiService) AccountGet(ctx context.Context, localVarOptionals map[string]interface{}) (Account,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return Account*/
+func (a *AccountApiService) AccountGet(ctx context.Context, localVarOptionals map[string]interface{}) (Account, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Account
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Account
 	)
 
 	// create path and map variables
@@ -113,7 +111,7 @@ func (a *AccountApiService) AccountGet(ctx context.Context, localVarOptionals ma
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -127,7 +125,7 @@ func (a *AccountApiService) AccountGet(ctx context.Context, localVarOptionals ma
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -153,23 +151,22 @@ func (a *AccountApiService) AccountGet(ctx context.Context, localVarOptionals ma
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* AccountApiService Returns SSH key
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param sshKeyId SSH key id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return SshKey*/
-func (a *AccountApiService) AccountGetSshKey(ctx context.Context, sshKeyId int32, localVarOptionals map[string]interface{}) (SshKey,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param sshKeyId SSH key id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return SshKey*/
+func (a *AccountApiService) AccountGetSshKey(ctx context.Context, sshKeyId int32, localVarOptionals map[string]interface{}) (SshKey, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  SshKey
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     SshKey
 	)
 
 	// create path and map variables
@@ -188,7 +185,7 @@ func (a *AccountApiService) AccountGetSshKey(ctx context.Context, sshKeyId int32
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -202,7 +199,7 @@ func (a *AccountApiService) AccountGetSshKey(ctx context.Context, sshKeyId int32
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -228,26 +225,25 @@ func (a *AccountApiService) AccountGetSshKey(ctx context.Context, sshKeyId int32
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* AccountApiService Returns SSH keys
- Acceptable order values are: OwnerUser, Name, Id
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionSshKey*/
-func (a *AccountApiService) AccountGetSshKeys(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionSshKey,  *http.Response, error) {
+Acceptable order values are: OwnerUser, Name, Id
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionSshKey*/
+func (a *AccountApiService) AccountGetSshKeys(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionSshKey, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionSshKey
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionSshKey
 	)
 
 	// create path and map variables
@@ -283,7 +279,7 @@ func (a *AccountApiService) AccountGetSshKeys(ctx context.Context, localVarOptio
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -297,7 +293,7 @@ func (a *AccountApiService) AccountGetSshKeys(ctx context.Context, localVarOptio
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -323,21 +319,20 @@ func (a *AccountApiService) AccountGetSshKeys(ctx context.Context, localVarOptio
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* AccountApiService Creates new SSH key for user
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param command Create SSH key command
- @return SshKey*/
-func (a *AccountApiService) AccountPostSshKey(ctx context.Context, command CreateSshKeyCommand) (SshKey,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param command Create SSH key command
+@return SshKey*/
+func (a *AccountApiService) AccountPostSshKey(ctx context.Context, command CreateSshKeyCommand) (SshKey, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  SshKey
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     SshKey
 	)
 
 	// create path and map variables
@@ -347,9 +342,8 @@ func (a *AccountApiService) AccountPostSshKey(ctx context.Context, command Creat
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -363,7 +357,7 @@ func (a *AccountApiService) AccountPostSshKey(ctx context.Context, command Creat
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -391,7 +385,5 @@ func (a *AccountApiService) AccountPostSshKey(ctx context.Context, command Creat
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-

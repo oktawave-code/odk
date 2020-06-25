@@ -13,7 +13,7 @@ package odk
 type SetLoadBalancerCommand struct {
 
 	// Is ssl enabled (only for \"HTTP\" load balancer service type)
-	SslEnabled bool `json:"SslEnabled"`
+	SslEnabled bool `json:"SslEnabled,omitempty"`
 
 	// Load balancer service type
 	ServiceType int32 `json:"ServiceType"`
@@ -40,7 +40,7 @@ type SetLoadBalancerCommand struct {
 	HealthCheckEnabled bool `json:"HealthCheckEnabled,omitempty"`
 
 	// Is common persistence for HTTP and HTTPS enabled (only for \"HTTP\" load balancer service type)
-	CommonPersistenceForHttpAndHttpsEnabled bool `json:"CommonPersistenceForHttpAndHttpsEnabled"`
+	CommonPersistenceForHttpAndHttpsEnabled bool `json:"CommonPersistenceForHttpAndHttpsEnabled,omitempty"`
 
 	// Public ip id for load balancer
 	LoadBalancerIpId int32 `json:"LoadBalancerIpId,omitempty"`

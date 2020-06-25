@@ -10,13 +10,14 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -26,18 +27,17 @@ var (
 
 type OCITemplatesApiService service
 
-
 /* OCITemplatesApiService Deletes template
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Template id
- @return Object*/
-func (a *OCITemplatesApiService) TemplatesDelete(ctx context.Context, id int32) (Object,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Template id
+@return Object*/
+func (a *OCITemplatesApiService) TemplatesDelete(ctx context.Context, id int32) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Object
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Object
 	)
 
 	// create path and map variables
@@ -48,9 +48,8 @@ func (a *OCITemplatesApiService) TemplatesDelete(ctx context.Context, id int32) 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -64,7 +63,7 @@ func (a *OCITemplatesApiService) TemplatesDelete(ctx context.Context, id int32) 
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -90,28 +89,27 @@ func (a *OCITemplatesApiService) TemplatesDelete(ctx context.Context, id int32) 
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCITemplatesApiService Returns templates list
- Acceptable order values are: Name, Version, creationDate, SystemCategory.
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "source" (string) Source
-     @param "query" (string) Query
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionTemplate*/
-func (a *OCITemplatesApiService) TemplatesGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionTemplate,  *http.Response, error) {
+Acceptable order values are: Name, Version, creationDate, SystemCategory.
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "source" (string) Source
+    @param "query" (string) Query
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionTemplate*/
+func (a *OCITemplatesApiService) TemplatesGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionTemplate, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionTemplate
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionTemplate
 	)
 
 	// create path and map variables
@@ -159,7 +157,7 @@ func (a *OCITemplatesApiService) TemplatesGet(ctx context.Context, localVarOptio
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -173,7 +171,7 @@ func (a *OCITemplatesApiService) TemplatesGet(ctx context.Context, localVarOptio
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -199,23 +197,22 @@ func (a *OCITemplatesApiService) TemplatesGet(ctx context.Context, localVarOptio
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCITemplatesApiService Returns template by identifier
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Template identifier
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return Template*/
-func (a *OCITemplatesApiService) TemplatesGet_1(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Template,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Template identifier
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return Template*/
+func (a *OCITemplatesApiService) TemplatesGet_1(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Template, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Template
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Template
 	)
 
 	// create path and map variables
@@ -234,7 +231,7 @@ func (a *OCITemplatesApiService) TemplatesGet_1(ctx context.Context, id int32, l
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -248,7 +245,7 @@ func (a *OCITemplatesApiService) TemplatesGet_1(ctx context.Context, id int32, l
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -274,22 +271,21 @@ func (a *OCITemplatesApiService) TemplatesGet_1(ctx context.Context, id int32, l
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCITemplatesApiService Updates template
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Template id
- @param command Update command
- @return Template*/
-func (a *OCITemplatesApiService) TemplatesPut(ctx context.Context, id int32, command UpdateTemplateCommand) (Template,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Template id
+@param command Update command
+@return Template*/
+func (a *OCITemplatesApiService) TemplatesPut(ctx context.Context, id int32, command UpdateTemplateCommand) (Template, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Template
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Template
 	)
 
 	// create path and map variables
@@ -300,9 +296,8 @@ func (a *OCITemplatesApiService) TemplatesPut(ctx context.Context, id int32, com
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -316,7 +311,7 @@ func (a *OCITemplatesApiService) TemplatesPut(ctx context.Context, id int32, com
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -344,7 +339,5 @@ func (a *OCITemplatesApiService) TemplatesPut(ctx context.Context, id int32, com
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-

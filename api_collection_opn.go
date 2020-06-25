@@ -10,7 +10,6 @@
 package odk
 
 type ApiCollectionOpn struct {
-
 	Items []Opn `json:"Items,omitempty"`
 
 	Meta *ApiCollectionMetadata `json:"Meta,omitempty"`

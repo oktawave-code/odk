@@ -10,7 +10,6 @@
 package odk
 
 type ApiCollectionTicket struct {
-
 	Items []Ticket `json:"Items,omitempty"`
 
 	Meta *ApiCollectionMetadata `json:"Meta,omitempty"`

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **TemplateId** | **int32** | Template id | [default to null]
 **TypeId** | **int32** | Type of an instance | [optional] [default to null]
 **Freemium** | **bool** | Freemium | [optional] [default to null]
+**InitScript** | **string** | InitScript | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

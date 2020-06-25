@@ -10,13 +10,14 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -26,18 +27,17 @@ var (
 
 type OCIAutoscalerApiService service
 
-
 /* OCIAutoscalerApiService Disables autoscaling for instance
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @return Ticket*/
-func (a *OCIAutoscalerApiService) InstancesDisableInstanceAutoscaler(ctx context.Context, id int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@return Ticket*/
+func (a *OCIAutoscalerApiService) InstancesDisableInstanceAutoscaler(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -48,9 +48,8 @@ func (a *OCIAutoscalerApiService) InstancesDisableInstanceAutoscaler(ctx context
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -64,7 +63,7 @@ func (a *OCIAutoscalerApiService) InstancesDisableInstanceAutoscaler(ctx context
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -90,21 +89,20 @@ func (a *OCIAutoscalerApiService) InstancesDisableInstanceAutoscaler(ctx context
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIAutoscalerApiService Enables autoscaling for instance
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @return Ticket*/
-func (a *OCIAutoscalerApiService) InstancesEnableInstanceAutoscaler(ctx context.Context, id int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@return Ticket*/
+func (a *OCIAutoscalerApiService) InstancesEnableInstanceAutoscaler(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -115,9 +113,8 @@ func (a *OCIAutoscalerApiService) InstancesEnableInstanceAutoscaler(ctx context.
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -131,7 +128,7 @@ func (a *OCIAutoscalerApiService) InstancesEnableInstanceAutoscaler(ctx context.
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -157,23 +154,22 @@ func (a *OCIAutoscalerApiService) InstancesEnableInstanceAutoscaler(ctx context.
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIAutoscalerApiService Returns instace autoscaler configuration
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return Autoscaler*/
-func (a *OCIAutoscalerApiService) InstancesGetAutoscaler(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Autoscaler,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return Autoscaler*/
+func (a *OCIAutoscalerApiService) InstancesGetAutoscaler(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Autoscaler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Autoscaler
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Autoscaler
 	)
 
 	// create path and map variables
@@ -192,7 +188,7 @@ func (a *OCIAutoscalerApiService) InstancesGetAutoscaler(ctx context.Context, id
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -206,7 +202,7 @@ func (a *OCIAutoscalerApiService) InstancesGetAutoscaler(ctx context.Context, id
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -232,22 +228,21 @@ func (a *OCIAutoscalerApiService) InstancesGetAutoscaler(ctx context.Context, id
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIAutoscalerApiService Updates instance autoscaler configuration
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id 
- @param command 
- @return Object*/
-func (a *OCIAutoscalerApiService) InstancesUpdateAutoscaler(ctx context.Context, id int32, command AutoscalerUpdateCommand) (Object,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id
+@param command
+@return Object*/
+func (a *OCIAutoscalerApiService) InstancesUpdateAutoscaler(ctx context.Context, id int32, command AutoscalerUpdateCommand) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Object
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Object
 	)
 
 	// create path and map variables
@@ -258,9 +253,8 @@ func (a *OCIAutoscalerApiService) InstancesUpdateAutoscaler(ctx context.Context,
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -274,7 +268,7 @@ func (a *OCIAutoscalerApiService) InstancesUpdateAutoscaler(ctx context.Context,
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -302,7 +296,5 @@ func (a *OCIAutoscalerApiService) InstancesUpdateAutoscaler(ctx context.Context,
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-

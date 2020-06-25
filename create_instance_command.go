@@ -44,4 +44,7 @@ type CreateInstanceCommand struct {
 
 	// Freemium
 	Freemium bool `json:"Freemium,omitempty"`
+
+	// InitScript
+	InitScript string `json:"InitScript,omitempty"`
 }

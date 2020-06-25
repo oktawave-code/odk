@@ -10,13 +10,14 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -26,18 +27,17 @@ var (
 
 type NetworkingApiService service
 
-
 /* NetworkingApiService Deletes an OPN
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id OPN id
- @return Ticket*/
-func (a *NetworkingApiService) OpnsDelete(ctx context.Context, id int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id OPN id
+@return Ticket*/
+func (a *NetworkingApiService) OpnsDelete(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -48,9 +48,8 @@ func (a *NetworkingApiService) OpnsDelete(ctx context.Context, id int32) (Ticket
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -64,7 +63,7 @@ func (a *NetworkingApiService) OpnsDelete(ctx context.Context, id int32) (Ticket
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -90,28 +89,27 @@ func (a *NetworkingApiService) OpnsDelete(ctx context.Context, id int32) (Ticket
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* NetworkingApiService Returns OPNs
- Acceptable order values are: Name
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "instanceId" (int32) Instance id
-     @param "query" (string) Query
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionOpn*/
-func (a *NetworkingApiService) OpnsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionOpn,  *http.Response, error) {
+Acceptable order values are: Name
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "instanceId" (int32) Instance id
+    @param "query" (string) Query
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionOpn*/
+func (a *NetworkingApiService) OpnsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionOpn, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionOpn
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionOpn
 	)
 
 	// create path and map variables
@@ -159,7 +157,7 @@ func (a *NetworkingApiService) OpnsGet(ctx context.Context, localVarOptionals ma
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -173,7 +171,7 @@ func (a *NetworkingApiService) OpnsGet(ctx context.Context, localVarOptionals ma
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -199,21 +197,20 @@ func (a *NetworkingApiService) OpnsGet(ctx context.Context, localVarOptionals ma
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* NetworkingApiService Creates an OPN
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param command Create OPN command
- @return Ticket*/
-func (a *NetworkingApiService) OpnsPost(ctx context.Context, command CreateOpnCommand) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param command Create OPN command
+@return Ticket*/
+func (a *NetworkingApiService) OpnsPost(ctx context.Context, command CreateOpnCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -223,9 +220,8 @@ func (a *NetworkingApiService) OpnsPost(ctx context.Context, command CreateOpnCo
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -239,7 +235,7 @@ func (a *NetworkingApiService) OpnsPost(ctx context.Context, command CreateOpnCo
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -267,22 +263,21 @@ func (a *NetworkingApiService) OpnsPost(ctx context.Context, command CreateOpnCo
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* NetworkingApiService Updates OPN
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id OPN id
- @param command Update OPN command
- @return Object*/
-func (a *NetworkingApiService) OpnsPut(ctx context.Context, id int32, command UpdateOpnCommand) (Object,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id OPN id
+@param command Update OPN command
+@return Object*/
+func (a *NetworkingApiService) OpnsPut(ctx context.Context, id int32, command UpdateOpnCommand) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Object
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Object
 	)
 
 	// create path and map variables
@@ -293,9 +288,8 @@ func (a *NetworkingApiService) OpnsPut(ctx context.Context, id int32, command Up
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -309,7 +303,7 @@ func (a *NetworkingApiService) OpnsPut(ctx context.Context, id int32, command Up
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -337,7 +331,5 @@ func (a *NetworkingApiService) OpnsPut(ctx context.Context, id int32, command Up
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-

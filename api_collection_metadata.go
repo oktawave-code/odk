@@ -10,6 +10,5 @@
 package odk
 
 type ApiCollectionMetadata struct {
-
 	Total int32 `json:"Total,omitempty"`
 }

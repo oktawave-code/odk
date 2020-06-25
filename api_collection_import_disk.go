@@ -10,7 +10,6 @@
 package odk
 
 type ApiCollectionImportDisk struct {
-
 	Items []ImportDisk `json:"Items,omitempty"`
 
 	Meta *ApiCollectionMetadata `json:"Meta,omitempty"`

@@ -10,7 +10,6 @@
 package odk
 
 type ApiCollectionSubregion struct {
-
 	Items []Subregion `json:"Items,omitempty"`
 
 	Meta *ApiCollectionMetadata `json:"Meta,omitempty"`

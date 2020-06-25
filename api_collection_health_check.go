@@ -10,7 +10,6 @@
 package odk
 
 type ApiCollectionHealthCheck struct {
-
 	Items []HealthCheck `json:"Items,omitempty"`
 
 	Meta *ApiCollectionMetadata `json:"Meta,omitempty"`

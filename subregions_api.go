@@ -10,13 +10,14 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -26,19 +27,18 @@ var (
 
 type SubregionsApiService service
 
-
 /* SubregionsApiService Gets subregions
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionSubregion*/
-func (a *SubregionsApiService) SubregionsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionSubregion,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionSubregion*/
+func (a *SubregionsApiService) SubregionsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionSubregion, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionSubregion
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionSubregion
 	)
 
 	// create path and map variables
@@ -56,7 +56,7 @@ func (a *SubregionsApiService) SubregionsGet(ctx context.Context, localVarOption
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -70,7 +70,7 @@ func (a *SubregionsApiService) SubregionsGet(ctx context.Context, localVarOption
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -96,23 +96,22 @@ func (a *SubregionsApiService) SubregionsGet(ctx context.Context, localVarOption
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* SubregionsApiService Gets subregion
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Subregion id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return Subregion*/
-func (a *SubregionsApiService) SubregionsGet_1(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Subregion,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Subregion id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return Subregion*/
+func (a *SubregionsApiService) SubregionsGet_1(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Subregion, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Subregion
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Subregion
 	)
 
 	// create path and map variables
@@ -131,7 +130,7 @@ func (a *SubregionsApiService) SubregionsGet_1(ctx context.Context, id int32, lo
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -145,7 +144,7 @@ func (a *SubregionsApiService) SubregionsGet_1(ctx context.Context, id int32, lo
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -171,7 +170,5 @@ func (a *SubregionsApiService) SubregionsGet_1(ctx context.Context, id int32, lo
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-

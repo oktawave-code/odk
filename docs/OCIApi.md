@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**InstancesGet**](OCIApi.md#InstancesGet) | **Get** /instances | Returns instance list
 [**InstancesGetAccessData**](OCIApi.md#InstancesGetAccessData) | **Get** /instances/{id}/access_data | Returns instance access data
 [**InstancesGetDisks**](OCIApi.md#InstancesGetDisks) | **Get** /instances/{id}/disks | Returns instance disk list
+[**InstancesGetInstanceInitScript**](OCIApi.md#InstancesGetInstanceInitScript) | **Get** /instances/{id}/init_script | Returns instance init script
 [**InstancesGetInstanceSoftware**](OCIApi.md#InstancesGetInstanceSoftware) | **Get** /instances/{id}/software | Returns instance software
 [**InstancesGetInstanceType**](OCIApi.md#InstancesGetInstanceType) | **Get** /instances/types/{id} | Returns instance type
 [**InstancesGetInstancesTypes**](OCIApi.md#InstancesGetInstancesTypes) | **Get** /instances/types | Returns all available instances types
@@ -391,6 +392,41 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiCollectionDisk**](ApiCollection[Disk].md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **InstancesGetInstanceInitScript**
+> string InstancesGetInstanceInitScript(ctx, id, optional)
+Returns instance init script
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **id** | **int32**|  | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int32**|  | 
+ **fields** | **string**| Response fields filter | 
+
+### Return type
+
+**string**
 
 ### Authorization
 

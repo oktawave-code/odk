@@ -10,14 +10,15 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
-	"time"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+	"time"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -27,26 +28,25 @@ var (
 
 type TicketsApiService service
 
-
 /* TicketsApiService Returns ticket collection
- Acceptable order values are: CreationDate, Status, OperationType
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "statusId" (int32) Tickets status id
-     @param "creationDateFrom" (time.Time) Tickets creation date from
-     @param "creationDateTo" (time.Time) Tickets creation date to
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionTicket*/
-func (a *TicketsApiService) TicketsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionTicket,  *http.Response, error) {
+Acceptable order values are: CreationDate, Status, OperationType
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "statusId" (int32) Tickets status id
+    @param "creationDateFrom" (time.Time) Tickets creation date from
+    @param "creationDateTo" (time.Time) Tickets creation date to
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionTicket*/
+func (a *TicketsApiService) TicketsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionTicket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionTicket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionTicket
 	)
 
 	// create path and map variables
@@ -100,7 +100,7 @@ func (a *TicketsApiService) TicketsGet(ctx context.Context, localVarOptionals ma
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -114,7 +114,7 @@ func (a *TicketsApiService) TicketsGet(ctx context.Context, localVarOptionals ma
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -140,23 +140,22 @@ func (a *TicketsApiService) TicketsGet(ctx context.Context, localVarOptionals ma
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* TicketsApiService Returns ticket by identifier
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Ticket identifier
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return Ticket*/
-func (a *TicketsApiService) TicketsGet_1(ctx context.Context, id int64, localVarOptionals map[string]interface{}) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Ticket identifier
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return Ticket*/
+func (a *TicketsApiService) TicketsGet_1(ctx context.Context, id int64, localVarOptionals map[string]interface{}) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -175,7 +174,7 @@ func (a *TicketsApiService) TicketsGet_1(ctx context.Context, id int64, localVar
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -189,7 +188,7 @@ func (a *TicketsApiService) TicketsGet_1(ctx context.Context, id int64, localVar
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -215,7 +214,5 @@ func (a *TicketsApiService) TicketsGet_1(ctx context.Context, id int64, localVar
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-

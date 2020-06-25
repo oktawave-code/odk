@@ -11,7 +11,6 @@ package odk
 
 // HATEOAS link
 type Link struct {
-
 	Rel string `json:"Rel,omitempty"`
 
 	Href string `json:"Href,omitempty"`

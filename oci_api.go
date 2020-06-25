@@ -10,13 +10,14 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -26,19 +27,18 @@ var (
 
 type OCIApiService service
 
-
 /* OCIApiService Change instance name
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance identifier
- @param name Name of an instance
- @return Ticket*/
-func (a *OCIApiService) InstancesChangeName(ctx context.Context, id int32, name string) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance identifier
+@param name Name of an instance
+@return Ticket*/
+func (a *OCIApiService) InstancesChangeName(ctx context.Context, id int32, name string) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -58,7 +58,7 @@ func (a *OCIApiService) InstancesChangeName(ctx context.Context, id int32, name 
 
 	localVarQueryParams.Add("name", parameterToString(name, ""))
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -72,7 +72,7 @@ func (a *OCIApiService) InstancesChangeName(ctx context.Context, id int32, name 
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -98,22 +98,21 @@ func (a *OCIApiService) InstancesChangeName(ctx context.Context, id int32, name 
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Change instance subregion
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance identifier
- @param command Change instance subregion command
- @return Ticket*/
-func (a *OCIApiService) InstancesChangeSubregion(ctx context.Context, id int32, command ChangeInstanceSubregionCommand) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance identifier
+@param command Change instance subregion command
+@return Ticket*/
+func (a *OCIApiService) InstancesChangeSubregion(ctx context.Context, id int32, command ChangeInstanceSubregionCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -124,9 +123,8 @@ func (a *OCIApiService) InstancesChangeSubregion(ctx context.Context, id int32, 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -140,7 +138,7 @@ func (a *OCIApiService) InstancesChangeSubregion(ctx context.Context, id int32, 
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -168,22 +166,21 @@ func (a *OCIApiService) InstancesChangeSubregion(ctx context.Context, id int32, 
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Change SCSI controllers type
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance identifier
- @param scsiControllerTypeId Type id
- @return Ticket*/
-func (a *OCIApiService) InstancesChangeType(ctx context.Context, id int32, scsiControllerTypeId int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance identifier
+@param scsiControllerTypeId Type id
+@return Ticket*/
+func (a *OCIApiService) InstancesChangeType(ctx context.Context, id int32, scsiControllerTypeId int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -194,10 +191,9 @@ func (a *OCIApiService) InstancesChangeType(ctx context.Context, id int32, scsiC
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	localVarQueryParams.Add("scsiControllerTypeId", parameterToString(scsiControllerTypeId, ""))
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -211,7 +207,7 @@ func (a *OCIApiService) InstancesChangeType(ctx context.Context, id int32, scsiC
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -237,22 +233,21 @@ func (a *OCIApiService) InstancesChangeType(ctx context.Context, id int32, scsiC
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Change instance type
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance identifier
- @param typeId Type id
- @return Ticket*/
-func (a *OCIApiService) InstancesChangeType_1(ctx context.Context, id int32, typeId int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance identifier
+@param typeId Type id
+@return Ticket*/
+func (a *OCIApiService) InstancesChangeType_1(ctx context.Context, id int32, typeId int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -263,10 +258,9 @@ func (a *OCIApiService) InstancesChangeType_1(ctx context.Context, id int32, typ
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	localVarQueryParams.Add("typeId", parameterToString(typeId, ""))
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -280,7 +274,7 @@ func (a *OCIApiService) InstancesChangeType_1(ctx context.Context, id int32, typ
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -306,22 +300,21 @@ func (a *OCIApiService) InstancesChangeType_1(ctx context.Context, id int32, typ
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Clone instance
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance Id
- @param command Clone instance command
- @return Ticket*/
-func (a *OCIApiService) InstancesClone(ctx context.Context, id int32, command CloneInstanceCommand) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance Id
+@param command Clone instance command
+@return Ticket*/
+func (a *OCIApiService) InstancesClone(ctx context.Context, id int32, command CloneInstanceCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -332,9 +325,8 @@ func (a *OCIApiService) InstancesClone(ctx context.Context, id int32, command Cl
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -348,7 +340,7 @@ func (a *OCIApiService) InstancesClone(ctx context.Context, id int32, command Cl
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -376,22 +368,21 @@ func (a *OCIApiService) InstancesClone(ctx context.Context, id int32, command Cl
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Converts instance to template
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance identifier
- @param command Convert instance to template command
- @return Ticket*/
-func (a *OCIApiService) InstancesConvertToTemplate(ctx context.Context, id int32, command ConvertInstanceToTemplateCommand) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance identifier
+@param command Convert instance to template command
+@return Ticket*/
+func (a *OCIApiService) InstancesConvertToTemplate(ctx context.Context, id int32, command ConvertInstanceToTemplateCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -402,9 +393,8 @@ func (a *OCIApiService) InstancesConvertToTemplate(ctx context.Context, id int32
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -418,7 +408,7 @@ func (a *OCIApiService) InstancesConvertToTemplate(ctx context.Context, id int32
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -446,22 +436,21 @@ func (a *OCIApiService) InstancesConvertToTemplate(ctx context.Context, id int32
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Creates remote console connection
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @param command Create remote console connection command
- @return VncConnection*/
-func (a *OCIApiService) InstancesCreateVncConnection(ctx context.Context, id int32, command CreateUpdateVncConnectionCommand) (VncConnection,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@param command Create remote console connection command
+@return VncConnection*/
+func (a *OCIApiService) InstancesCreateVncConnection(ctx context.Context, id int32, command CreateUpdateVncConnectionCommand) (VncConnection, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  VncConnection
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     VncConnection
 	)
 
 	// create path and map variables
@@ -472,9 +461,8 @@ func (a *OCIApiService) InstancesCreateVncConnection(ctx context.Context, id int
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -488,7 +476,7 @@ func (a *OCIApiService) InstancesCreateVncConnection(ctx context.Context, id int
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -516,23 +504,22 @@ func (a *OCIApiService) InstancesCreateVncConnection(ctx context.Context, id int
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Delete instance
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance identifie
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "deep" (bool) Deletes also additional disks attached to instance
- @return Ticket*/
-func (a *OCIApiService) InstancesDelete(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance identifie
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "deep" (bool) Deletes also additional disks attached to instance
+@return Ticket*/
+func (a *OCIApiService) InstancesDelete(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -551,7 +538,7 @@ func (a *OCIApiService) InstancesDelete(ctx context.Context, id int32, localVarO
 		localVarQueryParams.Add("deep", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -565,7 +552,7 @@ func (a *OCIApiService) InstancesDelete(ctx context.Context, id int32, localVarO
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -591,21 +578,20 @@ func (a *OCIApiService) InstancesDelete(ctx context.Context, id int32, localVarO
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Deletes remote console connection
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @return Object*/
-func (a *OCIApiService) InstancesDeleteVncConnection(ctx context.Context, id int32) (Object,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@return Object*/
+func (a *OCIApiService) InstancesDeleteVncConnection(ctx context.Context, id int32) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Object
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Object
 	)
 
 	// create path and map variables
@@ -616,9 +602,8 @@ func (a *OCIApiService) InstancesDeleteVncConnection(ctx context.Context, id int
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -632,7 +617,7 @@ func (a *OCIApiService) InstancesDeleteVncConnection(ctx context.Context, id int
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -658,31 +643,30 @@ func (a *OCIApiService) InstancesDeleteVncConnection(ctx context.Context, id int
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Returns instance list
- Acceptable order values are: Type, Status, CreationDate, Name.
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "templateTypeId" (int32) Template type id eg marketplace, oci instance
-     @param "isTurnedOn" (bool) Indicates wether an instance is turned on
-     @param "subregionId" (int32) Subregion Id
-     @param "typeId" (int32) Type Id
-     @param "query" (string) Query
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionInstance*/
-func (a *OCIApiService) InstancesGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionInstance,  *http.Response, error) {
+Acceptable order values are: Type, Status, CreationDate, Name.
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "templateTypeId" (int32) Template type id eg marketplace, oci instance
+    @param "isTurnedOn" (bool) Indicates wether an instance is turned on
+    @param "subregionId" (int32) Subregion Id
+    @param "typeId" (int32) Type Id
+    @param "query" (string) Query
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionInstance*/
+func (a *OCIApiService) InstancesGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionInstance, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionInstance
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionInstance
 	)
 
 	// create path and map variables
@@ -748,7 +732,7 @@ func (a *OCIApiService) InstancesGet(ctx context.Context, localVarOptionals map[
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -762,7 +746,7 @@ func (a *OCIApiService) InstancesGet(ctx context.Context, localVarOptionals map[
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -788,23 +772,22 @@ func (a *OCIApiService) InstancesGet(ctx context.Context, localVarOptionals map[
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Returns instance access data
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return AccessData*/
-func (a *OCIApiService) InstancesGetAccessData(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (AccessData,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return AccessData*/
+func (a *OCIApiService) InstancesGetAccessData(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (AccessData, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  AccessData
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     AccessData
 	)
 
 	// create path and map variables
@@ -823,7 +806,7 @@ func (a *OCIApiService) InstancesGetAccessData(ctx context.Context, id int32, lo
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -837,7 +820,7 @@ func (a *OCIApiService) InstancesGetAccessData(ctx context.Context, id int32, lo
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -863,29 +846,28 @@ func (a *OCIApiService) InstancesGetAccessData(ctx context.Context, id int32, lo
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Returns instance disk list
- Acceptable order values are: SpaceCapacity, Name, Tier, IsShared, Subregion
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "diskType" (string) Disk type
-     @param "query" (string) Query
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionDisk*/
-func (a *OCIApiService) InstancesGetDisks(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionDisk,  *http.Response, error) {
+Acceptable order values are: SpaceCapacity, Name, Tier, IsShared, Subregion
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "diskType" (string) Disk type
+    @param "query" (string) Query
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionDisk*/
+func (a *OCIApiService) InstancesGetDisks(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionDisk, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionDisk
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionDisk
 	)
 
 	// create path and map variables
@@ -934,7 +916,7 @@ func (a *OCIApiService) InstancesGetDisks(ctx context.Context, id int32, localVa
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -948,7 +930,7 @@ func (a *OCIApiService) InstancesGetDisks(ctx context.Context, id int32, localVa
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -974,23 +956,96 @@ func (a *OCIApiService) InstancesGetDisks(ctx context.Context, id int32, localVa
 		return successPayload, localVarHttpResponse, err
 	}
 
+	return successPayload, localVarHttpResponse, err
+}
+
+/* OCIApiService Returns instance init script
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return string*/
+func (a *OCIApiService) InstancesGetInstanceInitScript(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (string, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     string
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/instances/{id}/init_script"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if err := typeCheckParameter(localVarOptionals["fields"], "string", "fields"); err != nil {
+		return successPayload, nil, err
+	}
+
+	if localVarTempParam, localVarOk := localVarOptionals["fields"].(string); localVarOk {
+		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+		"text/json",
+		"application/xml",
+		"text/xml",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
 
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Returns instance software
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id 
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionSoftware*/
-func (a *OCIApiService) InstancesGetInstanceSoftware(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionSoftware,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionSoftware*/
+func (a *OCIApiService) InstancesGetInstanceSoftware(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionSoftware, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionSoftware
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionSoftware
 	)
 
 	// create path and map variables
@@ -1009,7 +1064,7 @@ func (a *OCIApiService) InstancesGetInstanceSoftware(ctx context.Context, id int
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1023,7 +1078,7 @@ func (a *OCIApiService) InstancesGetInstanceSoftware(ctx context.Context, id int
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1049,23 +1104,22 @@ func (a *OCIApiService) InstancesGetInstanceSoftware(ctx context.Context, id int
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Returns instance type
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance type id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionInstanceType*/
-func (a *OCIApiService) InstancesGetInstanceType(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionInstanceType,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance type id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionInstanceType*/
+func (a *OCIApiService) InstancesGetInstanceType(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionInstanceType, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionInstanceType
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionInstanceType
 	)
 
 	// create path and map variables
@@ -1084,7 +1138,7 @@ func (a *OCIApiService) InstancesGetInstanceType(ctx context.Context, id int32, 
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1098,7 +1152,7 @@ func (a *OCIApiService) InstancesGetInstanceType(ctx context.Context, id int32, 
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1124,28 +1178,27 @@ func (a *OCIApiService) InstancesGetInstanceType(ctx context.Context, id int32, 
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Returns all available instances types
- Acceptable order values are: Category, Cpu, Ram, Name.
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "categoryId" (int32) Category id
-     @param "availableForFreemium" (bool) Is available for freemium
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionInstanceType*/
-func (a *OCIApiService) InstancesGetInstancesTypes(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionInstanceType,  *http.Response, error) {
+Acceptable order values are: Category, Cpu, Ram, Name.
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "categoryId" (int32) Category id
+    @param "availableForFreemium" (bool) Is available for freemium
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionInstanceType*/
+func (a *OCIApiService) InstancesGetInstancesTypes(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionInstanceType, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionInstanceType
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionInstanceType
 	)
 
 	// create path and map variables
@@ -1193,7 +1246,7 @@ func (a *OCIApiService) InstancesGetInstancesTypes(ctx context.Context, localVar
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1207,7 +1260,7 @@ func (a *OCIApiService) InstancesGetInstancesTypes(ctx context.Context, localVar
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1233,25 +1286,24 @@ func (a *OCIApiService) InstancesGetInstancesTypes(ctx context.Context, localVar
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Returns instance screenshot
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "width" (int32) The pixel width of the scaled image
-     @param "height" (int32) The pixel height of the scaled image
-     @param "fields" (string) Response fields filter
- @return string*/
-func (a *OCIApiService) InstancesGetScreenshot(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (string,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "width" (int32) The pixel width of the scaled image
+    @param "height" (int32) The pixel height of the scaled image
+    @param "fields" (string) Response fields filter
+@return string*/
+func (a *OCIApiService) InstancesGetScreenshot(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (string, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  string
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     string
 	)
 
 	// create path and map variables
@@ -1282,7 +1334,7 @@ func (a *OCIApiService) InstancesGetScreenshot(ctx context.Context, id int32, lo
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1296,7 +1348,7 @@ func (a *OCIApiService) InstancesGetScreenshot(ctx context.Context, id int32, lo
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1322,22 +1374,21 @@ func (a *OCIApiService) InstancesGetScreenshot(ctx context.Context, id int32, lo
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Returns software
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionSoftware*/
-func (a *OCIApiService) InstancesGetSoftware(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionSoftware,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionSoftware*/
+func (a *OCIApiService) InstancesGetSoftware(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionSoftware, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionSoftware
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionSoftware
 	)
 
 	// create path and map variables
@@ -1355,7 +1406,7 @@ func (a *OCIApiService) InstancesGetSoftware(ctx context.Context, localVarOption
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1369,7 +1420,7 @@ func (a *OCIApiService) InstancesGetSoftware(ctx context.Context, localVarOption
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1395,23 +1446,22 @@ func (a *OCIApiService) InstancesGetSoftware(ctx context.Context, localVarOption
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Returns SSH keys uploaded to instances
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionInstanceSshKey*/
-func (a *OCIApiService) InstancesGetSshKeys(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionInstanceSshKey,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionInstanceSshKey*/
+func (a *OCIApiService) InstancesGetSshKeys(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionInstanceSshKey, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionInstanceSshKey
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionInstanceSshKey
 	)
 
 	// create path and map variables
@@ -1430,7 +1480,7 @@ func (a *OCIApiService) InstancesGetSshKeys(ctx context.Context, id int32, local
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1444,7 +1494,7 @@ func (a *OCIApiService) InstancesGetSshKeys(ctx context.Context, id int32, local
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1470,23 +1520,22 @@ func (a *OCIApiService) InstancesGetSshKeys(ctx context.Context, id int32, local
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Returns remote console connection
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return VncConnection*/
-func (a *OCIApiService) InstancesGetVncConnection(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (VncConnection,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return VncConnection*/
+func (a *OCIApiService) InstancesGetVncConnection(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (VncConnection, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  VncConnection
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     VncConnection
 	)
 
 	// create path and map variables
@@ -1505,7 +1554,7 @@ func (a *OCIApiService) InstancesGetVncConnection(ctx context.Context, id int32,
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1519,7 +1568,7 @@ func (a *OCIApiService) InstancesGetVncConnection(ctx context.Context, id int32,
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1545,23 +1594,22 @@ func (a *OCIApiService) InstancesGetVncConnection(ctx context.Context, id int32,
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Returns instance by identifier
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance identifier
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return Instance*/
-func (a *OCIApiService) InstancesGet_2(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Instance,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance identifier
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return Instance*/
+func (a *OCIApiService) InstancesGet_2(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Instance, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Instance
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Instance
 	)
 
 	// create path and map variables
@@ -1580,7 +1628,7 @@ func (a *OCIApiService) InstancesGet_2(ctx context.Context, id int32, localVarOp
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1594,7 +1642,7 @@ func (a *OCIApiService) InstancesGet_2(ctx context.Context, id int32, localVarOp
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1620,21 +1668,20 @@ func (a *OCIApiService) InstancesGet_2(ctx context.Context, id int32, localVarOp
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Creates instance
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param command Create instance command
- @return Ticket*/
-func (a *OCIApiService) InstancesPost(ctx context.Context, command CreateInstanceCommand) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param command Create instance command
+@return Ticket*/
+func (a *OCIApiService) InstancesPost(ctx context.Context, command CreateInstanceCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -1644,9 +1691,8 @@ func (a *OCIApiService) InstancesPost(ctx context.Context, command CreateInstanc
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1660,7 +1706,7 @@ func (a *OCIApiService) InstancesPost(ctx context.Context, command CreateInstanc
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1688,21 +1734,20 @@ func (a *OCIApiService) InstancesPost(ctx context.Context, command CreateInstanc
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Power off instance
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance identifier
- @return Ticket*/
-func (a *OCIApiService) InstancesPowerOff(ctx context.Context, id int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance identifier
+@return Ticket*/
+func (a *OCIApiService) InstancesPowerOff(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -1713,9 +1758,8 @@ func (a *OCIApiService) InstancesPowerOff(ctx context.Context, id int32) (Ticket
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1729,7 +1773,7 @@ func (a *OCIApiService) InstancesPowerOff(ctx context.Context, id int32) (Ticket
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1755,21 +1799,20 @@ func (a *OCIApiService) InstancesPowerOff(ctx context.Context, id int32) (Ticket
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Power on instance
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance identifier
- @return Ticket*/
-func (a *OCIApiService) InstancesPowerOn(ctx context.Context, id int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance identifier
+@return Ticket*/
+func (a *OCIApiService) InstancesPowerOn(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -1780,9 +1823,8 @@ func (a *OCIApiService) InstancesPowerOn(ctx context.Context, id int32) (Ticket,
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1796,7 +1838,7 @@ func (a *OCIApiService) InstancesPowerOn(ctx context.Context, id int32) (Ticket,
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1822,21 +1864,20 @@ func (a *OCIApiService) InstancesPowerOn(ctx context.Context, id int32) (Ticket,
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Reboot instance
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance identifier
- @return Ticket*/
-func (a *OCIApiService) InstancesReboot(ctx context.Context, id int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance identifier
+@return Ticket*/
+func (a *OCIApiService) InstancesReboot(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -1847,9 +1888,8 @@ func (a *OCIApiService) InstancesReboot(ctx context.Context, id int32) (Ticket, 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1863,7 +1903,7 @@ func (a *OCIApiService) InstancesReboot(ctx context.Context, id int32) (Ticket, 
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1889,21 +1929,20 @@ func (a *OCIApiService) InstancesReboot(ctx context.Context, id int32) (Ticket, 
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Reset instance
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance identifier
- @return Ticket*/
-func (a *OCIApiService) InstancesReset(ctx context.Context, id int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance identifier
+@return Ticket*/
+func (a *OCIApiService) InstancesReset(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -1914,9 +1953,8 @@ func (a *OCIApiService) InstancesReset(ctx context.Context, id int32) (Ticket,  
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1930,7 +1968,7 @@ func (a *OCIApiService) InstancesReset(ctx context.Context, id int32) (Ticket,  
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1956,21 +1994,20 @@ func (a *OCIApiService) InstancesReset(ctx context.Context, id int32) (Ticket,  
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Shutdown instance
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance identifier
- @return Ticket*/
-func (a *OCIApiService) InstancesShutdown(ctx context.Context, id int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance identifier
+@return Ticket*/
+func (a *OCIApiService) InstancesShutdown(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -1981,9 +2018,8 @@ func (a *OCIApiService) InstancesShutdown(ctx context.Context, id int32) (Ticket
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1997,7 +2033,7 @@ func (a *OCIApiService) InstancesShutdown(ctx context.Context, id int32) (Ticket
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2023,22 +2059,21 @@ func (a *OCIApiService) InstancesShutdown(ctx context.Context, id int32) (Ticket
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIApiService Updates remote console connection
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @param command Update remote console connection command
- @return VncConnection*/
-func (a *OCIApiService) InstancesUpdateVncConnection(ctx context.Context, id int32, command CreateUpdateVncConnectionCommand) (VncConnection,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@param command Update remote console connection command
+@return VncConnection*/
+func (a *OCIApiService) InstancesUpdateVncConnection(ctx context.Context, id int32, command CreateUpdateVncConnectionCommand) (VncConnection, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  VncConnection
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     VncConnection
 	)
 
 	// create path and map variables
@@ -2049,9 +2084,8 @@ func (a *OCIApiService) InstancesUpdateVncConnection(ctx context.Context, id int
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -2065,7 +2099,7 @@ func (a *OCIApiService) InstancesUpdateVncConnection(ctx context.Context, id int
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -2093,7 +2127,5 @@ func (a *OCIApiService) InstancesUpdateVncConnection(ctx context.Context, id int
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-

@@ -10,7 +10,6 @@
 package odk
 
 type ApiCollectionDictionary struct {
-
 	Items []Dictionary `json:"Items,omitempty"`
 
 	Meta *ApiCollectionMetadata `json:"Meta,omitempty"`

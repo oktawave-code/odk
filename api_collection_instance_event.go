@@ -10,7 +10,6 @@
 package odk
 
 type ApiCollectionInstanceEvent struct {
-
 	Items []InstanceEvent `json:"Items,omitempty"`
 
 	Meta *ApiCollectionMetadata `json:"Meta,omitempty"`

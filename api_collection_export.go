@@ -10,7 +10,6 @@
 package odk
 
 type ApiCollectionExport struct {
-
 	Items []Export `json:"Items,omitempty"`
 
 	Meta *ApiCollectionMetadata `json:"Meta,omitempty"`

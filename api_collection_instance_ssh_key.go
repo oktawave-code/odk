@@ -10,7 +10,6 @@
 package odk
 
 type ApiCollectionInstanceSshKey struct {
-
 	Items []InstanceSshKey `json:"Items,omitempty"`
 
 	Meta *ApiCollectionMetadata `json:"Meta,omitempty"`

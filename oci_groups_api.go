@@ -10,13 +10,14 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -26,19 +27,18 @@ var (
 
 type OCIGroupsApiService service
 
-
 /* OCIGroupsApiService Changes group assignments
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Id of a group
- @param command Change group assignments command
- @return ApiCollectionGroupAssignment*/
-func (a *OCIGroupsApiService) GroupsChangeAssignmentsInGroup(ctx context.Context, id int32, command ChangeContainerAssignmentsCommand) (ApiCollectionGroupAssignment,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Id of a group
+@param command Change group assignments command
+@return ApiCollectionGroupAssignment*/
+func (a *OCIGroupsApiService) GroupsChangeAssignmentsInGroup(ctx context.Context, id int32, command ChangeContainerAssignmentsCommand) (ApiCollectionGroupAssignment, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionGroupAssignment
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionGroupAssignment
 	)
 
 	// create path and map variables
@@ -49,9 +49,8 @@ func (a *OCIGroupsApiService) GroupsChangeAssignmentsInGroup(ctx context.Context
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -65,7 +64,7 @@ func (a *OCIGroupsApiService) GroupsChangeAssignmentsInGroup(ctx context.Context
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -93,21 +92,20 @@ func (a *OCIGroupsApiService) GroupsChangeAssignmentsInGroup(ctx context.Context
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Creates group
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param command Create group command
- @return Group*/
-func (a *OCIGroupsApiService) GroupsCreate(ctx context.Context, command CreateGroupCommand) (Group,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param command Create group command
+@return Group*/
+func (a *OCIGroupsApiService) GroupsCreate(ctx context.Context, command CreateGroupCommand) (Group, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Group
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Group
 	)
 
 	// create path and map variables
@@ -117,9 +115,8 @@ func (a *OCIGroupsApiService) GroupsCreate(ctx context.Context, command CreateGr
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -133,7 +130,7 @@ func (a *OCIGroupsApiService) GroupsCreate(ctx context.Context, command CreateGr
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -161,22 +158,21 @@ func (a *OCIGroupsApiService) GroupsCreate(ctx context.Context, command CreateGr
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Creates a group scheduler
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Group Id
- @param command Create group scheduler command
- @return GroupScheduler*/
-func (a *OCIGroupsApiService) GroupsCreateContainerScheduler(ctx context.Context, id int32, command CreateUpdateGroupSchedulerCommand) (GroupScheduler,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Group Id
+@param command Create group scheduler command
+@return GroupScheduler*/
+func (a *OCIGroupsApiService) GroupsCreateContainerScheduler(ctx context.Context, id int32, command CreateUpdateGroupSchedulerCommand) (GroupScheduler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GroupScheduler
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GroupScheduler
 	)
 
 	// create path and map variables
@@ -187,9 +183,8 @@ func (a *OCIGroupsApiService) GroupsCreateContainerScheduler(ctx context.Context
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -203,7 +198,7 @@ func (a *OCIGroupsApiService) GroupsCreateContainerScheduler(ctx context.Context
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -231,21 +226,20 @@ func (a *OCIGroupsApiService) GroupsCreateContainerScheduler(ctx context.Context
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Deletes group
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Id of a group
- @return Object*/
-func (a *OCIGroupsApiService) GroupsDelete(ctx context.Context, id int32) (Object,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Id of a group
+@return Object*/
+func (a *OCIGroupsApiService) GroupsDelete(ctx context.Context, id int32) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Object
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Object
 	)
 
 	// create path and map variables
@@ -256,9 +250,8 @@ func (a *OCIGroupsApiService) GroupsDelete(ctx context.Context, id int32) (Objec
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -272,7 +265,7 @@ func (a *OCIGroupsApiService) GroupsDelete(ctx context.Context, id int32) (Objec
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -298,21 +291,20 @@ func (a *OCIGroupsApiService) GroupsDelete(ctx context.Context, id int32) (Objec
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Deletes group scheduler
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Id of a group scheduler
- @return Object*/
-func (a *OCIGroupsApiService) GroupsDeleteGroupScheduler(ctx context.Context, id int32) (Object,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Id of a group scheduler
+@return Object*/
+func (a *OCIGroupsApiService) GroupsDeleteGroupScheduler(ctx context.Context, id int32) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Object
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Object
 	)
 
 	// create path and map variables
@@ -323,9 +315,8 @@ func (a *OCIGroupsApiService) GroupsDeleteGroupScheduler(ctx context.Context, id
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -339,7 +330,7 @@ func (a *OCIGroupsApiService) GroupsDeleteGroupScheduler(ctx context.Context, id
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -365,23 +356,22 @@ func (a *OCIGroupsApiService) GroupsDeleteGroupScheduler(ctx context.Context, id
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Returns group assignments
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Id of a group
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionGroupAssignment*/
-func (a *OCIGroupsApiService) GroupsGetAssignmentsInGroup(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionGroupAssignment,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Id of a group
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionGroupAssignment*/
+func (a *OCIGroupsApiService) GroupsGetAssignmentsInGroup(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionGroupAssignment, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionGroupAssignment
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionGroupAssignment
 	)
 
 	// create path and map variables
@@ -400,7 +390,7 @@ func (a *OCIGroupsApiService) GroupsGetAssignmentsInGroup(ctx context.Context, i
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -414,7 +404,7 @@ func (a *OCIGroupsApiService) GroupsGetAssignmentsInGroup(ctx context.Context, i
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -440,23 +430,22 @@ func (a *OCIGroupsApiService) GroupsGetAssignmentsInGroup(ctx context.Context, i
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Returns group
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Id of group
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return Group*/
-func (a *OCIGroupsApiService) GroupsGetGroup(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Group,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Id of group
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return Group*/
+func (a *OCIGroupsApiService) GroupsGetGroup(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Group, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Group
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Group
 	)
 
 	// create path and map variables
@@ -475,7 +464,7 @@ func (a *OCIGroupsApiService) GroupsGetGroup(ctx context.Context, id int32, loca
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -489,7 +478,7 @@ func (a *OCIGroupsApiService) GroupsGetGroup(ctx context.Context, id int32, loca
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -515,23 +504,22 @@ func (a *OCIGroupsApiService) GroupsGetGroup(ctx context.Context, id int32, loca
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Returns group autoscaler settings
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Id of a group
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return GroupAutoscaler*/
-func (a *OCIGroupsApiService) GroupsGetGroupAutoscaler(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (GroupAutoscaler,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Id of a group
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return GroupAutoscaler*/
+func (a *OCIGroupsApiService) GroupsGetGroupAutoscaler(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (GroupAutoscaler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GroupAutoscaler
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GroupAutoscaler
 	)
 
 	// create path and map variables
@@ -550,7 +538,7 @@ func (a *OCIGroupsApiService) GroupsGetGroupAutoscaler(ctx context.Context, id i
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -564,7 +552,7 @@ func (a *OCIGroupsApiService) GroupsGetGroupAutoscaler(ctx context.Context, id i
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -590,23 +578,22 @@ func (a *OCIGroupsApiService) GroupsGetGroupAutoscaler(ctx context.Context, id i
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Returns group scheduler
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Group scheduler Id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return GroupScheduler*/
-func (a *OCIGroupsApiService) GroupsGetGroupScheduler(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (GroupScheduler,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Group scheduler Id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return GroupScheduler*/
+func (a *OCIGroupsApiService) GroupsGetGroupScheduler(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (GroupScheduler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GroupScheduler
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GroupScheduler
 	)
 
 	// create path and map variables
@@ -625,7 +612,7 @@ func (a *OCIGroupsApiService) GroupsGetGroupScheduler(ctx context.Context, id in
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -639,7 +626,7 @@ func (a *OCIGroupsApiService) GroupsGetGroupScheduler(ctx context.Context, id in
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -665,23 +652,22 @@ func (a *OCIGroupsApiService) GroupsGetGroupScheduler(ctx context.Context, id in
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Returns group schedulers
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Id of a group
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionGroupScheduler*/
-func (a *OCIGroupsApiService) GroupsGetGroupSchedulers(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionGroupScheduler,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Id of a group
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionGroupScheduler*/
+func (a *OCIGroupsApiService) GroupsGetGroupSchedulers(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionGroupScheduler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionGroupScheduler
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionGroupScheduler
 	)
 
 	// create path and map variables
@@ -700,7 +686,7 @@ func (a *OCIGroupsApiService) GroupsGetGroupSchedulers(ctx context.Context, id i
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -714,7 +700,7 @@ func (a *OCIGroupsApiService) GroupsGetGroupSchedulers(ctx context.Context, id i
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -740,26 +726,25 @@ func (a *OCIGroupsApiService) GroupsGetGroupSchedulers(ctx context.Context, id i
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Returns a list of groups
- Acceptable order values are: Name
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionGroup*/
-func (a *OCIGroupsApiService) GroupsGetGroups(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionGroup,  *http.Response, error) {
+Acceptable order values are: Name
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionGroup*/
+func (a *OCIGroupsApiService) GroupsGetGroups(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionGroup, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionGroup
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionGroup
 	)
 
 	// create path and map variables
@@ -795,7 +780,7 @@ func (a *OCIGroupsApiService) GroupsGetGroups(ctx context.Context, localVarOptio
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -809,7 +794,7 @@ func (a *OCIGroupsApiService) GroupsGetGroups(ctx context.Context, localVarOptio
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -835,26 +820,25 @@ func (a *OCIGroupsApiService) GroupsGetGroups(ctx context.Context, localVarOptio
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Gets load balancers
- Acceptable order values are: GroupName
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionLoadBalancer*/
-func (a *OCIGroupsApiService) GroupsGetLoadBalancers(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionLoadBalancer,  *http.Response, error) {
+Acceptable order values are: GroupName
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionLoadBalancer*/
+func (a *OCIGroupsApiService) GroupsGetLoadBalancers(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionLoadBalancer, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionLoadBalancer
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionLoadBalancer
 	)
 
 	// create path and map variables
@@ -890,7 +874,7 @@ func (a *OCIGroupsApiService) GroupsGetLoadBalancers(ctx context.Context, localV
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -904,7 +888,7 @@ func (a *OCIGroupsApiService) GroupsGetLoadBalancers(ctx context.Context, localV
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -930,22 +914,21 @@ func (a *OCIGroupsApiService) GroupsGetLoadBalancers(ctx context.Context, localV
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Sets group autoscaler
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Id of a group
- @param command Set group autoscaler command
- @return GroupAutoscaler*/
-func (a *OCIGroupsApiService) GroupsSetGroupAutoscaler(ctx context.Context, id int32, command SetGroupAutoscalerCommand) (GroupAutoscaler,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Id of a group
+@param command Set group autoscaler command
+@return GroupAutoscaler*/
+func (a *OCIGroupsApiService) GroupsSetGroupAutoscaler(ctx context.Context, id int32, command SetGroupAutoscalerCommand) (GroupAutoscaler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GroupAutoscaler
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GroupAutoscaler
 	)
 
 	// create path and map variables
@@ -956,9 +939,8 @@ func (a *OCIGroupsApiService) GroupsSetGroupAutoscaler(ctx context.Context, id i
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -972,7 +954,7 @@ func (a *OCIGroupsApiService) GroupsSetGroupAutoscaler(ctx context.Context, id i
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1000,21 +982,20 @@ func (a *OCIGroupsApiService) GroupsSetGroupAutoscaler(ctx context.Context, id i
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Turns off group autoscaler
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Id of a group
- @return Object*/
-func (a *OCIGroupsApiService) GroupsTurnoffGroupAutoscaler(ctx context.Context, id int32) (Object,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Id of a group
+@return Object*/
+func (a *OCIGroupsApiService) GroupsTurnoffGroupAutoscaler(ctx context.Context, id int32) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Object
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Object
 	)
 
 	// create path and map variables
@@ -1025,9 +1006,8 @@ func (a *OCIGroupsApiService) GroupsTurnoffGroupAutoscaler(ctx context.Context, 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1041,7 +1021,7 @@ func (a *OCIGroupsApiService) GroupsTurnoffGroupAutoscaler(ctx context.Context, 
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1067,22 +1047,21 @@ func (a *OCIGroupsApiService) GroupsTurnoffGroupAutoscaler(ctx context.Context, 
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Updates group
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Id of a group
- @param command Update group command
- @return Group*/
-func (a *OCIGroupsApiService) GroupsUpdate(ctx context.Context, id int32, command CreateGroupCommand) (Group,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Id of a group
+@param command Update group command
+@return Group*/
+func (a *OCIGroupsApiService) GroupsUpdate(ctx context.Context, id int32, command CreateGroupCommand) (Group, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Group
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Group
 	)
 
 	// create path and map variables
@@ -1093,9 +1072,8 @@ func (a *OCIGroupsApiService) GroupsUpdate(ctx context.Context, id int32, comman
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1109,7 +1087,7 @@ func (a *OCIGroupsApiService) GroupsUpdate(ctx context.Context, id int32, comman
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1137,22 +1115,21 @@ func (a *OCIGroupsApiService) GroupsUpdate(ctx context.Context, id int32, comman
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Updates a group scheduler
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Group scheduler Id
- @param command Create group scheduler command
- @return GroupScheduler*/
-func (a *OCIGroupsApiService) GroupsUpdateGroupScheduler(ctx context.Context, id int32, command CreateUpdateGroupSchedulerCommand) (GroupScheduler,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Group scheduler Id
+@param command Create group scheduler command
+@return GroupScheduler*/
+func (a *OCIGroupsApiService) GroupsUpdateGroupScheduler(ctx context.Context, id int32, command CreateUpdateGroupSchedulerCommand) (GroupScheduler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  GroupScheduler
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     GroupScheduler
 	)
 
 	// create path and map variables
@@ -1163,9 +1140,8 @@ func (a *OCIGroupsApiService) GroupsUpdateGroupScheduler(ctx context.Context, id
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1179,7 +1155,7 @@ func (a *OCIGroupsApiService) GroupsUpdateGroupScheduler(ctx context.Context, id
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1207,23 +1183,22 @@ func (a *OCIGroupsApiService) GroupsUpdateGroupScheduler(ctx context.Context, id
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Returns a list of instance groups
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionGroup*/
-func (a *OCIGroupsApiService) InstancesGetGroups(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionGroup,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionGroup*/
+func (a *OCIGroupsApiService) InstancesGetGroups(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionGroup, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionGroup
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionGroup
 	)
 
 	// create path and map variables
@@ -1242,7 +1217,7 @@ func (a *OCIGroupsApiService) InstancesGetGroups(ctx context.Context, id int32, 
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1256,7 +1231,7 @@ func (a *OCIGroupsApiService) InstancesGetGroups(ctx context.Context, id int32, 
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1282,22 +1257,21 @@ func (a *OCIGroupsApiService) InstancesGetGroups(ctx context.Context, id int32, 
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Changes load balancer service state
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Id of a group
- @param command Change service status command
- @return LoadBalancer*/
-func (a *OCIGroupsApiService) LoadBalancersChangeServiceStatus(ctx context.Context, id int32, command ChangeContainerServiceStateCommand) (LoadBalancer,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Id of a group
+@param command Change service status command
+@return LoadBalancer*/
+func (a *OCIGroupsApiService) LoadBalancersChangeServiceStatus(ctx context.Context, id int32, command ChangeContainerServiceStateCommand) (LoadBalancer, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  LoadBalancer
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     LoadBalancer
 	)
 
 	// create path and map variables
@@ -1308,9 +1282,8 @@ func (a *OCIGroupsApiService) LoadBalancersChangeServiceStatus(ctx context.Conte
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1324,7 +1297,7 @@ func (a *OCIGroupsApiService) LoadBalancersChangeServiceStatus(ctx context.Conte
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1351,23 +1324,22 @@ func (a *OCIGroupsApiService) LoadBalancersChangeServiceStatus(ctx context.Conte
 	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
 		return successPayload, localVarHttpResponse, err
 	}
-
 
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Create load balancer for group
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Group id
- @param command Create load balancer command
- @return LoadBalancer*/
-func (a *OCIGroupsApiService) LoadBalancersCreate(ctx context.Context, id int32, command SetLoadBalancerCommand) (LoadBalancer,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Group id
+@param command Create load balancer command
+@return LoadBalancer*/
+func (a *OCIGroupsApiService) LoadBalancersCreate(ctx context.Context, id int32, command SetLoadBalancerCommand) (LoadBalancer, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  LoadBalancer
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     LoadBalancer
 	)
 
 	// create path and map variables
@@ -1378,9 +1350,8 @@ func (a *OCIGroupsApiService) LoadBalancersCreate(ctx context.Context, id int32,
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1394,7 +1365,7 @@ func (a *OCIGroupsApiService) LoadBalancersCreate(ctx context.Context, id int32,
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1422,21 +1393,20 @@ func (a *OCIGroupsApiService) LoadBalancersCreate(ctx context.Context, id int32,
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Delete load balancer
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Group id
- @return Object*/
-func (a *OCIGroupsApiService) LoadBalancersDelete(ctx context.Context, id int32) (Object,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Group id
+@return Object*/
+func (a *OCIGroupsApiService) LoadBalancersDelete(ctx context.Context, id int32) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Object
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Object
 	)
 
 	// create path and map variables
@@ -1447,9 +1417,8 @@ func (a *OCIGroupsApiService) LoadBalancersDelete(ctx context.Context, id int32)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1463,7 +1432,7 @@ func (a *OCIGroupsApiService) LoadBalancersDelete(ctx context.Context, id int32)
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1489,23 +1458,22 @@ func (a *OCIGroupsApiService) LoadBalancersDelete(ctx context.Context, id int32)
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Gets load balancer for group
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Group id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return LoadBalancer*/
-func (a *OCIGroupsApiService) LoadBalancersGetLoadBalancer(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (LoadBalancer,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Group id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return LoadBalancer*/
+func (a *OCIGroupsApiService) LoadBalancersGetLoadBalancer(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (LoadBalancer, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  LoadBalancer
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     LoadBalancer
 	)
 
 	// create path and map variables
@@ -1524,7 +1492,7 @@ func (a *OCIGroupsApiService) LoadBalancersGetLoadBalancer(ctx context.Context, 
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1538,7 +1506,7 @@ func (a *OCIGroupsApiService) LoadBalancersGetLoadBalancer(ctx context.Context, 
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1564,23 +1532,22 @@ func (a *OCIGroupsApiService) LoadBalancersGetLoadBalancer(ctx context.Context, 
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Gets load balancer detail for group
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Group id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return LoadBalancer*/
-func (a *OCIGroupsApiService) LoadBalancersGetLoadBalancerDetails(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (LoadBalancer,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Group id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return LoadBalancer*/
+func (a *OCIGroupsApiService) LoadBalancersGetLoadBalancerDetails(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (LoadBalancer, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  LoadBalancer
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     LoadBalancer
 	)
 
 	// create path and map variables
@@ -1599,7 +1566,7 @@ func (a *OCIGroupsApiService) LoadBalancersGetLoadBalancerDetails(ctx context.Co
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1613,7 +1580,7 @@ func (a *OCIGroupsApiService) LoadBalancersGetLoadBalancerDetails(ctx context.Co
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1639,22 +1606,21 @@ func (a *OCIGroupsApiService) LoadBalancersGetLoadBalancerDetails(ctx context.Co
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIGroupsApiService Update load balancer for group
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Group id
- @param command Update load balancer command
- @return LoadBalancer*/
-func (a *OCIGroupsApiService) LoadBalancersUpdate(ctx context.Context, id int32, command SetLoadBalancerCommand) (LoadBalancer,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Group id
+@param command Update load balancer command
+@return LoadBalancer*/
+func (a *OCIGroupsApiService) LoadBalancersUpdate(ctx context.Context, id int32, command SetLoadBalancerCommand) (LoadBalancer, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  LoadBalancer
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     LoadBalancer
 	)
 
 	// create path and map variables
@@ -1665,9 +1631,8 @@ func (a *OCIGroupsApiService) LoadBalancersUpdate(ctx context.Context, id int32,
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -1681,7 +1646,7 @@ func (a *OCIGroupsApiService) LoadBalancersUpdate(ctx context.Context, id int32,
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1709,7 +1674,5 @@ func (a *OCIGroupsApiService) LoadBalancersUpdate(ctx context.Context, id int32,
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-

@@ -11,6 +11,5 @@ package odk
 
 // Change container assignments Command
 type ChangeContainerAssignmentsCommand struct {
-
 	Assignments []ContainerAssignmentCommand `json:"Assignments,omitempty"`
 }

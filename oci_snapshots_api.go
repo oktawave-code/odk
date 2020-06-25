@@ -10,13 +10,14 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -26,20 +27,19 @@ var (
 
 type OCISnapshotsApiService service
 
-
 /* OCISnapshotsApiService Returns instance snapshots
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance identifier
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionSnapshot*/
-func (a *OCISnapshotsApiService) InstancesGetSnapshots(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionSnapshot,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance identifier
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionSnapshot*/
+func (a *OCISnapshotsApiService) InstancesGetSnapshots(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionSnapshot, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionSnapshot
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionSnapshot
 	)
 
 	// create path and map variables
@@ -58,7 +58,7 @@ func (a *OCISnapshotsApiService) InstancesGetSnapshots(ctx context.Context, id i
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -72,7 +72,7 @@ func (a *OCISnapshotsApiService) InstancesGetSnapshots(ctx context.Context, id i
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -98,22 +98,21 @@ func (a *OCISnapshotsApiService) InstancesGetSnapshots(ctx context.Context, id i
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCISnapshotsApiService Creates snapshot
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @param command Create snapshot command
- @return Ticket*/
-func (a *OCISnapshotsApiService) InstancesPostSnapshot(ctx context.Context, id int32, command CreateUpdateSnapshotCommand) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@param command Create snapshot command
+@return Ticket*/
+func (a *OCISnapshotsApiService) InstancesPostSnapshot(ctx context.Context, id int32, command CreateUpdateSnapshotCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -124,9 +123,8 @@ func (a *OCISnapshotsApiService) InstancesPostSnapshot(ctx context.Context, id i
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -140,7 +138,7 @@ func (a *OCISnapshotsApiService) InstancesPostSnapshot(ctx context.Context, id i
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -168,21 +166,20 @@ func (a *OCISnapshotsApiService) InstancesPostSnapshot(ctx context.Context, id i
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCISnapshotsApiService Delete snapshot
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Snapshot id
- @return Ticket*/
-func (a *OCISnapshotsApiService) SnapshotsDelete(ctx context.Context, id int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Snapshot id
+@return Ticket*/
+func (a *OCISnapshotsApiService) SnapshotsDelete(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -193,9 +190,8 @@ func (a *OCISnapshotsApiService) SnapshotsDelete(ctx context.Context, id int32) 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -209,7 +205,7 @@ func (a *OCISnapshotsApiService) SnapshotsDelete(ctx context.Context, id int32) 
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -235,28 +231,27 @@ func (a *OCISnapshotsApiService) SnapshotsDelete(ctx context.Context, id int32) 
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCISnapshotsApiService Returns snapshot collection
- Acceptable order values are: CreationDate, Description, IsCurrent, Name, Instance.
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "instanceId" (int32) Instance id
-     @param "query" (string) Query
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionSnapshot*/
-func (a *OCISnapshotsApiService) SnapshotsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionSnapshot,  *http.Response, error) {
+Acceptable order values are: CreationDate, Description, IsCurrent, Name, Instance.
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "instanceId" (int32) Instance id
+    @param "query" (string) Query
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionSnapshot*/
+func (a *OCISnapshotsApiService) SnapshotsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionSnapshot, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionSnapshot
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionSnapshot
 	)
 
 	// create path and map variables
@@ -304,7 +299,7 @@ func (a *OCISnapshotsApiService) SnapshotsGet(ctx context.Context, localVarOptio
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -318,7 +313,7 @@ func (a *OCISnapshotsApiService) SnapshotsGet(ctx context.Context, localVarOptio
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -344,23 +339,22 @@ func (a *OCISnapshotsApiService) SnapshotsGet(ctx context.Context, localVarOptio
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCISnapshotsApiService Gets snapshot
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Snapshot id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return Snapshot*/
-func (a *OCISnapshotsApiService) SnapshotsGet_1(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Snapshot,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Snapshot id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return Snapshot*/
+func (a *OCISnapshotsApiService) SnapshotsGet_1(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Snapshot, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Snapshot
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Snapshot
 	)
 
 	// create path and map variables
@@ -379,7 +373,7 @@ func (a *OCISnapshotsApiService) SnapshotsGet_1(ctx context.Context, id int32, l
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -393,7 +387,7 @@ func (a *OCISnapshotsApiService) SnapshotsGet_1(ctx context.Context, id int32, l
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -419,22 +413,21 @@ func (a *OCISnapshotsApiService) SnapshotsGet_1(ctx context.Context, id int32, l
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCISnapshotsApiService Update snapshot
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Snapshot id
- @param command Update snapshot command
- @return Snapshot*/
-func (a *OCISnapshotsApiService) SnapshotsPut(ctx context.Context, id int32, command CreateUpdateSnapshotCommand) (Snapshot,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Snapshot id
+@param command Update snapshot command
+@return Snapshot*/
+func (a *OCISnapshotsApiService) SnapshotsPut(ctx context.Context, id int32, command CreateUpdateSnapshotCommand) (Snapshot, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Snapshot
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Snapshot
 	)
 
 	// create path and map variables
@@ -445,9 +438,8 @@ func (a *OCISnapshotsApiService) SnapshotsPut(ctx context.Context, id int32, com
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -461,7 +453,7 @@ func (a *OCISnapshotsApiService) SnapshotsPut(ctx context.Context, id int32, com
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -489,21 +481,20 @@ func (a *OCISnapshotsApiService) SnapshotsPut(ctx context.Context, id int32, com
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCISnapshotsApiService Restore snapshot
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Snapshot id
- @return Ticket*/
-func (a *OCISnapshotsApiService) SnapshotsRestore(ctx context.Context, id int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Snapshot id
+@return Ticket*/
+func (a *OCISnapshotsApiService) SnapshotsRestore(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -514,9 +505,8 @@ func (a *OCISnapshotsApiService) SnapshotsRestore(ctx context.Context, id int32)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -530,7 +520,7 @@ func (a *OCISnapshotsApiService) SnapshotsRestore(ctx context.Context, id int32)
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -556,7 +546,5 @@ func (a *OCISnapshotsApiService) SnapshotsRestore(ctx context.Context, id int32)
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-

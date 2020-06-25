@@ -10,12 +10,13 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
 	"encoding/json"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -25,19 +26,18 @@ var (
 
 type OCSApiService service
 
-
 /* OCSApiService Returns the list of OCS projects
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionOcsProject*/
-func (a *OCSApiService) OcsGetProjects(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionOcsProject,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionOcsProject*/
+func (a *OCSApiService) OcsGetProjects(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionOcsProject, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionOcsProject
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionOcsProject
 	)
 
 	// create path and map variables
@@ -55,7 +55,7 @@ func (a *OCSApiService) OcsGetProjects(ctx context.Context, localVarOptionals ma
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -69,7 +69,7 @@ func (a *OCSApiService) OcsGetProjects(ctx context.Context, localVarOptionals ma
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -95,7 +95,5 @@ func (a *OCSApiService) OcsGetProjects(ctx context.Context, localVarOptionals ma
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-

@@ -10,13 +10,14 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -26,19 +27,18 @@ var (
 
 type DictionariesApiService service
 
-
 /* DictionariesApiService Returns dictionaries
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionDictionary*/
-func (a *DictionariesApiService) DictionariesGetDictionaries(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionDictionary,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionDictionary*/
+func (a *DictionariesApiService) DictionariesGetDictionaries(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionDictionary, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionDictionary
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionDictionary
 	)
 
 	// create path and map variables
@@ -56,7 +56,7 @@ func (a *DictionariesApiService) DictionariesGetDictionaries(ctx context.Context
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -70,7 +70,7 @@ func (a *DictionariesApiService) DictionariesGetDictionaries(ctx context.Context
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -96,23 +96,22 @@ func (a *DictionariesApiService) DictionariesGetDictionaries(ctx context.Context
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* DictionariesApiService Returns dictionaries items
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param ids Dictionaries ids
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionDictionaryItem*/
-func (a *DictionariesApiService) DictionariesGetDictionariesItems(ctx context.Context, ids string, localVarOptionals map[string]interface{}) (ApiCollectionDictionaryItem,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param ids Dictionaries ids
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionDictionaryItem*/
+func (a *DictionariesApiService) DictionariesGetDictionariesItems(ctx context.Context, ids string, localVarOptionals map[string]interface{}) (ApiCollectionDictionaryItem, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionDictionaryItem
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionDictionaryItem
 	)
 
 	// create path and map variables
@@ -131,7 +130,7 @@ func (a *DictionariesApiService) DictionariesGetDictionariesItems(ctx context.Co
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -145,7 +144,7 @@ func (a *DictionariesApiService) DictionariesGetDictionariesItems(ctx context.Co
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -171,22 +170,21 @@ func (a *DictionariesApiService) DictionariesGetDictionariesItems(ctx context.Co
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* DictionariesApiService Returns languages
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionDictionaryItem*/
-func (a *DictionariesApiService) DictionariesGetLanguages(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionDictionaryItem,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionDictionaryItem*/
+func (a *DictionariesApiService) DictionariesGetLanguages(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionDictionaryItem, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionDictionaryItem
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionDictionaryItem
 	)
 
 	// create path and map variables
@@ -204,7 +202,7 @@ func (a *DictionariesApiService) DictionariesGetLanguages(ctx context.Context, l
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -218,7 +216,7 @@ func (a *DictionariesApiService) DictionariesGetLanguages(ctx context.Context, l
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -244,7 +242,5 @@ func (a *DictionariesApiService) DictionariesGetLanguages(ctx context.Context, l
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-

@@ -11,7 +11,6 @@ package odk
 
 // Resource with HATEOAS links
 type Resource struct {
-
 	Links []Link `json:"Links,omitempty"`
 
 	// Resurce id

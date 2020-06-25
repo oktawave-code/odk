@@ -45,6 +45,7 @@ Class | Method | HTTP request | Description
 *OCIApi* | [**InstancesGet**](docs/OCIApi.md#instancesget) | **Get** /instances | Returns instance list
 *OCIApi* | [**InstancesGetAccessData**](docs/OCIApi.md#instancesgetaccessdata) | **Get** /instances/{id}/access_data | Returns instance access data
 *OCIApi* | [**InstancesGetDisks**](docs/OCIApi.md#instancesgetdisks) | **Get** /instances/{id}/disks | Returns instance disk list
+*OCIApi* | [**InstancesGetInstanceInitScript**](docs/OCIApi.md#instancesgetinstanceinitscript) | **Get** /instances/{id}/init_script | Returns instance init script
 *OCIApi* | [**InstancesGetInstanceSoftware**](docs/OCIApi.md#instancesgetinstancesoftware) | **Get** /instances/{id}/software | Returns instance software
 *OCIApi* | [**InstancesGetInstanceType**](docs/OCIApi.md#instancesgetinstancetype) | **Get** /instances/types/{id} | Returns instance type
 *OCIApi* | [**InstancesGetInstancesTypes**](docs/OCIApi.md#instancesgetinstancestypes) | **Get** /instances/types | Returns all available instances types

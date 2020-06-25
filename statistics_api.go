@@ -10,14 +10,15 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
-	"time"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+	"time"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -27,22 +28,21 @@ var (
 
 type StatisticsApiService service
 
-
 /* StatisticsApiService Gets client statistics
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param dateFrom Date from (utc timezone)
- @param dateTo Date to (utc timezone)
- @param statisticTypes Statistic types
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionClientStatistics*/
-func (a *StatisticsApiService) StatisticsGetClientStatistics(ctx context.Context, dateFrom time.Time, dateTo time.Time, statisticTypes []int32, localVarOptionals map[string]interface{}) (ApiCollectionClientStatistics,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param dateFrom Date from (utc timezone)
+@param dateTo Date to (utc timezone)
+@param statisticTypes Statistic types
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionClientStatistics*/
+func (a *StatisticsApiService) StatisticsGetClientStatistics(ctx context.Context, dateFrom time.Time, dateTo time.Time, statisticTypes []int32, localVarOptionals map[string]interface{}) (ApiCollectionClientStatistics, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionClientStatistics
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionClientStatistics
 	)
 
 	// create path and map variables
@@ -63,7 +63,7 @@ func (a *StatisticsApiService) StatisticsGetClientStatistics(ctx context.Context
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -77,7 +77,7 @@ func (a *StatisticsApiService) StatisticsGetClientStatistics(ctx context.Context
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -103,27 +103,26 @@ func (a *StatisticsApiService) StatisticsGetClientStatistics(ctx context.Context
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* StatisticsApiService Gets instance statistics
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Id
- @param statisticInterval Statistic interval
- @param dateFrom Date from (utc timezone)
- @param dateTo Date to (utc timezone)
- @param statisticTypes Statistic types
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionInstanceStatistics*/
-func (a *StatisticsApiService) StatisticsGetInstanceStatistics(ctx context.Context, id int32, statisticInterval int32, dateFrom time.Time, dateTo time.Time, statisticTypes []int32, localVarOptionals map[string]interface{}) (ApiCollectionInstanceStatistics,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Id
+@param statisticInterval Statistic interval
+@param dateFrom Date from (utc timezone)
+@param dateTo Date to (utc timezone)
+@param statisticTypes Statistic types
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionInstanceStatistics*/
+func (a *StatisticsApiService) StatisticsGetInstanceStatistics(ctx context.Context, id int32, statisticInterval int32, dateFrom time.Time, dateTo time.Time, statisticTypes []int32, localVarOptionals map[string]interface{}) (ApiCollectionInstanceStatistics, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionInstanceStatistics
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionInstanceStatistics
 	)
 
 	// create path and map variables
@@ -146,7 +145,7 @@ func (a *StatisticsApiService) StatisticsGetInstanceStatistics(ctx context.Conte
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -160,7 +159,7 @@ func (a *StatisticsApiService) StatisticsGetInstanceStatistics(ctx context.Conte
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -186,22 +185,21 @@ func (a *StatisticsApiService) StatisticsGetInstanceStatistics(ctx context.Conte
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* StatisticsApiService Gets statistic interval types
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionDictionaryItem*/
-func (a *StatisticsApiService) StatisticsGetStatisticIntervals(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionDictionaryItem,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionDictionaryItem*/
+func (a *StatisticsApiService) StatisticsGetStatisticIntervals(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionDictionaryItem, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionDictionaryItem
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionDictionaryItem
 	)
 
 	// create path and map variables
@@ -219,7 +217,7 @@ func (a *StatisticsApiService) StatisticsGetStatisticIntervals(ctx context.Conte
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -233,7 +231,7 @@ func (a *StatisticsApiService) StatisticsGetStatisticIntervals(ctx context.Conte
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -259,7 +257,5 @@ func (a *StatisticsApiService) StatisticsGetStatisticIntervals(ctx context.Conte
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-

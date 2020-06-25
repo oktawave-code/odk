@@ -10,13 +10,14 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -26,25 +27,24 @@ var (
 
 type OCIBackupsApiService service
 
-
 /* OCIBackupsApiService Returns exports list
- Acceptable order values are: TotalSpaceCapacity, CreationDate, OcsLocation, Name, StartDate, Status.
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "instanceId" (int32) Instance id
-     @param "statusId" (int32) Status id
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionExport*/
-func (a *OCIBackupsApiService) ExportsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionExport,  *http.Response, error) {
+Acceptable order values are: TotalSpaceCapacity, CreationDate, OcsLocation, Name, StartDate, Status.
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "instanceId" (int32) Instance id
+    @param "statusId" (int32) Status id
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionExport*/
+func (a *OCIBackupsApiService) ExportsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionExport, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionExport
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionExport
 	)
 
 	// create path and map variables
@@ -92,7 +92,7 @@ func (a *OCIBackupsApiService) ExportsGet(ctx context.Context, localVarOptionals
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -106,7 +106,7 @@ func (a *OCIBackupsApiService) ExportsGet(ctx context.Context, localVarOptionals
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -132,23 +132,22 @@ func (a *OCIBackupsApiService) ExportsGet(ctx context.Context, localVarOptionals
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIBackupsApiService Gets export by identifier
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Export id
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return Export*/
-func (a *OCIBackupsApiService) ExportsGet_1(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Export,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Export id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return Export*/
+func (a *OCIBackupsApiService) ExportsGet_1(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Export, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Export
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Export
 	)
 
 	// create path and map variables
@@ -167,7 +166,7 @@ func (a *OCIBackupsApiService) ExportsGet_1(ctx context.Context, id int32, local
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -181,7 +180,7 @@ func (a *OCIBackupsApiService) ExportsGet_1(ctx context.Context, id int32, local
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -207,21 +206,20 @@ func (a *OCIBackupsApiService) ExportsGet_1(ctx context.Context, id int32, local
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIBackupsApiService Creates an import
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param command Create import command
- @return ModelImport*/
-func (a *OCIBackupsApiService) ImportsCreateImport(ctx context.Context, command CreateImportCommand) (ModelImport,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param command Create import command
+@return ModelImport*/
+func (a *OCIBackupsApiService) ImportsCreateImport(ctx context.Context, command CreateImportCommand) (ModelImport, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ModelImport
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ModelImport
 	)
 
 	// create path and map variables
@@ -231,9 +229,8 @@ func (a *OCIBackupsApiService) ImportsCreateImport(ctx context.Context, command 
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -247,7 +244,7 @@ func (a *OCIBackupsApiService) ImportsCreateImport(ctx context.Context, command 
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -275,20 +272,19 @@ func (a *OCIBackupsApiService) ImportsCreateImport(ctx context.Context, command 
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIBackupsApiService Deletes an import
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Import identifier
- @return */
-func (a *OCIBackupsApiService) ImportsDeleteImport(ctx context.Context, id int32) ( *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Import identifier
+@return */
+func (a *OCIBackupsApiService) ImportsDeleteImport(ctx context.Context, id int32) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
 	)
 
 	// create path and map variables
@@ -299,9 +295,8 @@ func (a *OCIBackupsApiService) ImportsDeleteImport(ctx context.Context, id int32
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -310,8 +305,7 @@ func (a *OCIBackupsApiService) ImportsDeleteImport(ctx context.Context, id int32
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		}
+	localVarHttpHeaderAccepts := []string{}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -337,18 +331,18 @@ func (a *OCIBackupsApiService) ImportsDeleteImport(ctx context.Context, id int32
 }
 
 /* OCIBackupsApiService Returns an import
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Import identifier
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ModelImport*/
-func (a *OCIBackupsApiService) ImportsGetImport(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ModelImport,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Import identifier
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ModelImport*/
+func (a *OCIBackupsApiService) ImportsGetImport(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ModelImport, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ModelImport
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ModelImport
 	)
 
 	// create path and map variables
@@ -367,7 +361,7 @@ func (a *OCIBackupsApiService) ImportsGetImport(ctx context.Context, id int32, l
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -381,7 +375,7 @@ func (a *OCIBackupsApiService) ImportsGetImport(ctx context.Context, id int32, l
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -407,23 +401,22 @@ func (a *OCIBackupsApiService) ImportsGetImport(ctx context.Context, id int32, l
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIBackupsApiService Returns an import disks
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Import identifier
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return ApiCollectionImportDisk*/
-func (a *OCIBackupsApiService) ImportsGetImportDisks(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionImportDisk,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Import identifier
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return ApiCollectionImportDisk*/
+func (a *OCIBackupsApiService) ImportsGetImportDisks(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionImportDisk, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionImportDisk
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionImportDisk
 	)
 
 	// create path and map variables
@@ -442,7 +435,7 @@ func (a *OCIBackupsApiService) ImportsGetImportDisks(ctx context.Context, id int
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -456,7 +449,7 @@ func (a *OCIBackupsApiService) ImportsGetImportDisks(ctx context.Context, id int
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -482,26 +475,25 @@ func (a *OCIBackupsApiService) ImportsGetImportDisks(ctx context.Context, id int
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIBackupsApiService Returns a list of imports
- Acceptable order values are: Name, Status, CreationDate, DisksCount, NetworkInterfacesCount, Size
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionImport*/
-func (a *OCIBackupsApiService) ImportsGetImports(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionImport,  *http.Response, error) {
+Acceptable order values are: Name, Status, CreationDate, DisksCount, NetworkInterfacesCount, Size
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionImport*/
+func (a *OCIBackupsApiService) ImportsGetImports(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionImport, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionImport
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionImport
 	)
 
 	// create path and map variables
@@ -537,7 +529,7 @@ func (a *OCIBackupsApiService) ImportsGetImports(ctx context.Context, localVarOp
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -551,7 +543,7 @@ func (a *OCIBackupsApiService) ImportsGetImports(ctx context.Context, localVarOp
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -577,22 +569,21 @@ func (a *OCIBackupsApiService) ImportsGetImports(ctx context.Context, localVarOp
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIBackupsApiService Run an import
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Import identifier
- @param command Run import command
- @return Ticket*/
-func (a *OCIBackupsApiService) ImportsRunImport(ctx context.Context, id int32, command RunImportCommand) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Import identifier
+@param command Run import command
+@return Ticket*/
+func (a *OCIBackupsApiService) ImportsRunImport(ctx context.Context, id int32, command RunImportCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -603,9 +594,8 @@ func (a *OCIBackupsApiService) ImportsRunImport(ctx context.Context, id int32, c
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -619,7 +609,7 @@ func (a *OCIBackupsApiService) ImportsRunImport(ctx context.Context, id int32, c
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -647,27 +637,26 @@ func (a *OCIBackupsApiService) ImportsRunImport(ctx context.Context, id int32, c
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIBackupsApiService Returns instace&#39;s exports
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id 
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "statusId" (int32) Status id
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionExport*/
-func (a *OCIBackupsApiService) InstancesGetExports(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionExport,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "statusId" (int32) Status id
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionExport*/
+func (a *OCIBackupsApiService) InstancesGetExports(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionExport, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionExport
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionExport
 	)
 
 	// create path and map variables
@@ -710,7 +699,7 @@ func (a *OCIBackupsApiService) InstancesGetExports(ctx context.Context, id int32
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -724,7 +713,7 @@ func (a *OCIBackupsApiService) InstancesGetExports(ctx context.Context, id int32
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -750,22 +739,21 @@ func (a *OCIBackupsApiService) InstancesGetExports(ctx context.Context, id int32
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OCIBackupsApiService Create export
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Instance id
- @param command Create export command
- @return Export*/
-func (a *OCIBackupsApiService) InstancesPostExport(ctx context.Context, id int32, command CreateExportCommand) (Export,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Instance id
+@param command Create export command
+@return Export*/
+func (a *OCIBackupsApiService) InstancesPostExport(ctx context.Context, id int32, command CreateExportCommand) (Export, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Export
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Export
 	)
 
 	// create path and map variables
@@ -776,9 +764,8 @@ func (a *OCIBackupsApiService) InstancesPostExport(ctx context.Context, id int32
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -792,7 +779,7 @@ func (a *OCIBackupsApiService) InstancesPostExport(ctx context.Context, id int32
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -820,7 +807,5 @@ func (a *OCIBackupsApiService) InstancesPostExport(ctx context.Context, id int32
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-

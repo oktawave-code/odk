@@ -10,7 +10,6 @@
 package odk
 
 type ApiCollectionGroupScheduler struct {
-
 	Items []GroupScheduler `json:"Items,omitempty"`
 
 	Meta *ApiCollectionMetadata `json:"Meta,omitempty"`

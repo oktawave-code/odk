@@ -10,7 +10,6 @@
 package odk
 
 type ApiCollectionImport struct {
-
 	Items []ModelImport `json:"Items,omitempty"`
 
 	Meta *ApiCollectionMetadata `json:"Meta,omitempty"`

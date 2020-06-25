@@ -10,7 +10,6 @@
 package odk
 
 type ApiCollectionLoadBalancer struct {
-
 	Items []LoadBalancer `json:"Items,omitempty"`
 
 	Meta *ApiCollectionMetadata `json:"Meta,omitempty"`

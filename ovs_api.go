@@ -10,13 +10,14 @@
 package odk
 
 import (
-	"io/ioutil"
-	"net/url"
-	"net/http"
-	"strings"
-	"golang.org/x/net/context"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"strings"
+
+	"golang.org/x/net/context"
 )
 
 // Linger please
@@ -26,19 +27,18 @@ var (
 
 type OVSApiService service
 
-
 /* OVSApiService Attach disk to instance
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Disk id
- @param instanceId Instance id
- @return Ticket*/
-func (a *OVSApiService) DisksAttachToInstance(ctx context.Context, id int32, instanceId int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Disk id
+@param instanceId Instance id
+@return Ticket*/
+func (a *OVSApiService) DisksAttachToInstance(ctx context.Context, id int32, instanceId int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -49,10 +49,9 @@ func (a *OVSApiService) DisksAttachToInstance(ctx context.Context, id int32, ins
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	localVarQueryParams.Add("instanceId", parameterToString(instanceId, ""))
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -66,7 +65,7 @@ func (a *OVSApiService) DisksAttachToInstance(ctx context.Context, id int32, ins
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -92,22 +91,21 @@ func (a *OVSApiService) DisksAttachToInstance(ctx context.Context, id int32, ins
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OVSApiService Change disk subregion
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Disk id
- @param subregionId Subregion id
- @return Ticket*/
-func (a *OVSApiService) DisksChangeSubregion(ctx context.Context, id int32, subregionId int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Disk id
+@param subregionId Subregion id
+@return Ticket*/
+func (a *OVSApiService) DisksChangeSubregion(ctx context.Context, id int32, subregionId int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -118,10 +116,9 @@ func (a *OVSApiService) DisksChangeSubregion(ctx context.Context, id int32, subr
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	localVarQueryParams.Add("subregionId", parameterToString(subregionId, ""))
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -135,7 +132,7 @@ func (a *OVSApiService) DisksChangeSubregion(ctx context.Context, id int32, subr
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -161,22 +158,21 @@ func (a *OVSApiService) DisksChangeSubregion(ctx context.Context, id int32, subr
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OVSApiService Change disk tier
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Disk id
- @param tierId Tier id
- @return Ticket*/
-func (a *OVSApiService) DisksChangeTier(ctx context.Context, id int32, tierId int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Disk id
+@param tierId Tier id
+@return Ticket*/
+func (a *OVSApiService) DisksChangeTier(ctx context.Context, id int32, tierId int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -187,10 +183,9 @@ func (a *OVSApiService) DisksChangeTier(ctx context.Context, id int32, tierId in
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	localVarQueryParams.Add("tierId", parameterToString(tierId, ""))
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -204,7 +199,7 @@ func (a *OVSApiService) DisksChangeTier(ctx context.Context, id int32, tierId in
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -230,21 +225,20 @@ func (a *OVSApiService) DisksChangeTier(ctx context.Context, id int32, tierId in
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OVSApiService Delete disk
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Disk id
- @return Ticket*/
-func (a *OVSApiService) DisksDelete(ctx context.Context, id int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Disk id
+@return Ticket*/
+func (a *OVSApiService) DisksDelete(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -255,9 +249,8 @@ func (a *OVSApiService) DisksDelete(ctx context.Context, id int32) (Ticket,  *ht
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -271,7 +264,7 @@ func (a *OVSApiService) DisksDelete(ctx context.Context, id int32) (Ticket,  *ht
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -297,22 +290,21 @@ func (a *OVSApiService) DisksDelete(ctx context.Context, id int32) (Ticket,  *ht
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OVSApiService Detach disk from instance
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Disk id
- @param instanceId Instance id
- @return Ticket*/
-func (a *OVSApiService) DisksDetachFromInstance(ctx context.Context, id int32, instanceId int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Disk id
+@param instanceId Instance id
+@return Ticket*/
+func (a *OVSApiService) DisksDetachFromInstance(ctx context.Context, id int32, instanceId int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -323,10 +315,9 @@ func (a *OVSApiService) DisksDetachFromInstance(ctx context.Context, id int32, i
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	localVarQueryParams.Add("instanceId", parameterToString(instanceId, ""))
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -340,7 +331,7 @@ func (a *OVSApiService) DisksDetachFromInstance(ctx context.Context, id int32, i
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -366,22 +357,21 @@ func (a *OVSApiService) DisksDetachFromInstance(ctx context.Context, id int32, i
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OVSApiService Extend disk
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Disk id
- @param spaceCapacity Disk space capacity in GB
- @return Ticket*/
-func (a *OVSApiService) DisksExtend(ctx context.Context, id int32, spaceCapacity int32) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Disk id
+@param spaceCapacity Disk space capacity in GB
+@return Ticket*/
+func (a *OVSApiService) DisksExtend(ctx context.Context, id int32, spaceCapacity int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -392,10 +382,9 @@ func (a *OVSApiService) DisksExtend(ctx context.Context, id int32, spaceCapacity
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	localVarQueryParams.Add("spaceCapacity", parameterToString(spaceCapacity, ""))
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -409,7 +398,7 @@ func (a *OVSApiService) DisksExtend(ctx context.Context, id int32, spaceCapacity
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -435,23 +424,22 @@ func (a *OVSApiService) DisksExtend(ctx context.Context, id int32, spaceCapacity
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OVSApiService Returns disk by identifier
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Disk identifier
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "fields" (string) Response fields filter
- @return Disk*/
-func (a *OVSApiService) DisksGet(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Disk,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Disk identifier
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "fields" (string) Response fields filter
+@return Disk*/
+func (a *OVSApiService) DisksGet(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Disk, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Disk
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Disk
 	)
 
 	// create path and map variables
@@ -470,7 +458,7 @@ func (a *OVSApiService) DisksGet(ctx context.Context, id int32, localVarOptional
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -484,7 +472,7 @@ func (a *OVSApiService) DisksGet(ctx context.Context, id int32, localVarOptional
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -510,28 +498,27 @@ func (a *OVSApiService) DisksGet(ctx context.Context, id int32, localVarOptional
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OVSApiService Returns disk list
- Acceptable order values are: SpaceCapacity, Name, Tier, IsShared, Subregion
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param optional (nil or map[string]interface{}) with one or more of:
-     @param "diskType" (string) Disk type
-     @param "query" (string) Query
-     @param "pageSize" (int32) Page size
-     @param "pageNumber" (int32) Page number
-     @param "orderBy" (string) Order by
-     @param "fields" (string) Response fields filter
- @return ApiCollectionDisk*/
-func (a *OVSApiService) DisksGetDisks(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionDisk,  *http.Response, error) {
+Acceptable order values are: SpaceCapacity, Name, Tier, IsShared, Subregion
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "diskType" (string) Disk type
+    @param "query" (string) Query
+    @param "pageSize" (int32) Page size
+    @param "pageNumber" (int32) Page number
+    @param "orderBy" (string) Order by
+    @param "fields" (string) Response fields filter
+@return ApiCollectionDisk*/
+func (a *OVSApiService) DisksGetDisks(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionDisk, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  ApiCollectionDisk
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     ApiCollectionDisk
 	)
 
 	// create path and map variables
@@ -579,7 +566,7 @@ func (a *OVSApiService) DisksGetDisks(ctx context.Context, localVarOptionals map
 		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
 	}
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -593,7 +580,7 @@ func (a *OVSApiService) DisksGetDisks(ctx context.Context, localVarOptionals map
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -619,21 +606,20 @@ func (a *OVSApiService) DisksGetDisks(ctx context.Context, localVarOptionals map
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OVSApiService Creates disk
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param command Create disk command
- @return Ticket*/
-func (a *OVSApiService) DisksPost(ctx context.Context, command CreateDiskCommand) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param command Create disk command
+@return Ticket*/
+func (a *OVSApiService) DisksPost(ctx context.Context, command CreateDiskCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -643,9 +629,8 @@ func (a *OVSApiService) DisksPost(ctx context.Context, command CreateDiskCommand
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -659,7 +644,7 @@ func (a *OVSApiService) DisksPost(ctx context.Context, command CreateDiskCommand
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -687,22 +672,21 @@ func (a *OVSApiService) DisksPost(ctx context.Context, command CreateDiskCommand
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
 
 /* OVSApiService Update disk
- * @param ctx context.Context for authentication, logging, tracing, etc.
- @param id Disk id
- @param command Update disk command
- @return Ticket*/
-func (a *OVSApiService) DisksPut(ctx context.Context, id int32, command UpdateDiskCommand) (Ticket,  *http.Response, error) {
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Disk id
+@param command Update disk command
+@return Ticket*/
+func (a *OVSApiService) DisksPut(ctx context.Context, id int32, command UpdateDiskCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
-		localVarPostBody interface{}
-		localVarFileName string
-		localVarFileBytes []byte
-	 	successPayload  Ticket
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
 	)
 
 	// create path and map variables
@@ -713,9 +697,8 @@ func (a *OVSApiService) DisksPut(ctx context.Context, id int32, command UpdateDi
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{ "application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded",  }
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
@@ -729,7 +712,7 @@ func (a *OVSApiService) DisksPut(ctx context.Context, id int32, command UpdateDi
 		"text/json",
 		"application/xml",
 		"text/xml",
-		}
+	}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -757,7 +740,5 @@ func (a *OVSApiService) DisksPut(ctx context.Context, id int32, command UpdateDi
 		return successPayload, localVarHttpResponse, err
 	}
 
-
 	return successPayload, localVarHttpResponse, err
 }
-
