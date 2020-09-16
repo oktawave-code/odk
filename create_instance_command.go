@@ -33,6 +33,9 @@ type CreateInstanceCommand struct {
 	// Id of ssh keys to be attached to the instance
 	SshKeysIds []int32 `json:"SshKeysIds,omitempty"`
 
+	// Id of opns where attach the instance
+	OpnsIds []int32 `json:"OpnsIds,omitempty"`
+
 	// Id of target subregion
 	SubregionId int32 `json:"SubregionId,omitempty"`
 
@@ -47,4 +50,7 @@ type CreateInstanceCommand struct {
 
 	// InitScript
 	InitScript string `json:"InitScript,omitempty"`
+
+	// Freemium
+	WithoutPublicIp bool `json:"WithoutPublicIp,omitempty"`
 }

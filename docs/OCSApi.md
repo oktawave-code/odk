@@ -1,4 +1,4 @@
-# odk\OCSApi
+# \OCSApi
 
 All URIs are relative to *https://api.oktawave.com/beta*
 

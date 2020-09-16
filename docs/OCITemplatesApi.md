@@ -1,4 +1,4 @@
-# odk\OCITemplatesApi
+# \OCITemplatesApi
 
 All URIs are relative to *https://api.oktawave.com/beta*
 

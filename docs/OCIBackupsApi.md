@@ -1,4 +1,4 @@
-# odk\OCIBackupsApi
+# \OCIBackupsApi
 
 All URIs are relative to *https://api.oktawave.com/beta*
 

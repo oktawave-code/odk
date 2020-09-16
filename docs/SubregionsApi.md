@@ -1,4 +1,4 @@
-# odk\SubregionsApi
+# \SubregionsApi
 
 All URIs are relative to *https://api.oktawave.com/beta*
 
