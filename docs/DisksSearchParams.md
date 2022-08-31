@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DiskType** | **string** | Disk type | [optional] [default to null]
+**ShowDeleted** | **bool** | Show deleted | [optional] [default to null]
 **Query** | **string** | Query | [optional] [default to null]
 **PageSize** | **int32** | Page size | [optional] [default to null]
 **PageNumber** | **int32** | Page number | [optional] [default to null]

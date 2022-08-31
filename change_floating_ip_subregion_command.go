@@ -9,12 +9,12 @@
 
 package odk
 
-// Container assignment
-type ContainerAssignmentCommand struct {
+// Change Ip address subregion command
+type ChangeFloatingIpSubregionCommand struct {
 
-	// Id of an instance
-	InstanceId int32 `json:"InstanceId"`
+	// IPv4 address identifier.
+	IpV4 string `json:"IpV4"`
 
-	// Id of instance ip
-	IpId int32 `json:"IpId"`
+	// Subregion Id
+	SubregionId int32 `json:"SubregionId,omitempty"`
 }

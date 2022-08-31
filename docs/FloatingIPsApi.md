@@ -1,272 +1,33 @@
-# \OVSApi
+# \FloatingIPsApi
 
 All URIs are relative to *https://api.oktawave.com/services*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DisksAttachToInstance**](OVSApi.md#DisksAttachToInstance) | **Post** /disks/{id}/attach_to_instance_ticket | Attach disk to instance
-[**DisksChangeSubregion**](OVSApi.md#DisksChangeSubregion) | **Post** /disks/{id}/change_subregion_ticket | Change disk subregion
-[**DisksChangeTier**](OVSApi.md#DisksChangeTier) | **Post** /disks/{id}/change_tier_ticket | Change disk tier
-[**DisksDelete**](OVSApi.md#DisksDelete) | **Delete** /disks/{id} | Delete disk
-[**DisksDetachFromInstance**](OVSApi.md#DisksDetachFromInstance) | **Post** /disks/{id}/detach_from_instance_ticket | Detach disk from instance
-[**DisksExtend**](OVSApi.md#DisksExtend) | **Post** /disks/{id}/extend_ticket | Extend disk
-[**DisksGet**](OVSApi.md#DisksGet) | **Get** /disks/{id} | Returns disk by identifier
-[**DisksGetDisks**](OVSApi.md#DisksGetDisks) | **Get** /disks | Returns disk list
-[**DisksPost**](OVSApi.md#DisksPost) | **Post** /disks | Creates disk
-[**DisksPut**](OVSApi.md#DisksPut) | **Put** /disks/{id} | Update disk
+[**FloatingIpsBookNewIp**](FloatingIPsApi.md#FloatingIpsBookNewIp) | **Post** /floating_ips | Book new IP address
+[**FloatingIpsChangeIpSubregionTicket**](FloatingIPsApi.md#FloatingIpsChangeIpSubregionTicket) | **Post** /floating_ips/change_ip_subregion_ticket | Change IP subregion
+[**FloatingIpsDeleteIp**](FloatingIPsApi.md#FloatingIpsDeleteIp) | **Delete** /floating_ips/{ip} | Deletes IP address
+[**FloatingIpsGetIp**](FloatingIPsApi.md#FloatingIpsGetIp) | **Get** /floating_ips/{ip} | Returns IP by Ipv4 address
+[**FloatingIpsGetIps**](FloatingIPsApi.md#FloatingIpsGetIps) | **Get** /floating_ips | Returns public ip list
+[**FloatingIpsPostAttachIpTicket**](FloatingIPsApi.md#FloatingIpsPostAttachIpTicket) | **Post** /floating_ips/attach_ip_ticket | Attach public IP to instance
+[**FloatingIpsPostDetachIpTicket**](FloatingIPsApi.md#FloatingIpsPostDetachIpTicket) | **Post** /floating_ips/detach_ip_ticket | Detach public IP from instance
+[**FloatingIpsUpdateIp**](FloatingIPsApi.md#FloatingIpsUpdateIp) | **Put** /floating_ips/{ip} | Updates IP address
 
 
-# **DisksAttachToInstance**
-> Ticket DisksAttachToInstance(ctx, id, instanceId)
-Attach disk to instance
+# **FloatingIpsBookNewIp**
+> Ip FloatingIpsBookNewIp(ctx, command)
+Book new IP address
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
-  **id** | **int32**| Disk id | 
-  **instanceId** | **int32**| Instance id | 
+  **command** | [**BookIpCommand**](BookIpCommand.md)|  | 
 
 ### Return type
 
-[**Ticket**](Ticket.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **DisksChangeSubregion**
-> Ticket DisksChangeSubregion(ctx, id, subregionId)
-Change disk subregion
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
-  **id** | **int32**| Disk id | 
-  **subregionId** | **int32**| Subregion id | 
-
-### Return type
-
-[**Ticket**](Ticket.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **DisksChangeTier**
-> Ticket DisksChangeTier(ctx, id, tierId)
-Change disk tier
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
-  **id** | **int32**| Disk id | 
-  **tierId** | **int32**| Tier id | 
-
-### Return type
-
-[**Ticket**](Ticket.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **DisksDelete**
-> Ticket DisksDelete(ctx, id)
-Delete disk
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
-  **id** | **int32**| Disk id | 
-
-### Return type
-
-[**Ticket**](Ticket.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **DisksDetachFromInstance**
-> Ticket DisksDetachFromInstance(ctx, id, instanceId)
-Detach disk from instance
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
-  **id** | **int32**| Disk id | 
-  **instanceId** | **int32**| Instance id | 
-
-### Return type
-
-[**Ticket**](Ticket.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **DisksExtend**
-> Ticket DisksExtend(ctx, id, spaceCapacity)
-Extend disk
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
-  **id** | **int32**| Disk id | 
-  **spaceCapacity** | **int32**| Disk space capacity in GB | 
-
-### Return type
-
-[**Ticket**](Ticket.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **DisksGet**
-> Disk DisksGet(ctx, id, optional)
-Returns disk by identifier
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
-  **id** | **int32**| Disk identifier | 
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **int32**| Disk identifier | 
- **fields** | **string**| Response fields filter | 
-
-### Return type
-
-[**Disk**](Disk.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **DisksGetDisks**
-> ApiCollectionDisk DisksGetDisks(ctx, optional)
-Returns disk list
-
-Acceptable order values are: SpaceCapacity, Name, Tier, IsShared, Subregion
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
- **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
-
-### Optional Parameters
-Optional parameters are passed through a map[string]interface{}.
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **diskType** | **string**| Disk type | 
- **showDeleted** | **bool**| Show deleted | 
- **query** | **string**| Query | 
- **pageSize** | **int32**| Page size | 
- **pageNumber** | **int32**| Page number | 
- **orderBy** | **string**| Order by | 
- **fields** | **string**| Response fields filter | 
-
-### Return type
-
-[**ApiCollectionDisk**](ApiCollection[Disk].md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **DisksPost**
-> Ticket DisksPost(ctx, command)
-Creates disk
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
-  **command** | [**CreateDiskCommand**](CreateDiskCommand.md)| Create disk command | 
-
-### Return type
-
-[**Ticket**](Ticket.md)
+[**Ip**](Ip.md)
 
 ### Authorization
 
@@ -279,21 +40,220 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DisksPut**
-> Ticket DisksPut(ctx, id, command)
-Update disk
+# **FloatingIpsChangeIpSubregionTicket**
+> Ticket FloatingIpsChangeIpSubregionTicket(ctx, ipV4, optional)
+Change IP subregion
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
-  **id** | **int32**| Disk id | 
-  **command** | [**UpdateDiskCommand**](UpdateDiskCommand.md)| Update disk command | 
+  **ipV4** | **string**| IPv4 address identifier. | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ipV4** | **string**| IPv4 address identifier. | 
+ **subregionId** | **int32**| Subregion Id | 
 
 ### Return type
 
 [**Ticket**](Ticket.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **FloatingIpsDeleteIp**
+> Object FloatingIpsDeleteIp(ctx, ip)
+Deletes IP address
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **ip** | **string**| IPv4 address | 
+
+### Return type
+
+[**Object**](Object.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **FloatingIpsGetIp**
+> Ip FloatingIpsGetIp(ctx, ip, optional)
+Returns IP by Ipv4 address
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **ip** | **string**|  | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ip** | **string**|  | 
+ **fields** | **string**| Response fields filter | 
+
+### Return type
+
+[**Ip**](Ip.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **FloatingIpsGetIps**
+> ApiCollectionIp FloatingIpsGetIps(ctx, optional)
+Returns public ip list
+
+Acceptable order values are: Address, Subregion, Comment, Type.
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instanceId** | **int32**| Instance id | 
+ **onlyFree** | **bool**| Only free | 
+ **pageSize** | **int32**| Page size | 
+ **pageNumber** | **int32**| Page number | 
+ **orderBy** | **string**| Order by | 
+ **fields** | **string**| Response fields filter | 
+
+### Return type
+
+[**ApiCollectionIp**](ApiCollection[Ip].md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **FloatingIpsPostAttachIpTicket**
+> Ticket FloatingIpsPostAttachIpTicket(ctx, instanceId, optional)
+Attach public IP to instance
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **instanceId** | **int32**| Instance identifier. | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instanceId** | **int32**| Instance identifier. | 
+ **ipV4** | **string**| IPv4 address identifier. Optional value, if null random ip will be attached. | 
+ **ipV6Only** | **bool**| If attach IPv6 only. Optional value, if null IPv4 and IPv6 will be attached. | 
+
+### Return type
+
+[**Ticket**](Ticket.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **FloatingIpsPostDetachIpTicket**
+> Ticket FloatingIpsPostDetachIpTicket(ctx, ipV4, instanceId)
+Detach public IP from instance
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **ipV4** | **string**| IPv4 address identifier | 
+  **instanceId** | **int32**| Instance identifier. | 
+
+### Return type
+
+[**Ticket**](Ticket.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **FloatingIpsUpdateIp**
+> Object FloatingIpsUpdateIp(ctx, ip, command)
+Updates IP address
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **ip** | **string**|  | 
+  **command** | [**UpdateIpCommand**](UpdateIpCommand.md)|  | 
+
+### Return type
+
+[**Object**](Object.md)
 
 ### Authorization
 

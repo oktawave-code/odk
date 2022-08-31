@@ -56,4 +56,7 @@ type LoadBalancer struct {
 
 	// Services
 	Servers []LoadBalancerServer `json:"Servers,omitempty"`
+
+	// Proxy-protocol version
+	ProxyProtocolVersion *DictionaryItem `json:"ProxyProtocolVersion,omitempty"`
 }

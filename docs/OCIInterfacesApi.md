@@ -1,23 +1,24 @@
 # \OCIInterfacesApi
 
-All URIs are relative to *https://api.oktawave.com/beta*
+All URIs are relative to *https://api.oktawave.com/services*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**InstancesAttachOpn**](OCIInterfacesApi.md#InstancesAttachOpn) | **Post** /instances/{id}/attach_opn_ticket | Attach instance to OPN
-[**InstancesBookNewIp**](OCIInterfacesApi.md#InstancesBookNewIp) | **Post** /instances/ip_addresses | Book new IP address
+[**InstancesBookNewIp**](OCIInterfacesApi.md#InstancesBookNewIp) | **Post** /instances/ip_addresses | [Deprecated] Book new IP address
+[**InstancesChangeIpSubregionTicket**](OCIInterfacesApi.md#InstancesChangeIpSubregionTicket) | **Post** /instances/ip_addresses/change_ip_subregion_ticket | [Deprecated] Change IP subregion
 [**InstancesChangeOpn**](OCIInterfacesApi.md#InstancesChangeOpn) | **Post** /instances/{id}/change_opn_ticket | Change OPN on network interface
-[**InstancesDeleteIp**](OCIInterfacesApi.md#InstancesDeleteIp) | **Delete** /instances/ip_addresses/{id} | Deletes IP address
+[**InstancesDeleteIp**](OCIInterfacesApi.md#InstancesDeleteIp) | **Delete** /instances/ip_addresses/{id} | [Deprecated] Deletes IP address
 [**InstancesDetachFromOpn**](OCIInterfacesApi.md#InstancesDetachFromOpn) | **Post** /instances/{id}/detach_opn_ticket | Detach instance from OPN
 [**InstancesGetAllNetworkInterfaces**](OCIInterfacesApi.md#InstancesGetAllNetworkInterfaces) | **Get** /instances/interfaces | Returns all network interfaces
-[**InstancesGetInstanceIp**](OCIInterfacesApi.md#InstancesGetInstanceIp) | **Get** /instances/ip_addresses/{id} | Returns IP by id
+[**InstancesGetInstanceIp**](OCIInterfacesApi.md#InstancesGetInstanceIp) | **Get** /instances/ip_addresses/{id} | [Deprecated] Returns IP by id
 [**InstancesGetInstanceIps**](OCIInterfacesApi.md#InstancesGetInstanceIps) | **Get** /instances/{id}/ip_addresses | Returns instance public ip list
 [**InstancesGetInstanceNetworkInterfaces**](OCIInterfacesApi.md#InstancesGetInstanceNetworkInterfaces) | **Get** /instances/{id}/interfaces | Returns instance network interfaces
-[**InstancesGetIps**](OCIInterfacesApi.md#InstancesGetIps) | **Get** /instances/ip_addresses | Returns public ip list
+[**InstancesGetIps**](OCIInterfacesApi.md#InstancesGetIps) | **Get** /instances/ip_addresses | [Deprecated] Returns public ip list
 [**InstancesGetOpns**](OCIInterfacesApi.md#InstancesGetOpns) | **Get** /instances/{id}/opns | Returns instance OPN&#39;s
-[**InstancesPostAttachIpTicket**](OCIInterfacesApi.md#InstancesPostAttachIpTicket) | **Post** /instances/{id}/attach_ip_ticket | Attach public IP to instance
-[**InstancesPostDetachIpTicket**](OCIInterfacesApi.md#InstancesPostDetachIpTicket) | **Post** /instances/{id}/detach_ip_ticket | Detach public IP from instance
-[**InstancesUpdateIp**](OCIInterfacesApi.md#InstancesUpdateIp) | **Put** /instances/ip_addresses/{id} | Updates IP address
+[**InstancesPostAttachIpTicket**](OCIInterfacesApi.md#InstancesPostAttachIpTicket) | **Post** /instances/{id}/attach_ip_ticket | [Deprecated] Attach public IP to instance
+[**InstancesPostDetachIpTicket**](OCIInterfacesApi.md#InstancesPostDetachIpTicket) | **Post** /instances/{id}/detach_ip_ticket | [Deprecated] Detach public IP from instance
+[**InstancesUpdateIp**](OCIInterfacesApi.md#InstancesUpdateIp) | **Put** /instances/ip_addresses/{id} | [Deprecated] Updates IP address
 
 
 # **InstancesAttachOpn**
@@ -49,7 +50,7 @@ Name | Type | Description  | Notes
 
 # **InstancesBookNewIp**
 > Ip InstancesBookNewIp(ctx, command)
-Book new IP address
+[Deprecated] Book new IP address
 
 ### Required Parameters
 
@@ -69,6 +70,41 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **InstancesChangeIpSubregionTicket**
+> Ticket InstancesChangeIpSubregionTicket(ctx, ipId, optional)
+[Deprecated] Change IP subregion
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **ipId** | **int32**| IP address identifier | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ipId** | **int32**| IP address identifier | 
+ **subregionId** | **int32**| Subregion Id | 
+
+### Return type
+
+[**Ticket**](Ticket.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -102,7 +138,7 @@ Name | Type | Description  | Notes
 
 # **InstancesDeleteIp**
 > Object InstancesDeleteIp(ctx, id)
-Deletes IP address
+[Deprecated] Deletes IP address
 
 ### Required Parameters
 
@@ -193,7 +229,7 @@ Name | Type | Description  | Notes
 
 # **InstancesGetInstanceIp**
 > Ip InstancesGetInstanceIp(ctx, id, optional)
-Returns IP by id
+[Deprecated] Returns IP by id
 
 ### Required Parameters
 
@@ -308,7 +344,7 @@ Name | Type | Description  | Notes
 
 # **InstancesGetIps**
 > ApiCollectionIp InstancesGetIps(ctx, optional)
-Returns public ip list
+[Deprecated] Returns public ip list
 
 Acceptable order values are: Address, Subregion, Comment, Type.
 
@@ -389,7 +425,7 @@ Name | Type | Description  | Notes
 
 # **InstancesPostAttachIpTicket**
 > Ticket InstancesPostAttachIpTicket(ctx, id, optional)
-Attach public IP to instance
+[Deprecated] Attach public IP to instance
 
 ### Required Parameters
 
@@ -425,7 +461,7 @@ Name | Type | Description  | Notes
 
 # **InstancesPostDetachIpTicket**
 > Ticket InstancesPostDetachIpTicket(ctx, id, ipId)
-Detach public IP from instance
+[Deprecated] Detach public IP from instance
 
 ### Required Parameters
 
@@ -452,7 +488,7 @@ Name | Type | Description  | Notes
 
 # **InstancesUpdateIp**
 > Object InstancesUpdateIp(ctx, id, command)
-Updates IP address
+[Deprecated] Updates IP address
 
 ### Required Parameters
 

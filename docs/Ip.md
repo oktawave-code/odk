@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **DnsPrefix** | **string** | DNS prefix | [optional] [default to null]
 **DhcpBranch** | **string** | Dhcp branch address | [optional] [default to null]
 **Subregion** | [***BaseResource**](BaseResource.md) | Subregion | [optional] [default to null]
+**DefaultSubregion** | [***BaseResource**](BaseResource.md) | Subregion | [optional] [default to null]
+**Mode** | [***DictionaryItem**](DictionaryItem.md) | Mode | [optional] [default to null]
 **Type_** | [***DictionaryItem**](DictionaryItem.md) | Type | [optional] [default to null]
 **OwnerAccount** | [***BaseResource**](BaseResource.md) | Account that is owner IP address | [optional] [default to null]
 **Comment** | **string** | Owner comment | [optional] [default to null]

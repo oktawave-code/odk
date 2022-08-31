@@ -1,6 +1,6 @@
 # \OCSApi
 
-All URIs are relative to *https://api.oktawave.com/beta*
+All URIs are relative to *https://api.oktawave.com/services*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

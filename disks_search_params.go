@@ -15,6 +15,9 @@ type DisksSearchParams struct {
 	// Disk type
 	DiskType string `json:"DiskType,omitempty"`
 
+	// Show deleted
+	ShowDeleted bool `json:"ShowDeleted,omitempty"`
+
 	// Query
 	Query string `json:"Query,omitempty"`
 

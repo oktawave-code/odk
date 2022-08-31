@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **HealthCheckEnabled** | **bool** | Is health check enabled | [optional] [default to null]
 **CommonPersistenceForHttpAndHttpsEnabled** | **bool** | Is common persistence for HTTP and HTTPS enabled (only for \&quot;HTTP\&quot; load balancer service type) | [optional] [default to null]
 **LoadBalancerIpId** | **int32** | Public ip id for load balancer | [optional] [default to null]
+**ProxyProtocolVersion** | **int32** | Proxy-protocol version | [optional] [default to 1861]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

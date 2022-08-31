@@ -1,12 +1,13 @@
 # \OCISnapshotsApi
 
-All URIs are relative to *https://api.oktawave.com/beta*
+All URIs are relative to *https://api.oktawave.com/services*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**InstancesGetSnapshots**](OCISnapshotsApi.md#InstancesGetSnapshots) | **Get** /instances/{id}/snapshots | Returns instance snapshots
 [**InstancesPostSnapshot**](OCISnapshotsApi.md#InstancesPostSnapshot) | **Post** /instances/{id}/snapshots | Creates snapshot
 [**SnapshotsDelete**](OCISnapshotsApi.md#SnapshotsDelete) | **Delete** /snapshots/{id} | Delete snapshot
+[**SnapshotsDeleteSnapshots**](OCISnapshotsApi.md#SnapshotsDeleteSnapshots) | **Delete** /snapshots/ids | Delete snapshots
 [**SnapshotsGet**](OCISnapshotsApi.md#SnapshotsGet) | **Get** /snapshots | Returns snapshot collection
 [**SnapshotsGet_0**](OCISnapshotsApi.md#SnapshotsGet_0) | **Get** /snapshots/{id} | Gets snapshot
 [**SnapshotsPut**](OCISnapshotsApi.md#SnapshotsPut) | **Put** /snapshots/{id} | Update snapshot
@@ -97,6 +98,32 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **SnapshotsDeleteSnapshots**
+> Ticket SnapshotsDeleteSnapshots(ctx, command)
+Delete snapshots
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **command** | [**DeleteSnapshotsCommand**](DeleteSnapshotsCommand.md)|  | 
+
+### Return type
+
+[**Ticket**](Ticket.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
  - **Accept**: application/json, text/json, application/xml, text/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

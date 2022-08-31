@@ -45,6 +45,12 @@ type Ip struct {
 	// Subregion
 	Subregion *BaseResource `json:"Subregion,omitempty"`
 
+	// Subregion
+	DefaultSubregion *BaseResource `json:"DefaultSubregion,omitempty"`
+
+	// Mode
+	Mode *DictionaryItem `json:"Mode,omitempty"`
+
 	// Type
 	Type_ *DictionaryItem `json:"Type,omitempty"`
 

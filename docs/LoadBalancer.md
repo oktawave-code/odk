@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **SslEnabled** | **bool** | Is ssl enabled (only for \&quot;HTTP\&quot; service type) | [optional] [default to null]
 **CommonPersistenceForHttpAndHttpsEnabled** | **bool** | Is common persistence for HTTP and HTTPS enabled (only for \&quot;HTTP\&quot; service type) | [optional] [default to null]
 **Servers** | [**[]LoadBalancerServer**](LoadBalancerServer.md) | Services | [optional] [default to null]
+**ProxyProtocolVersion** | [***DictionaryItem**](DictionaryItem.md) | Proxy-protocol version | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

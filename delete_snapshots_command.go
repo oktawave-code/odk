@@ -9,12 +9,9 @@
 
 package odk
 
-// Container assignment
-type ContainerAssignmentCommand struct {
+// Delet snapshots command
+type DeleteSnapshotsCommand struct {
 
-	// Id of an instance
-	InstanceId int32 `json:"InstanceId"`
-
-	// Id of instance ip
-	IpId int32 `json:"IpId"`
+	// Ids
+	Ids []int32 `json:"Ids"`
 }

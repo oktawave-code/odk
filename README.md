@@ -17,7 +17,7 @@ Put the package under your project folder and add the following in import:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.oktawave.com/beta*
+All URIs are relative to *https://api.oktawave.com/services*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -29,6 +29,14 @@ Class | Method | HTTP request | Description
 *DictionariesApi* | [**DictionariesGetDictionaries**](docs/DictionariesApi.md#dictionariesgetdictionaries) | **Get** /dictionaries | Returns dictionaries
 *DictionariesApi* | [**DictionariesGetDictionariesItems**](docs/DictionariesApi.md#dictionariesgetdictionariesitems) | **Get** /dictionaries/{ids} | Returns dictionaries items
 *DictionariesApi* | [**DictionariesGetLanguages**](docs/DictionariesApi.md#dictionariesgetlanguages) | **Get** /dictionaries/languages | Returns languages
+*FloatingIPsApi* | [**FloatingIpsBookNewIp**](docs/FloatingIPsApi.md#floatingipsbooknewip) | **Post** /floating_ips | Book new IP address
+*FloatingIPsApi* | [**FloatingIpsChangeIpSubregionTicket**](docs/FloatingIPsApi.md#floatingipschangeipsubregionticket) | **Post** /floating_ips/change_ip_subregion_ticket | Change IP subregion
+*FloatingIPsApi* | [**FloatingIpsDeleteIp**](docs/FloatingIPsApi.md#floatingipsdeleteip) | **Delete** /floating_ips/{ip} | Deletes IP address
+*FloatingIPsApi* | [**FloatingIpsGetIp**](docs/FloatingIPsApi.md#floatingipsgetip) | **Get** /floating_ips/{ip} | Returns IP by Ipv4 address
+*FloatingIPsApi* | [**FloatingIpsGetIps**](docs/FloatingIPsApi.md#floatingipsgetips) | **Get** /floating_ips | Returns public ip list
+*FloatingIPsApi* | [**FloatingIpsPostAttachIpTicket**](docs/FloatingIPsApi.md#floatingipspostattachipticket) | **Post** /floating_ips/attach_ip_ticket | Attach public IP to instance
+*FloatingIPsApi* | [**FloatingIpsPostDetachIpTicket**](docs/FloatingIPsApi.md#floatingipspostdetachipticket) | **Post** /floating_ips/detach_ip_ticket | Detach public IP from instance
+*FloatingIPsApi* | [**FloatingIpsUpdateIp**](docs/FloatingIPsApi.md#floatingipsupdateip) | **Put** /floating_ips/{ip} | Updates IP address
 *NetworkingApi* | [**OpnsDelete**](docs/NetworkingApi.md#opnsdelete) | **Delete** /opns/{id} | Deletes an OPN
 *NetworkingApi* | [**OpnsGet**](docs/NetworkingApi.md#opnsget) | **Get** /opns | Returns OPNs
 *NetworkingApi* | [**OpnsPost**](docs/NetworkingApi.md#opnspost) | **Post** /opns | Creates an OPN
@@ -104,19 +112,20 @@ Class | Method | HTTP request | Description
 *OCIGroupsApi* | [**LoadBalancersGetLoadBalancerDetails**](docs/OCIGroupsApi.md#loadbalancersgetloadbalancerdetails) | **Get** /groups/{id}/load_balancer/details | Gets load balancer detail for group
 *OCIGroupsApi* | [**LoadBalancersUpdate**](docs/OCIGroupsApi.md#loadbalancersupdate) | **Put** /groups/{id}/load_balancer | Update load balancer for group
 *OCIInterfacesApi* | [**InstancesAttachOpn**](docs/OCIInterfacesApi.md#instancesattachopn) | **Post** /instances/{id}/attach_opn_ticket | Attach instance to OPN
-*OCIInterfacesApi* | [**InstancesBookNewIp**](docs/OCIInterfacesApi.md#instancesbooknewip) | **Post** /instances/ip_addresses | Book new IP address
+*OCIInterfacesApi* | [**InstancesBookNewIp**](docs/OCIInterfacesApi.md#instancesbooknewip) | **Post** /instances/ip_addresses | [Deprecated] Book new IP address
+*OCIInterfacesApi* | [**InstancesChangeIpSubregionTicket**](docs/OCIInterfacesApi.md#instanceschangeipsubregionticket) | **Post** /instances/ip_addresses/change_ip_subregion_ticket | [Deprecated] Change IP subregion
 *OCIInterfacesApi* | [**InstancesChangeOpn**](docs/OCIInterfacesApi.md#instanceschangeopn) | **Post** /instances/{id}/change_opn_ticket | Change OPN on network interface
-*OCIInterfacesApi* | [**InstancesDeleteIp**](docs/OCIInterfacesApi.md#instancesdeleteip) | **Delete** /instances/ip_addresses/{id} | Deletes IP address
+*OCIInterfacesApi* | [**InstancesDeleteIp**](docs/OCIInterfacesApi.md#instancesdeleteip) | **Delete** /instances/ip_addresses/{id} | [Deprecated] Deletes IP address
 *OCIInterfacesApi* | [**InstancesDetachFromOpn**](docs/OCIInterfacesApi.md#instancesdetachfromopn) | **Post** /instances/{id}/detach_opn_ticket | Detach instance from OPN
 *OCIInterfacesApi* | [**InstancesGetAllNetworkInterfaces**](docs/OCIInterfacesApi.md#instancesgetallnetworkinterfaces) | **Get** /instances/interfaces | Returns all network interfaces
-*OCIInterfacesApi* | [**InstancesGetInstanceIp**](docs/OCIInterfacesApi.md#instancesgetinstanceip) | **Get** /instances/ip_addresses/{id} | Returns IP by id
+*OCIInterfacesApi* | [**InstancesGetInstanceIp**](docs/OCIInterfacesApi.md#instancesgetinstanceip) | **Get** /instances/ip_addresses/{id} | [Deprecated] Returns IP by id
 *OCIInterfacesApi* | [**InstancesGetInstanceIps**](docs/OCIInterfacesApi.md#instancesgetinstanceips) | **Get** /instances/{id}/ip_addresses | Returns instance public ip list
 *OCIInterfacesApi* | [**InstancesGetInstanceNetworkInterfaces**](docs/OCIInterfacesApi.md#instancesgetinstancenetworkinterfaces) | **Get** /instances/{id}/interfaces | Returns instance network interfaces
-*OCIInterfacesApi* | [**InstancesGetIps**](docs/OCIInterfacesApi.md#instancesgetips) | **Get** /instances/ip_addresses | Returns public ip list
+*OCIInterfacesApi* | [**InstancesGetIps**](docs/OCIInterfacesApi.md#instancesgetips) | **Get** /instances/ip_addresses | [Deprecated] Returns public ip list
 *OCIInterfacesApi* | [**InstancesGetOpns**](docs/OCIInterfacesApi.md#instancesgetopns) | **Get** /instances/{id}/opns | Returns instance OPN&#39;s
-*OCIInterfacesApi* | [**InstancesPostAttachIpTicket**](docs/OCIInterfacesApi.md#instancespostattachipticket) | **Post** /instances/{id}/attach_ip_ticket | Attach public IP to instance
-*OCIInterfacesApi* | [**InstancesPostDetachIpTicket**](docs/OCIInterfacesApi.md#instancespostdetachipticket) | **Post** /instances/{id}/detach_ip_ticket | Detach public IP from instance
-*OCIInterfacesApi* | [**InstancesUpdateIp**](docs/OCIInterfacesApi.md#instancesupdateip) | **Put** /instances/ip_addresses/{id} | Updates IP address
+*OCIInterfacesApi* | [**InstancesPostAttachIpTicket**](docs/OCIInterfacesApi.md#instancespostattachipticket) | **Post** /instances/{id}/attach_ip_ticket | [Deprecated] Attach public IP to instance
+*OCIInterfacesApi* | [**InstancesPostDetachIpTicket**](docs/OCIInterfacesApi.md#instancespostdetachipticket) | **Post** /instances/{id}/detach_ip_ticket | [Deprecated] Detach public IP from instance
+*OCIInterfacesApi* | [**InstancesUpdateIp**](docs/OCIInterfacesApi.md#instancesupdateip) | **Put** /instances/ip_addresses/{id} | [Deprecated] Updates IP address
 *OCISchedulersApi* | [**InstanceSchedulersDelete**](docs/OCISchedulersApi.md#instanceschedulersdelete) | **Delete** /instances/schedulers/{id} | Deletes instance scheduler
 *OCISchedulersApi* | [**InstanceSchedulersGet**](docs/OCISchedulersApi.md#instanceschedulersget) | **Get** /instances/schedulers/{id} | Gets scheduler by identifier
 *OCISchedulersApi* | [**InstanceSchedulersGetInstanceSchedulers**](docs/OCISchedulersApi.md#instanceschedulersgetinstanceschedulers) | **Get** /instances/{id}/schedulers | Gets instance schedulers
@@ -126,6 +135,7 @@ Class | Method | HTTP request | Description
 *OCISnapshotsApi* | [**InstancesGetSnapshots**](docs/OCISnapshotsApi.md#instancesgetsnapshots) | **Get** /instances/{id}/snapshots | Returns instance snapshots
 *OCISnapshotsApi* | [**InstancesPostSnapshot**](docs/OCISnapshotsApi.md#instancespostsnapshot) | **Post** /instances/{id}/snapshots | Creates snapshot
 *OCISnapshotsApi* | [**SnapshotsDelete**](docs/OCISnapshotsApi.md#snapshotsdelete) | **Delete** /snapshots/{id} | Delete snapshot
+*OCISnapshotsApi* | [**SnapshotsDeleteSnapshots**](docs/OCISnapshotsApi.md#snapshotsdeletesnapshots) | **Delete** /snapshots/ids | Delete snapshots
 *OCISnapshotsApi* | [**SnapshotsGet**](docs/OCISnapshotsApi.md#snapshotsget) | **Get** /snapshots | Returns snapshot collection
 *OCISnapshotsApi* | [**SnapshotsGet_0**](docs/OCISnapshotsApi.md#snapshotsget_0) | **Get** /snapshots/{id} | Gets snapshot
 *OCISnapshotsApi* | [**SnapshotsPut**](docs/OCISnapshotsApi.md#snapshotsput) | **Put** /snapshots/{id} | Update snapshot
@@ -235,6 +245,7 @@ Class | Method | HTTP request | Description
  - [ApiCollectionTemplate](docs/ApiCollectionTemplate.md)
  - [ApiCollectionTicket](docs/ApiCollectionTicket.md)
  - [AssignNewMonitoringSensorCommand](docs/AssignNewMonitoringSensorCommand.md)
+ - [AttachFloatingIpToInstanceCommand](docs/AttachFloatingIpToInstanceCommand.md)
  - [AttachInstanceToOpnCommand](docs/AttachInstanceToOpnCommand.md)
  - [AttachIpToInstanceCommand](docs/AttachIpToInstanceCommand.md)
  - [Autoscaler](docs/Autoscaler.md)
@@ -246,10 +257,12 @@ Class | Method | HTTP request | Description
  - [ChangeContainerAssignmentsCommand](docs/ChangeContainerAssignmentsCommand.md)
  - [ChangeContainerServiceStateCommand](docs/ChangeContainerServiceStateCommand.md)
  - [ChangeDiskTierCommand](docs/ChangeDiskTierCommand.md)
+ - [ChangeFloatingIpSubregionCommand](docs/ChangeFloatingIpSubregionCommand.md)
  - [ChangeInstanceNameCommand](docs/ChangeInstanceNameCommand.md)
  - [ChangeInstanceScsiControllerTypeCommand](docs/ChangeInstanceScsiControllerTypeCommand.md)
  - [ChangeInstanceSubregionCommand](docs/ChangeInstanceSubregionCommand.md)
  - [ChangeInstanceTypeCommand](docs/ChangeInstanceTypeCommand.md)
+ - [ChangeIpSubregionCommand](docs/ChangeIpSubregionCommand.md)
  - [ChangeOpnCommand](docs/ChangeOpnCommand.md)
  - [ClientStatistics](docs/ClientStatistics.md)
  - [ClientStatisticsSearchParams](docs/ClientStatisticsSearchParams.md)
@@ -281,6 +294,8 @@ Class | Method | HTTP request | Description
  - [CreateUpdateSnapshotCommand](docs/CreateUpdateSnapshotCommand.md)
  - [CreateUpdateVncConnectionCommand](docs/CreateUpdateVncConnectionCommand.md)
  - [DeleteEventsCommand](docs/DeleteEventsCommand.md)
+ - [DeleteSnapshotsCommand](docs/DeleteSnapshotsCommand.md)
+ - [DetachFloatingIpFromInstanceCommand](docs/DetachFloatingIpFromInstanceCommand.md)
  - [DetachInstanceFromOpnCommand](docs/DetachInstanceFromOpnCommand.md)
  - [DetachIpFromInstanceCommand](docs/DetachIpFromInstanceCommand.md)
  - [Dictionary](docs/Dictionary.md)

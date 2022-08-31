@@ -1,6 +1,6 @@
 # \OCIApi
 
-All URIs are relative to *https://api.oktawave.com/beta*
+All URIs are relative to *https://api.oktawave.com/services*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -383,6 +383,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int32**| Instance id | 
  **diskType** | **string**| Disk type | 
+ **showDeleted** | **bool**| Show deleted | 
  **query** | **string**| Query | 
  **pageSize** | **int32**| Page size | 
  **pageNumber** | **int32**| Page number | 

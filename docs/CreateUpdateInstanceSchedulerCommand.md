@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **Name** | **string** | Name | [default to null]
 **TypeId** | **int32** | Type id | [default to null]
 **StartDate** | [**time.Time**](time.Time.md) | Start date | [default to null]
-**TimeZoneName** | **string** | Timezone name | [default to null]
+**TimeZoneName** | **string** | IANA Time zone. To get a list of available timezones, visit (https://momentjs.com/timezone) | [default to null]
 **CycleTypeId** | **int32** | Cycle type id | [optional] [default to null]
 **CycleNumber** | **int32** | Cycle number beetwen scheduler launch | [optional] [default to null]
 **ActionTypeId** | **int32** | Action type | [default to null]

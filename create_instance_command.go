@@ -51,6 +51,6 @@ type CreateInstanceCommand struct {
 	// InitScript
 	InitScript string `json:"InitScript,omitempty"`
 
-	// Freemium
+	// WithoutPublicIp
 	WithoutPublicIp bool `json:"WithoutPublicIp,omitempty"`
 }

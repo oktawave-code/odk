@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **TemplateWindowsTypeId** | **int32** | Template windows type id | [optional] [default to null]
 **TemplateDefaultTypeId** | **int32** | Template default type id | [default to null]
 **TemplateMinimumTypeId** | **int32** | Template minimum type id | [default to null]
-**TemplateWithInitialization** | **bool** | Template with initialization | [default to null]
 **TechSupportPassword** | **string** | Account &#39;tech-support&#39; password. Required for templates with initialization | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

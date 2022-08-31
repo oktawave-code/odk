@@ -9,12 +9,12 @@
 
 package odk
 
-// Container assignment
-type ContainerAssignmentCommand struct {
+// Detach IP from instance command
+type DetachFloatingIpFromInstanceCommand struct {
 
-	// Id of an instance
+	// IPv4 address identifier
+	IpV4 string `json:"IpV4"`
+
+	// Instance identifier.
 	InstanceId int32 `json:"InstanceId"`
-
-	// Id of instance ip
-	IpId int32 `json:"IpId"`
 }

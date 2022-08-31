@@ -506,6 +506,7 @@ Acceptable order values are: SpaceCapacity, Name, Tier, IsShared, Subregion
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "diskType" (string) Disk type
+    @param "showDeleted" (bool) Show deleted
     @param "query" (string) Query
     @param "pageSize" (int32) Page size
     @param "pageNumber" (int32) Page number
@@ -531,6 +532,9 @@ func (a *OVSApiService) DisksGetDisks(ctx context.Context, localVarOptionals map
 	if err := typeCheckParameter(localVarOptionals["diskType"], "string", "diskType"); err != nil {
 		return successPayload, nil, err
 	}
+	if err := typeCheckParameter(localVarOptionals["showDeleted"], "bool", "showDeleted"); err != nil {
+		return successPayload, nil, err
+	}
 	if err := typeCheckParameter(localVarOptionals["query"], "string", "query"); err != nil {
 		return successPayload, nil, err
 	}
@@ -549,6 +553,9 @@ func (a *OVSApiService) DisksGetDisks(ctx context.Context, localVarOptionals map
 
 	if localVarTempParam, localVarOk := localVarOptionals["diskType"].(string); localVarOk {
 		localVarQueryParams.Add("diskType", parameterToString(localVarTempParam, ""))
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["showDeleted"].(bool); localVarOk {
+		localVarQueryParams.Add("showDeleted", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["query"].(string); localVarOk {
 		localVarQueryParams.Add("query", parameterToString(localVarTempParam, ""))

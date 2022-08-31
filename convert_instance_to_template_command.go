@@ -36,9 +36,6 @@ type ConvertInstanceToTemplateCommand struct {
 	// Template minimum type id
 	TemplateMinimumTypeId int32 `json:"TemplateMinimumTypeId"`
 
-	// Template with initialization
-	TemplateWithInitialization bool `json:"TemplateWithInitialization"`
-
 	// Account 'tech-support' password. Required for templates with initialization
 	TechSupportPassword string `json:"TechSupportPassword,omitempty"`
 }

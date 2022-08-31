@@ -46,6 +46,7 @@ type APIClient struct {
 	// API Services
 	AccountApi       *AccountApiService
 	DictionariesApi  *DictionariesApiService
+	FloatingIPsApi   *FloatingIPsApiService
 	NetworkingApi    *NetworkingApiService
 	OCIApi           *OCIApiService
 	OCIAutoscalerApi *OCIAutoscalerApiService
@@ -82,6 +83,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.AccountApi = (*AccountApiService)(&c.common)
 	c.DictionariesApi = (*DictionariesApiService)(&c.common)
+	c.FloatingIPsApi = (*FloatingIPsApiService)(&c.common)
 	c.NetworkingApi = (*NetworkingApiService)(&c.common)
 	c.OCIApi = (*OCIApiService)(&c.common)
 	c.OCIAutoscalerApi = (*OCIAutoscalerApiService)(&c.common)

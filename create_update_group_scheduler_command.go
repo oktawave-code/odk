@@ -22,7 +22,7 @@ type CreateUpdateGroupSchedulerCommand struct {
 	// Start date
 	StartDate time.Time `json:"StartDate"`
 
-	// Timezone name
+	// IANA Time zone. To get a list of available timezones, visit (https://momentjs.com/timezone)
 	TimeZoneName string `json:"TimeZoneName"`
 
 	// Instance Id

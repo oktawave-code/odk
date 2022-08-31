@@ -95,7 +95,7 @@ func (a *OCIInterfacesApiService) InstancesAttachOpn(ctx context.Context, id int
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService Book new IP address
+/* OCIInterfacesApiService [Deprecated] Book new IP address
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command
 @return Ip*/
@@ -139,6 +139,80 @@ func (a *OCIInterfacesApiService) InstancesBookNewIp(ctx context.Context, comman
 	}
 	// body params
 	localVarPostBody = &command
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+	return successPayload, localVarHttpResponse, err
+}
+
+/* OCIInterfacesApiService [Deprecated] Change IP subregion
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param ipId IP address identifier
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "subregionId" (int32) Subregion Id
+@return Ticket*/
+func (a *OCIInterfacesApiService) InstancesChangeIpSubregionTicket(ctx context.Context, ipId int32, localVarOptionals map[string]interface{}) (Ticket, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/instances/ip_addresses/change_ip_subregion_ticket"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if err := typeCheckParameter(localVarOptionals["subregionId"], "int32", "subregionId"); err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarQueryParams.Add("ipId", parameterToString(ipId, ""))
+	if localVarTempParam, localVarOk := localVarOptionals["subregionId"].(int32); localVarOk {
+		localVarQueryParams.Add("subregionId", parameterToString(localVarTempParam, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+		"text/json",
+		"application/xml",
+		"text/xml",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return successPayload, nil, err
@@ -229,7 +303,7 @@ func (a *OCIInterfacesApiService) InstancesChangeOpn(ctx context.Context, id int
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService Deletes IP address
+/* OCIInterfacesApiService [Deprecated] Deletes IP address
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id IP address identifier
 @return Object*/
@@ -456,7 +530,7 @@ func (a *OCIInterfacesApiService) InstancesGetAllNetworkInterfaces(ctx context.C
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService Returns IP by id
+/* OCIInterfacesApiService [Deprecated] Returns IP by id
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id
 @param optional (nil or map[string]interface{}) with one or more of:
@@ -722,7 +796,7 @@ func (a *OCIInterfacesApiService) InstancesGetInstanceNetworkInterfaces(ctx cont
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService Returns public ip list
+/* OCIInterfacesApiService [Deprecated] Returns public ip list
 Acceptable order values are: Address, Subregion, Comment, Type.
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
@@ -933,7 +1007,7 @@ func (a *OCIInterfacesApiService) InstancesGetOpns(ctx context.Context, id int32
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService Attach public IP to instance
+/* OCIInterfacesApiService [Deprecated] Attach public IP to instance
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance identifier
 @param optional (nil or map[string]interface{}) with one or more of:
@@ -1014,7 +1088,7 @@ func (a *OCIInterfacesApiService) InstancesPostAttachIpTicket(ctx context.Contex
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService Detach public IP from instance
+/* OCIInterfacesApiService [Deprecated] Detach public IP from instance
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance identifier
 @param ipId IP address identifier
@@ -1081,7 +1155,7 @@ func (a *OCIInterfacesApiService) InstancesPostDetachIpTicket(ctx context.Contex
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService Updates IP address
+/* OCIInterfacesApiService [Deprecated] Updates IP address
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id
 @param command

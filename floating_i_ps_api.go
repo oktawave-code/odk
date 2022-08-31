@@ -25,26 +25,231 @@ var (
 	_ context.Context
 )
 
-type OCISnapshotsApiService service
+type FloatingIPsApiService service
 
-/* OCISnapshotsApiService Returns instance snapshots
+/* FloatingIPsApiService Book new IP address
 * @param ctx context.Context for authentication, logging, tracing, etc.
-@param id Instance identifier
+@param command
+@return Ip*/
+func (a *FloatingIPsApiService) FloatingIpsBookNewIp(ctx context.Context, command BookIpCommand) (Ip, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ip
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/floating_ips"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+		"text/json",
+		"application/xml",
+		"text/xml",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	// body params
+	localVarPostBody = &command
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+	return successPayload, localVarHttpResponse, err
+}
+
+/* FloatingIPsApiService Change IP subregion
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param ipV4 IPv4 address identifier.
+@param optional (nil or map[string]interface{}) with one or more of:
+    @param "subregionId" (int32) Subregion Id
+@return Ticket*/
+func (a *FloatingIPsApiService) FloatingIpsChangeIpSubregionTicket(ctx context.Context, ipV4 string, localVarOptionals map[string]interface{}) (Ticket, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/floating_ips/change_ip_subregion_ticket"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if err := typeCheckParameter(localVarOptionals["subregionId"], "int32", "subregionId"); err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarQueryParams.Add("ipV4", parameterToString(ipV4, ""))
+	if localVarTempParam, localVarOk := localVarOptionals["subregionId"].(int32); localVarOk {
+		localVarQueryParams.Add("subregionId", parameterToString(localVarTempParam, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+		"text/json",
+		"application/xml",
+		"text/xml",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+	return successPayload, localVarHttpResponse, err
+}
+
+/* FloatingIPsApiService Deletes IP address
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param ip IPv4 address
+@return Object*/
+func (a *FloatingIPsApiService) FloatingIpsDeleteIp(ctx context.Context, ip string) (Object, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Delete")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Object
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/floating_ips/{ip}"
+	localVarPath = strings.Replace(localVarPath, "{"+"ip"+"}", fmt.Sprintf("%v", ip), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+		"text/json",
+		"application/xml",
+		"text/xml",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+	return successPayload, localVarHttpResponse, err
+}
+
+/* FloatingIPsApiService Returns IP by Ipv4 address
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param ip
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "fields" (string) Response fields filter
-@return ApiCollectionSnapshot*/
-func (a *OCISnapshotsApiService) InstancesGetSnapshots(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionSnapshot, *http.Response, error) {
+@return Ip*/
+func (a *FloatingIPsApiService) FloatingIpsGetIp(ctx context.Context, ip string, localVarOptionals map[string]interface{}) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     ApiCollectionSnapshot
+		successPayload     Ip
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/instances/{id}/snapshots"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
+	localVarPath := a.client.cfg.BasePath + "/floating_ips/{ip}"
+	localVarPath = strings.Replace(localVarPath, "{"+"ip"+"}", fmt.Sprintf("%v", ip), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -101,227 +306,28 @@ func (a *OCISnapshotsApiService) InstancesGetSnapshots(ctx context.Context, id i
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCISnapshotsApiService Creates snapshot
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param id Instance id
-@param command Create snapshot command
-@return Ticket*/
-func (a *OCISnapshotsApiService) InstancesPostSnapshot(ctx context.Context, id int32, command CreateUpdateSnapshotCommand) (Ticket, *http.Response, error) {
-	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     Ticket
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/instances/{id}/snapshots"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		"application/json",
-		"text/json",
-		"application/xml",
-		"text/xml",
-	}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	// body params
-	localVarPostBody = &command
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return successPayload, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return successPayload, localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
-		return successPayload, localVarHttpResponse, err
-	}
-
-	return successPayload, localVarHttpResponse, err
-}
-
-/* OCISnapshotsApiService Delete snapshot
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param id Snapshot id
-@return Ticket*/
-func (a *OCISnapshotsApiService) SnapshotsDelete(ctx context.Context, id int32) (Ticket, *http.Response, error) {
-	var (
-		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     Ticket
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/snapshots/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		"application/json",
-		"text/json",
-		"application/xml",
-		"text/xml",
-	}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return successPayload, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return successPayload, localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
-		return successPayload, localVarHttpResponse, err
-	}
-
-	return successPayload, localVarHttpResponse, err
-}
-
-/* OCISnapshotsApiService Delete snapshots
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param command
-@return Ticket*/
-func (a *OCISnapshotsApiService) SnapshotsDeleteSnapshots(ctx context.Context, command DeleteSnapshotsCommand) (Ticket, *http.Response, error) {
-	var (
-		localVarHttpMethod = strings.ToUpper("Delete")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     Ticket
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/snapshots/ids"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/json", "text/json", "application/xml", "text/xml", "application/x-www-form-urlencoded"}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		"application/json",
-		"text/json",
-		"application/xml",
-		"text/xml",
-	}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	// body params
-	localVarPostBody = &command
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return successPayload, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return successPayload, localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
-		return successPayload, localVarHttpResponse, err
-	}
-
-	return successPayload, localVarHttpResponse, err
-}
-
-/* OCISnapshotsApiService Returns snapshot collection
-Acceptable order values are: CreationDate, Description, IsCurrent, Name, Instance.
+/* FloatingIPsApiService Returns public ip list
+Acceptable order values are: Address, Subregion, Comment, Type.
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
     @param "instanceId" (int32) Instance id
-    @param "query" (string) Query
+    @param "onlyFree" (bool) Only free
     @param "pageSize" (int32) Page size
     @param "pageNumber" (int32) Page number
     @param "orderBy" (string) Order by
     @param "fields" (string) Response fields filter
-@return ApiCollectionSnapshot*/
-func (a *OCISnapshotsApiService) SnapshotsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionSnapshot, *http.Response, error) {
+@return ApiCollectionIp*/
+func (a *FloatingIPsApiService) FloatingIpsGetIps(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionIp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     ApiCollectionSnapshot
+		successPayload     ApiCollectionIp
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/snapshots"
+	localVarPath := a.client.cfg.BasePath + "/floating_ips"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -330,7 +336,7 @@ func (a *OCISnapshotsApiService) SnapshotsGet(ctx context.Context, localVarOptio
 	if err := typeCheckParameter(localVarOptionals["instanceId"], "int32", "instanceId"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["query"], "string", "query"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["onlyFree"], "bool", "onlyFree"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["pageSize"], "int32", "pageSize"); err != nil {
@@ -349,8 +355,8 @@ func (a *OCISnapshotsApiService) SnapshotsGet(ctx context.Context, localVarOptio
 	if localVarTempParam, localVarOk := localVarOptionals["instanceId"].(int32); localVarOk {
 		localVarQueryParams.Add("instanceId", parameterToString(localVarTempParam, ""))
 	}
-	if localVarTempParam, localVarOk := localVarOptionals["query"].(string); localVarOk {
-		localVarQueryParams.Add("query", parameterToString(localVarTempParam, ""))
+	if localVarTempParam, localVarOk := localVarOptionals["onlyFree"].(bool); localVarOk {
+		localVarQueryParams.Add("onlyFree", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["pageSize"].(int32); localVarOk {
 		localVarQueryParams.Add("pageSize", parameterToString(localVarTempParam, ""))
@@ -408,36 +414,43 @@ func (a *OCISnapshotsApiService) SnapshotsGet(ctx context.Context, localVarOptio
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCISnapshotsApiService Gets snapshot
+/* FloatingIPsApiService Attach public IP to instance
 * @param ctx context.Context for authentication, logging, tracing, etc.
-@param id Snapshot id
+@param instanceId Instance identifier.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return Snapshot*/
-func (a *OCISnapshotsApiService) SnapshotsGet_1(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Snapshot, *http.Response, error) {
+    @param "ipV4" (string) IPv4 address identifier. Optional value, if null random ip will be attached.
+    @param "ipV6Only" (bool) If attach IPv6 only. Optional value, if null IPv4 and IPv6 will be attached.
+@return Ticket*/
+func (a *FloatingIPsApiService) FloatingIpsPostAttachIpTicket(ctx context.Context, instanceId int32, localVarOptionals map[string]interface{}) (Ticket, *http.Response, error) {
 	var (
-		localVarHttpMethod = strings.ToUpper("Get")
+		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     Snapshot
+		successPayload     Ticket
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/snapshots/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
+	localVarPath := a.client.cfg.BasePath + "/floating_ips/attach_ip_ticket"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if err := typeCheckParameter(localVarOptionals["fields"], "string", "fields"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["ipV4"], "string", "ipV4"); err != nil {
+		return successPayload, nil, err
+	}
+	if err := typeCheckParameter(localVarOptionals["ipV6Only"], "bool", "ipV6Only"); err != nil {
 		return successPayload, nil, err
 	}
 
-	if localVarTempParam, localVarOk := localVarOptionals["fields"].(string); localVarOk {
-		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
+	if localVarTempParam, localVarOk := localVarOptionals["ipV4"].(string); localVarOk {
+		localVarQueryParams.Add("ipV4", parameterToString(localVarTempParam, ""))
 	}
+	if localVarTempParam, localVarOk := localVarOptionals["ipV6Only"].(bool); localVarOk {
+		localVarQueryParams.Add("ipV6Only", parameterToString(localVarTempParam, ""))
+	}
+	localVarQueryParams.Add("instanceId", parameterToString(instanceId, ""))
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{}
 
@@ -482,23 +495,90 @@ func (a *OCISnapshotsApiService) SnapshotsGet_1(ctx context.Context, id int32, l
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCISnapshotsApiService Update snapshot
+/* FloatingIPsApiService Detach public IP from instance
 * @param ctx context.Context for authentication, logging, tracing, etc.
-@param id Snapshot id
-@param command Update snapshot command
-@return Snapshot*/
-func (a *OCISnapshotsApiService) SnapshotsPut(ctx context.Context, id int32, command CreateUpdateSnapshotCommand) (Snapshot, *http.Response, error) {
+@param ipV4 IPv4 address identifier
+@param instanceId Instance identifier.
+@return Ticket*/
+func (a *FloatingIPsApiService) FloatingIpsPostDetachIpTicket(ctx context.Context, ipV4 string, instanceId int32) (Ticket, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Post")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Ticket
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/floating_ips/detach_ip_ticket"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	localVarQueryParams.Add("ipV4", parameterToString(ipV4, ""))
+	localVarQueryParams.Add("instanceId", parameterToString(instanceId, ""))
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+		"text/json",
+		"application/xml",
+		"text/xml",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+	return successPayload, localVarHttpResponse, err
+}
+
+/* FloatingIPsApiService Updates IP address
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param ip
+@param command
+@return Object*/
+func (a *FloatingIPsApiService) FloatingIpsUpdateIp(ctx context.Context, ip string, command UpdateIpCommand) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		successPayload     Snapshot
+		successPayload     Object
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/snapshots/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
+	localVarPath := a.client.cfg.BasePath + "/floating_ips/{ip}"
+	localVarPath = strings.Replace(localVarPath, "{"+"ip"+"}", fmt.Sprintf("%v", ip), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -528,71 +608,6 @@ func (a *OCISnapshotsApiService) SnapshotsPut(ctx context.Context, id int32, com
 	}
 	// body params
 	localVarPostBody = &command
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return successPayload, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return successPayload, localVarHttpResponse, err
-	}
-	defer localVarHttpResponse.Body.Close()
-	if localVarHttpResponse.StatusCode >= 300 {
-		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
-		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
-	}
-
-	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
-		return successPayload, localVarHttpResponse, err
-	}
-
-	return successPayload, localVarHttpResponse, err
-}
-
-/* OCISnapshotsApiService Restore snapshot
-* @param ctx context.Context for authentication, logging, tracing, etc.
-@param id Snapshot id
-@return Ticket*/
-func (a *OCISnapshotsApiService) SnapshotsRestore(ctx context.Context, id int32) (Ticket, *http.Response, error) {
-	var (
-		localVarHttpMethod = strings.ToUpper("Post")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		successPayload     Ticket
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/snapshots/{id}/restore_ticket"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{
-		"application/json",
-		"text/json",
-		"application/xml",
-		"text/xml",
-	}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return successPayload, nil, err

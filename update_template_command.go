@@ -17,7 +17,4 @@ type UpdateTemplateCommand struct {
 
 	// Template descriptions
 	TemplateDescriptions []TemplateDescription `json:"TemplateDescriptions,omitempty"`
-
-	// Should be published
-	IsPublic bool `json:"IsPublic,omitempty"`
 }

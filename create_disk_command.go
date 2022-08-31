@@ -21,9 +21,6 @@ type CreateDiskCommand struct {
 	// Tier id
 	TierId int32 `json:"TierId"`
 
-	// If disk is shared
-	IsShared bool `json:"IsShared"`
-
 	// Shared disk type, null if disk is not shared
 	SharedDiskTypeId int32 `json:"SharedDiskTypeId,omitempty"`
 

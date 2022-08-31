@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 **DiskName** | **string** | Name of disk | [default to null]
 **SpaceCapacity** | **int32** | Space capacity in GB | [default to 5]
 **TierId** | **int32** | Tier id | [default to 48]
-**IsShared** | **bool** | If disk is shared | [default to null]
 **SharedDiskTypeId** | **int32** | Shared disk type, null if disk is not shared | [optional] [default to null]
 **SubregionId** | **int32** | Subregion identifier | [optional] [default to null]
 **InstanceIdsList** | **[]int32** | Instance ids list | [optional] [default to null]

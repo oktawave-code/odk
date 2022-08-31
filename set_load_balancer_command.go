@@ -44,4 +44,7 @@ type SetLoadBalancerCommand struct {
 
 	// Public ip id for load balancer
 	LoadBalancerIpId int32 `json:"LoadBalancerIpId,omitempty"`
+
+	// Proxy-protocol version
+	ProxyProtocolVersion int32 `json:"ProxyProtocolVersion,omitempty"`
 }
