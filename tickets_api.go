@@ -28,18 +28,22 @@ var (
 
 type TicketsApiService service
 
-/* TicketsApiService Returns ticket collection
+/*
+TicketsApiService Returns ticket collection
 Acceptable order values are: CreationDate, Status, OperationType
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "statusId" (int32) Tickets status id
-    @param "creationDateFrom" (time.Time) Tickets creation date from
-    @param "creationDateTo" (time.Time) Tickets creation date to
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionTicket*/
+
+	@param "statusId" (int32) Tickets status id
+	@param "creationDateFrom" (time.Time) Tickets creation date from
+	@param "creationDateTo" (time.Time) Tickets creation date to
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionTicket
+*/
 func (a *TicketsApiService) TicketsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionTicket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -143,12 +147,16 @@ func (a *TicketsApiService) TicketsGet(ctx context.Context, localVarOptionals ma
 	return successPayload, localVarHttpResponse, err
 }
 
-/* TicketsApiService Returns ticket by identifier
+/*
+TicketsApiService Returns ticket by identifier
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Ticket identifier
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return Ticket*/
+
+	@param "fields" (string) Response fields filter
+
+@return Ticket
+*/
 func (a *TicketsApiService) TicketsGet_1(ctx context.Context, id int64, localVarOptionals map[string]interface{}) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")

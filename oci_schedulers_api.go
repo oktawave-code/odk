@@ -27,10 +27,12 @@ var (
 
 type OCISchedulersApiService service
 
-/* OCISchedulersApiService Deletes instance scheduler
+/*
+OCISchedulersApiService Deletes instance scheduler
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Scheduler id
-@return */
+@return
+*/
 func (a *OCISchedulersApiService) InstanceSchedulersDelete(ctx context.Context, id int32) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -82,12 +84,16 @@ func (a *OCISchedulersApiService) InstanceSchedulersDelete(ctx context.Context, 
 	return localVarHttpResponse, err
 }
 
-/* OCISchedulersApiService Gets scheduler by identifier
+/*
+OCISchedulersApiService Gets scheduler by identifier
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Scheduler id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return InstanceScheduler*/
+
+	@param "fields" (string) Response fields filter
+
+@return InstanceScheduler
+*/
 func (a *OCISchedulersApiService) InstanceSchedulersGet(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (InstanceScheduler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -156,12 +162,16 @@ func (a *OCISchedulersApiService) InstanceSchedulersGet(ctx context.Context, id 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCISchedulersApiService Gets instance schedulers
+/*
+OCISchedulersApiService Gets instance schedulers
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionInstanceScheduler*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionInstanceScheduler
+*/
 func (a *OCISchedulersApiService) InstanceSchedulersGetInstanceSchedulers(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionInstanceScheduler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -230,11 +240,13 @@ func (a *OCISchedulersApiService) InstanceSchedulersGetInstanceSchedulers(ctx co
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCISchedulersApiService Creates instance scheduler
+/*
+OCISchedulersApiService Creates instance scheduler
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance id
 @param command Create instance scheduler command
-@return InstanceScheduler*/
+@return InstanceScheduler
+*/
 func (a *OCISchedulersApiService) InstanceSchedulersPost(ctx context.Context, id int32, command CreateUpdateInstanceSchedulerCommand) (InstanceScheduler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -298,11 +310,13 @@ func (a *OCISchedulersApiService) InstanceSchedulersPost(ctx context.Context, id
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCISchedulersApiService Updates instance scheduler
+/*
+OCISchedulersApiService Updates instance scheduler
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Scheduler id
 @param command Create instance scheduler command
-@return InstanceScheduler*/
+@return InstanceScheduler
+*/
 func (a *OCISchedulersApiService) InstanceSchedulersPut(ctx context.Context, id int32, command CreateUpdateInstanceSchedulerCommand) (InstanceScheduler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -366,18 +380,22 @@ func (a *OCISchedulersApiService) InstanceSchedulersPut(ctx context.Context, id 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCISchedulersApiService Gets schedulers by search params
+/*
+OCISchedulersApiService Gets schedulers by search params
 Acceptable order values are: Name, CreationDate, StartDate, Instance, ActionType
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "instanceId" (int32) Instance id filter
-    @param "actionTypeId" (int32) Action type id filter
-    @param "query" (string) Query
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionInstanceScheduler*/
+
+	@param "instanceId" (int32) Instance id filter
+	@param "actionTypeId" (int32) Action type id filter
+	@param "query" (string) Query
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionInstanceScheduler
+*/
 func (a *OCISchedulersApiService) InstancesGetSchedulers(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionInstanceScheduler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")

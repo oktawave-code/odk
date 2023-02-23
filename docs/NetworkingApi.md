@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**OpnsDelete**](NetworkingApi.md#OpnsDelete) | **Delete** /opns/{id} | Deletes an OPN
 [**OpnsGet**](NetworkingApi.md#OpnsGet) | **Get** /opns | Returns OPNs
+[**OpnsGet_0**](NetworkingApi.md#OpnsGet_0) | **Get** /opns/{id} | Gets Opn
 [**OpnsPost**](NetworkingApi.md#OpnsPost) | **Post** /opns | Creates an OPN
 [**OpnsPut**](NetworkingApi.md#OpnsPut) | **Put** /opns/{id} | Updates OPN
 
@@ -64,6 +65,41 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiCollectionOpn**](ApiCollection[Opn].md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **OpnsGet_0**
+> Opn OpnsGet_0(ctx, id, optional)
+Gets Opn
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **id** | **int32**| Opn id | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int32**| Opn id | 
+ **fields** | **string**| Response fields filter | 
+
+### Return type
+
+[**Opn**](Opn.md)
 
 ### Authorization
 

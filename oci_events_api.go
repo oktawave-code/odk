@@ -28,10 +28,12 @@ var (
 
 type OCIEventsApiService service
 
-/* OCIEventsApiService Deletes event
+/*
+OCIEventsApiService Deletes event
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Event id
-@return */
+@return
+*/
 func (a *OCIEventsApiService) EventsDelete(ctx context.Context, id int32) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -83,12 +85,16 @@ func (a *OCIEventsApiService) EventsDelete(ctx context.Context, id int32) (*http
 	return localVarHttpResponse, err
 }
 
-/* OCIEventsApiService Returns instance event
+/*
+OCIEventsApiService Returns instance event
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Event id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionInstanceEvent*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionInstanceEvent
+*/
 func (a *OCIEventsApiService) EventsGetEvent(ctx context.Context, id int64, localVarOptionals map[string]interface{}) (ApiCollectionInstanceEvent, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -157,18 +163,22 @@ func (a *OCIEventsApiService) EventsGetEvent(ctx context.Context, id int64, loca
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIEventsApiService Returns all instances events
+/*
+OCIEventsApiService Returns all instances events
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "typeIds" (string) Type IDs
-    @param "statusIds" (string) Status IDs
-    @param "dateFrom" (time.Time) Date from
-    @param "dateTo" (time.Time) Date to
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionInstanceEvent*/
+
+	@param "typeIds" (string) Type IDs
+	@param "statusIds" (string) Status IDs
+	@param "dateFrom" (time.Time) Date from
+	@param "dateTo" (time.Time) Date to
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionInstanceEvent
+*/
 func (a *OCIEventsApiService) EventsGetEvents(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionInstanceEvent, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -278,11 +288,13 @@ func (a *OCIEventsApiService) EventsGetEvents(ctx context.Context, localVarOptio
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIEventsApiService Deletes instance events
+/*
+OCIEventsApiService Deletes instance events
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance id
 @param command Delete events command
-@return */
+@return
+*/
 func (a *OCIEventsApiService) InstancesDeleteEvents(ctx context.Context, id int32, command DeleteEventsCommand) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -336,20 +348,24 @@ func (a *OCIEventsApiService) InstancesDeleteEvents(ctx context.Context, id int3
 	return localVarHttpResponse, err
 }
 
-/* OCIEventsApiService Returns instance events
+/*
+OCIEventsApiService Returns instance events
 Acceptable order values are: OperationType, User, Date, Instance, OperationStatus
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance identifier
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "userId" (int32) User id
-    @param "dateFrom" (time.Time) Date from
-    @param "dateTo" (time.Time) Date to
-    @param "operationTypeId" (int32) Operation type id
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionInstanceEvent*/
+
+	@param "userId" (int32) User id
+	@param "dateFrom" (time.Time) Date from
+	@param "dateTo" (time.Time) Date to
+	@param "operationTypeId" (int32) Operation type id
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionInstanceEvent
+*/
 func (a *OCIEventsApiService) InstancesGetEvents(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionInstanceEvent, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")

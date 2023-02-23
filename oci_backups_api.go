@@ -27,17 +27,21 @@ var (
 
 type OCIBackupsApiService service
 
-/* OCIBackupsApiService Returns exports list
+/*
+OCIBackupsApiService Returns exports list
 Acceptable order values are: TotalSpaceCapacity, CreationDate, OcsLocation, Name, StartDate, Status.
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "instanceId" (int32) Instance id
-    @param "statusId" (int32) Status id
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionExport*/
+
+	@param "instanceId" (int32) Instance id
+	@param "statusId" (int32) Status id
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionExport
+*/
 func (a *OCIBackupsApiService) ExportsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionExport, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -135,12 +139,16 @@ func (a *OCIBackupsApiService) ExportsGet(ctx context.Context, localVarOptionals
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIBackupsApiService Gets export by identifier
+/*
+OCIBackupsApiService Gets export by identifier
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Export id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return Export*/
+
+	@param "fields" (string) Response fields filter
+
+@return Export
+*/
 func (a *OCIBackupsApiService) ExportsGet_1(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Export, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -209,10 +217,12 @@ func (a *OCIBackupsApiService) ExportsGet_1(ctx context.Context, id int32, local
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIBackupsApiService Creates an import
+/*
+OCIBackupsApiService Creates an import
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create import command
-@return ModelImport*/
+@return ModelImport
+*/
 func (a *OCIBackupsApiService) ImportsCreateImport(ctx context.Context, command CreateImportCommand) (ModelImport, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -275,10 +285,12 @@ func (a *OCIBackupsApiService) ImportsCreateImport(ctx context.Context, command 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIBackupsApiService Deletes an import
+/*
+OCIBackupsApiService Deletes an import
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Import identifier
-@return */
+@return
+*/
 func (a *OCIBackupsApiService) ImportsDeleteImport(ctx context.Context, id int32) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -330,12 +342,16 @@ func (a *OCIBackupsApiService) ImportsDeleteImport(ctx context.Context, id int32
 	return localVarHttpResponse, err
 }
 
-/* OCIBackupsApiService Returns an import
+/*
+OCIBackupsApiService Returns an import
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Import identifier
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ModelImport*/
+
+	@param "fields" (string) Response fields filter
+
+@return ModelImport
+*/
 func (a *OCIBackupsApiService) ImportsGetImport(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ModelImport, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -404,12 +420,16 @@ func (a *OCIBackupsApiService) ImportsGetImport(ctx context.Context, id int32, l
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIBackupsApiService Returns an import disks
+/*
+OCIBackupsApiService Returns an import disks
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Import identifier
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionImportDisk*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionImportDisk
+*/
 func (a *OCIBackupsApiService) ImportsGetImportDisks(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionImportDisk, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -478,15 +498,19 @@ func (a *OCIBackupsApiService) ImportsGetImportDisks(ctx context.Context, id int
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIBackupsApiService Returns a list of imports
+/*
+OCIBackupsApiService Returns a list of imports
 Acceptable order values are: Name, Status, CreationDate, DisksCount, NetworkInterfacesCount, Size
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionImport*/
+
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionImport
+*/
 func (a *OCIBackupsApiService) ImportsGetImports(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionImport, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -572,11 +596,13 @@ func (a *OCIBackupsApiService) ImportsGetImports(ctx context.Context, localVarOp
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIBackupsApiService Run an import
+/*
+OCIBackupsApiService Run an import
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Import identifier
 @param command Run import command
-@return Ticket*/
+@return Ticket
+*/
 func (a *OCIBackupsApiService) ImportsRunImport(ctx context.Context, id int32, command RunImportCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -640,16 +666,20 @@ func (a *OCIBackupsApiService) ImportsRunImport(ctx context.Context, id int32, c
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIBackupsApiService Returns instace&#39;s exports
+/*
+OCIBackupsApiService Returns instace&#39;s exports
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "statusId" (int32) Status id
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionExport*/
+
+	@param "statusId" (int32) Status id
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionExport
+*/
 func (a *OCIBackupsApiService) InstancesGetExports(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionExport, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -742,11 +772,13 @@ func (a *OCIBackupsApiService) InstancesGetExports(ctx context.Context, id int32
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIBackupsApiService Create export
+/*
+OCIBackupsApiService Create export
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance id
 @param command Create export command
-@return Export*/
+@return Export
+*/
 func (a *OCIBackupsApiService) InstancesPostExport(ctx context.Context, id int32, command CreateExportCommand) (Export, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")

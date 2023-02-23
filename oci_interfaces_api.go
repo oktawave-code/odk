@@ -27,11 +27,13 @@ var (
 
 type OCIInterfacesApiService service
 
-/* OCIInterfacesApiService Attach instance to OPN
+/*
+OCIInterfacesApiService Attach instance to OPN
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance identifier
 @param command Attach instance to OPN command
-@return Ticket*/
+@return Ticket
+*/
 func (a *OCIInterfacesApiService) InstancesAttachOpn(ctx context.Context, id int32, command AttachInstanceToOpnCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -95,10 +97,12 @@ func (a *OCIInterfacesApiService) InstancesAttachOpn(ctx context.Context, id int
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService [Deprecated] Book new IP address
+/*
+OCIInterfacesApiService [Deprecated] Book new IP address
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command
-@return Ip*/
+@return Ip
+*/
 func (a *OCIInterfacesApiService) InstancesBookNewIp(ctx context.Context, command BookIpCommand) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -161,12 +165,16 @@ func (a *OCIInterfacesApiService) InstancesBookNewIp(ctx context.Context, comman
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService [Deprecated] Change IP subregion
+/*
+OCIInterfacesApiService [Deprecated] Change IP subregion
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param ipId IP address identifier
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "subregionId" (int32) Subregion Id
-@return Ticket*/
+
+	@param "subregionId" (int32) Subregion Id
+
+@return Ticket
+*/
 func (a *OCIInterfacesApiService) InstancesChangeIpSubregionTicket(ctx context.Context, ipId int32, localVarOptionals map[string]interface{}) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -235,11 +243,13 @@ func (a *OCIInterfacesApiService) InstancesChangeIpSubregionTicket(ctx context.C
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService Change OPN on network interface
+/*
+OCIInterfacesApiService Change OPN on network interface
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance identifier
 @param command Change OPN command
-@return Ticket*/
+@return Ticket
+*/
 func (a *OCIInterfacesApiService) InstancesChangeOpn(ctx context.Context, id int32, command ChangeOpnCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -303,10 +313,12 @@ func (a *OCIInterfacesApiService) InstancesChangeOpn(ctx context.Context, id int
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService [Deprecated] Deletes IP address
+/*
+OCIInterfacesApiService [Deprecated] Deletes IP address
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id IP address identifier
-@return Object*/
+@return Object
+*/
 func (a *OCIInterfacesApiService) InstancesDeleteIp(ctx context.Context, id int32) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -368,11 +380,13 @@ func (a *OCIInterfacesApiService) InstancesDeleteIp(ctx context.Context, id int3
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService Detach instance from OPN
+/*
+OCIInterfacesApiService Detach instance from OPN
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance identifier
 @param command Detach instance from OPN command
-@return Ticket*/
+@return Ticket
+*/
 func (a *OCIInterfacesApiService) InstancesDetachFromOpn(ctx context.Context, id int32, command DetachInstanceFromOpnCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -436,15 +450,19 @@ func (a *OCIInterfacesApiService) InstancesDetachFromOpn(ctx context.Context, id
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService Returns all network interfaces
+/*
+OCIInterfacesApiService Returns all network interfaces
 Acceptable order values are: MacAddress, Instance, Opn, Address
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return NetworkInterface*/
+
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return NetworkInterface
+*/
 func (a *OCIInterfacesApiService) InstancesGetAllNetworkInterfaces(ctx context.Context, localVarOptionals map[string]interface{}) (NetworkInterface, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -530,12 +548,16 @@ func (a *OCIInterfacesApiService) InstancesGetAllNetworkInterfaces(ctx context.C
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService [Deprecated] Returns IP by id
+/*
+OCIInterfacesApiService [Deprecated] Returns IP by id
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return Ip*/
+
+	@param "fields" (string) Response fields filter
+
+@return Ip
+*/
 func (a *OCIInterfacesApiService) InstancesGetInstanceIp(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -604,16 +626,20 @@ func (a *OCIInterfacesApiService) InstancesGetInstanceIp(ctx context.Context, id
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService Returns instance public ip list
+/*
+OCIInterfacesApiService Returns instance public ip list
 Acceptable order values are: Address, Subregion, Comment, Type
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionIp*/
+
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionIp
+*/
 func (a *OCIInterfacesApiService) InstancesGetInstanceIps(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionIp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -700,16 +726,20 @@ func (a *OCIInterfacesApiService) InstancesGetInstanceIps(ctx context.Context, i
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService Returns instance network interfaces
+/*
+OCIInterfacesApiService Returns instance network interfaces
 Acceptable order values are: MacAddress, Instance, Opn, Address
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return NetworkInterface*/
+
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return NetworkInterface
+*/
 func (a *OCIInterfacesApiService) InstancesGetInstanceNetworkInterfaces(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (NetworkInterface, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -796,17 +826,21 @@ func (a *OCIInterfacesApiService) InstancesGetInstanceNetworkInterfaces(ctx cont
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService [Deprecated] Returns public ip list
+/*
+OCIInterfacesApiService [Deprecated] Returns public ip list
 Acceptable order values are: Address, Subregion, Comment, Type.
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "instanceId" (int32) Instance id
-    @param "onlyFree" (bool) Only free
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionIp*/
+
+	@param "instanceId" (int32) Instance id
+	@param "onlyFree" (bool) Only free
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionIp
+*/
 func (a *OCIInterfacesApiService) InstancesGetIps(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionIp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -904,17 +938,21 @@ func (a *OCIInterfacesApiService) InstancesGetIps(ctx context.Context, localVarO
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService Returns instance OPN&#39;s
+/*
+OCIInterfacesApiService Returns instance OPN&#39;s
 Acceptable order values are: Name
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "query" (string) Query
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionOpn*/
+
+	@param "query" (string) Query
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionOpn
+*/
 func (a *OCIInterfacesApiService) InstancesGetOpns(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionOpn, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1007,13 +1045,17 @@ func (a *OCIInterfacesApiService) InstancesGetOpns(ctx context.Context, id int32
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService [Deprecated] Attach public IP to instance
+/*
+OCIInterfacesApiService [Deprecated] Attach public IP to instance
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance identifier
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "ipId" (int32) IP address identifier. Optional value, if null random ip will be attached.
-    @param "ipV6" (bool) If attach IPv6 only. Optional value, if null IPv4 and IPv6 will be attached.
-@return Ticket*/
+
+	@param "ipId" (int32) IP address identifier. Optional value, if null random ip will be attached.
+	@param "ipV6" (bool) If attach IPv6 only. Optional value, if null IPv4 and IPv6 will be attached.
+
+@return Ticket
+*/
 func (a *OCIInterfacesApiService) InstancesPostAttachIpTicket(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -1088,11 +1130,13 @@ func (a *OCIInterfacesApiService) InstancesPostAttachIpTicket(ctx context.Contex
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService [Deprecated] Detach public IP from instance
+/*
+OCIInterfacesApiService [Deprecated] Detach public IP from instance
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance identifier
 @param ipId IP address identifier
-@return Ticket*/
+@return Ticket
+*/
 func (a *OCIInterfacesApiService) InstancesPostDetachIpTicket(ctx context.Context, id int32, ipId int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -1155,11 +1199,13 @@ func (a *OCIInterfacesApiService) InstancesPostDetachIpTicket(ctx context.Contex
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIInterfacesApiService [Deprecated] Updates IP address
+/*
+OCIInterfacesApiService [Deprecated] Updates IP address
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id
 @param command
-@return Object*/
+@return Object
+*/
 func (a *OCIInterfacesApiService) InstancesUpdateIp(ctx context.Context, id int32, command UpdateIpCommand) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")

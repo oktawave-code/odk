@@ -27,10 +27,12 @@ var (
 
 type OCITemplatesApiService service
 
-/* OCITemplatesApiService Deletes template
+/*
+OCITemplatesApiService Deletes template
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Template id
-@return Object*/
+@return Object
+*/
 func (a *OCITemplatesApiService) TemplatesDelete(ctx context.Context, id int32) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -92,17 +94,21 @@ func (a *OCITemplatesApiService) TemplatesDelete(ctx context.Context, id int32) 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCITemplatesApiService Returns templates list
+/*
+OCITemplatesApiService Returns templates list
 Acceptable order values are: Name, Version, creationDate, SystemCategory.
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "source" (string) Source
-    @param "query" (string) Query
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionTemplate*/
+
+	@param "source" (string) Source
+	@param "query" (string) Query
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionTemplate
+*/
 func (a *OCITemplatesApiService) TemplatesGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionTemplate, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -200,12 +206,16 @@ func (a *OCITemplatesApiService) TemplatesGet(ctx context.Context, localVarOptio
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCITemplatesApiService Returns template by identifier
+/*
+OCITemplatesApiService Returns template by identifier
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Template identifier
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return Template*/
+
+	@param "fields" (string) Response fields filter
+
+@return Template
+*/
 func (a *OCITemplatesApiService) TemplatesGet_1(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Template, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -274,11 +284,13 @@ func (a *OCITemplatesApiService) TemplatesGet_1(ctx context.Context, id int32, l
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCITemplatesApiService Updates template
+/*
+OCITemplatesApiService Updates template
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Template id
 @param command Update command
-@return Template*/
+@return Template
+*/
 func (a *OCITemplatesApiService) TemplatesPut(ctx context.Context, id int32, command UpdateTemplateCommand) (Template, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")

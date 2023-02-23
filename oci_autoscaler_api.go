@@ -27,10 +27,12 @@ var (
 
 type OCIAutoscalerApiService service
 
-/* OCIAutoscalerApiService Disables autoscaling for instance
+/*
+OCIAutoscalerApiService Disables autoscaling for instance
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance id
-@return Ticket*/
+@return Ticket
+*/
 func (a *OCIAutoscalerApiService) InstancesDisableInstanceAutoscaler(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -92,10 +94,12 @@ func (a *OCIAutoscalerApiService) InstancesDisableInstanceAutoscaler(ctx context
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIAutoscalerApiService Enables autoscaling for instance
+/*
+OCIAutoscalerApiService Enables autoscaling for instance
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance id
-@return Ticket*/
+@return Ticket
+*/
 func (a *OCIAutoscalerApiService) InstancesEnableInstanceAutoscaler(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -157,12 +161,16 @@ func (a *OCIAutoscalerApiService) InstancesEnableInstanceAutoscaler(ctx context.
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIAutoscalerApiService Returns instace autoscaler configuration
+/*
+OCIAutoscalerApiService Returns instace autoscaler configuration
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return Autoscaler*/
+
+	@param "fields" (string) Response fields filter
+
+@return Autoscaler
+*/
 func (a *OCIAutoscalerApiService) InstancesGetAutoscaler(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Autoscaler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -231,11 +239,13 @@ func (a *OCIAutoscalerApiService) InstancesGetAutoscaler(ctx context.Context, id
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIAutoscalerApiService Updates instance autoscaler configuration
+/*
+OCIAutoscalerApiService Updates instance autoscaler configuration
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id
 @param command
-@return Object*/
+@return Object
+*/
 func (a *OCIAutoscalerApiService) InstancesUpdateAutoscaler(ctx context.Context, id int32, command AutoscalerUpdateCommand) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")

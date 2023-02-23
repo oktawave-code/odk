@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **CpuNumber** | **int32** | Number of CPUs | [optional] [default to null]
 **RamMb** | **int32** | Memory in MB | [optional] [default to null]
 **SupportType** | [***Software**](Software.md) | Support type | [optional] [default to null]
+**IsHotPlugEnabled** | **bool** | Is hot plug enabled | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

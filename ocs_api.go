@@ -26,11 +26,15 @@ var (
 
 type OCSApiService service
 
-/* OCSApiService Returns the list of OCS projects
+/*
+OCSApiService Returns the list of OCS projects
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionOcsProject*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionOcsProject
+*/
 func (a *OCSApiService) OcsGetProjects(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionOcsProject, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")

@@ -4,6 +4,7 @@ All URIs are relative to *https://api.oktawave.com/services*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**InstancesChangeHotPlugSetting**](OCIApi.md#InstancesChangeHotPlugSetting) | **Post** /instances/{id}/change_hotplug_ticket | Change instance hotplug setting
 [**InstancesChangeName**](OCIApi.md#InstancesChangeName) | **Post** /instances/{id}/change_name_ticket | Change instance name
 [**InstancesChangeSubregion**](OCIApi.md#InstancesChangeSubregion) | **Post** /instances/{id}/change_subregion_ticket | Change instance subregion
 [**InstancesChangeType**](OCIApi.md#InstancesChangeType) | **Post** /instances/{id}/change_scsi_controllers_type_ticket | Change SCSI controllers type
@@ -23,6 +24,7 @@ Method | HTTP request | Description
 [**InstancesGetScreenshot**](OCIApi.md#InstancesGetScreenshot) | **Get** /instances/{id}/screenshot | Returns instance screenshot
 [**InstancesGetSoftware**](OCIApi.md#InstancesGetSoftware) | **Get** /instances/software | Returns software
 [**InstancesGetSshKeys**](OCIApi.md#InstancesGetSshKeys) | **Get** /instances/{id}/ssh_keys | Returns SSH keys uploaded to instances
+[**InstancesGetTemplateByBaseVirtualMachineId**](OCIApi.md#InstancesGetTemplateByBaseVirtualMachineId) | **Get** /instances/{id}/template | Returns the template by source virtual machine id
 [**InstancesGetVncConnection**](OCIApi.md#InstancesGetVncConnection) | **Get** /instances/{id}/remote_console_connection | Returns remote console connection
 [**InstancesGet_0**](OCIApi.md#InstancesGet_0) | **Get** /instances/{id} | Returns instance by identifier
 [**InstancesPost**](OCIApi.md#InstancesPost) | **Post** /instances | Creates instance
@@ -33,6 +35,33 @@ Method | HTTP request | Description
 [**InstancesShutdown**](OCIApi.md#InstancesShutdown) | **Post** /instances/{id}/shutdown_ticket | Shutdown instance
 [**InstancesUpdateVncConnection**](OCIApi.md#InstancesUpdateVncConnection) | **Put** /instances/{id}/remote_console_connection | Updates remote console connection
 
+
+# **InstancesChangeHotPlugSetting**
+> Ticket InstancesChangeHotPlugSetting(ctx, id, hotPlugEnabled)
+Change instance hotplug setting
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **id** | **int32**|  | 
+  **hotPlugEnabled** | **bool**| Is hot plug enabled | 
+
+### Return type
+
+[**Ticket**](Ticket.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **InstancesChangeName**
 > Ticket InstancesChangeName(ctx, id, name)
@@ -643,6 +672,41 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ApiCollectionInstanceSshKey**](ApiCollection[InstanceSshKey].md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **InstancesGetTemplateByBaseVirtualMachineId**
+> Template InstancesGetTemplateByBaseVirtualMachineId(ctx, id, optional)
+Returns the template by source virtual machine id
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for logging, tracing, authentication, etc.
+  **id** | **int32**|  | 
+ **optional** | **map[string]interface{}** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a map[string]interface{}.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int32**|  | 
+ **fields** | **string**| Response fields filter | 
+
+### Return type
+
+[**Template**](Template.md)
 
 ### Authorization
 

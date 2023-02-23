@@ -93,4 +93,7 @@ type Instance struct {
 
 	// Support type
 	SupportType *Software `json:"SupportType,omitempty"`
+
+	// Is hot plug enabled
+	IsHotPlugEnabled bool `json:"IsHotPlugEnabled,omitempty"`
 }

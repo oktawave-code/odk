@@ -27,10 +27,12 @@ var (
 
 type NetworkingApiService service
 
-/* NetworkingApiService Deletes an OPN
+/*
+NetworkingApiService Deletes an OPN
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id OPN id
-@return Ticket*/
+@return Ticket
+*/
 func (a *NetworkingApiService) OpnsDelete(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -92,17 +94,21 @@ func (a *NetworkingApiService) OpnsDelete(ctx context.Context, id int32) (Ticket
 	return successPayload, localVarHttpResponse, err
 }
 
-/* NetworkingApiService Returns OPNs
+/*
+NetworkingApiService Returns OPNs
 Acceptable order values are: Name
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "instanceId" (int32) Instance id
-    @param "query" (string) Query
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionOpn*/
+
+	@param "instanceId" (int32) Instance id
+	@param "query" (string) Query
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionOpn
+*/
 func (a *NetworkingApiService) OpnsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionOpn, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -200,10 +206,90 @@ func (a *NetworkingApiService) OpnsGet(ctx context.Context, localVarOptionals ma
 	return successPayload, localVarHttpResponse, err
 }
 
-/* NetworkingApiService Creates an OPN
+/*
+NetworkingApiService Gets Opn
+* @param ctx context.Context for authentication, logging, tracing, etc.
+@param id Opn id
+@param optional (nil or map[string]interface{}) with one or more of:
+
+	@param "fields" (string) Response fields filter
+
+@return Opn
+*/
+func (a *NetworkingApiService) OpnsGet_1(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Opn, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		successPayload     Opn
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/opns/{id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", fmt.Sprintf("%v", id), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if err := typeCheckParameter(localVarOptionals["fields"], "string", "fields"); err != nil {
+		return successPayload, nil, err
+	}
+
+	if localVarTempParam, localVarOk := localVarOptionals["fields"].(string); localVarOk {
+		localVarQueryParams.Add("fields", parameterToString(localVarTempParam, ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+		"text/json",
+		"application/xml",
+		"text/xml",
+	}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+	return successPayload, localVarHttpResponse, err
+}
+
+/*
+NetworkingApiService Creates an OPN
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create OPN command
-@return Ticket*/
+@return Ticket
+*/
 func (a *NetworkingApiService) OpnsPost(ctx context.Context, command CreateOpnCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -266,11 +352,13 @@ func (a *NetworkingApiService) OpnsPost(ctx context.Context, command CreateOpnCo
 	return successPayload, localVarHttpResponse, err
 }
 
-/* NetworkingApiService Updates OPN
+/*
+NetworkingApiService Updates OPN
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id OPN id
 @param command Update OPN command
-@return Object*/
+@return Object
+*/
 func (a *NetworkingApiService) OpnsPut(ctx context.Context, id int32, command UpdateOpnCommand) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")

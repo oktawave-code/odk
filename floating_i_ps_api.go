@@ -27,10 +27,12 @@ var (
 
 type FloatingIPsApiService service
 
-/* FloatingIPsApiService Book new IP address
+/*
+FloatingIPsApiService Book new IP address
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command
-@return Ip*/
+@return Ip
+*/
 func (a *FloatingIPsApiService) FloatingIpsBookNewIp(ctx context.Context, command BookIpCommand) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -93,12 +95,16 @@ func (a *FloatingIPsApiService) FloatingIpsBookNewIp(ctx context.Context, comman
 	return successPayload, localVarHttpResponse, err
 }
 
-/* FloatingIPsApiService Change IP subregion
+/*
+FloatingIPsApiService Change IP subregion
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param ipV4 IPv4 address identifier.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "subregionId" (int32) Subregion Id
-@return Ticket*/
+
+	@param "subregionId" (int32) Subregion Id
+
+@return Ticket
+*/
 func (a *FloatingIPsApiService) FloatingIpsChangeIpSubregionTicket(ctx context.Context, ipV4 string, localVarOptionals map[string]interface{}) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -167,10 +173,12 @@ func (a *FloatingIPsApiService) FloatingIpsChangeIpSubregionTicket(ctx context.C
 	return successPayload, localVarHttpResponse, err
 }
 
-/* FloatingIPsApiService Deletes IP address
+/*
+FloatingIPsApiService Deletes IP address
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param ip IPv4 address
-@return Object*/
+@return Object
+*/
 func (a *FloatingIPsApiService) FloatingIpsDeleteIp(ctx context.Context, ip string) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -232,12 +240,16 @@ func (a *FloatingIPsApiService) FloatingIpsDeleteIp(ctx context.Context, ip stri
 	return successPayload, localVarHttpResponse, err
 }
 
-/* FloatingIPsApiService Returns IP by Ipv4 address
+/*
+FloatingIPsApiService Returns IP by Ipv4 address
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param ip
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return Ip*/
+
+	@param "fields" (string) Response fields filter
+
+@return Ip
+*/
 func (a *FloatingIPsApiService) FloatingIpsGetIp(ctx context.Context, ip string, localVarOptionals map[string]interface{}) (Ip, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -306,17 +318,21 @@ func (a *FloatingIPsApiService) FloatingIpsGetIp(ctx context.Context, ip string,
 	return successPayload, localVarHttpResponse, err
 }
 
-/* FloatingIPsApiService Returns public ip list
+/*
+FloatingIPsApiService Returns public ip list
 Acceptable order values are: Address, Subregion, Comment, Type.
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "instanceId" (int32) Instance id
-    @param "onlyFree" (bool) Only free
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionIp*/
+
+	@param "instanceId" (int32) Instance id
+	@param "onlyFree" (bool) Only free
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionIp
+*/
 func (a *FloatingIPsApiService) FloatingIpsGetIps(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionIp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -414,13 +430,17 @@ func (a *FloatingIPsApiService) FloatingIpsGetIps(ctx context.Context, localVarO
 	return successPayload, localVarHttpResponse, err
 }
 
-/* FloatingIPsApiService Attach public IP to instance
+/*
+FloatingIPsApiService Attach public IP to instance
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param instanceId Instance identifier.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "ipV4" (string) IPv4 address identifier. Optional value, if null random ip will be attached.
-    @param "ipV6Only" (bool) If attach IPv6 only. Optional value, if null IPv4 and IPv6 will be attached.
-@return Ticket*/
+
+	@param "ipV4" (string) IPv4 address identifier. Optional value, if null random ip will be attached.
+	@param "ipV6Only" (bool) If attach IPv6 only. Optional value, if null IPv4 and IPv6 will be attached.
+
+@return Ticket
+*/
 func (a *FloatingIPsApiService) FloatingIpsPostAttachIpTicket(ctx context.Context, instanceId int32, localVarOptionals map[string]interface{}) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -495,11 +515,13 @@ func (a *FloatingIPsApiService) FloatingIpsPostAttachIpTicket(ctx context.Contex
 	return successPayload, localVarHttpResponse, err
 }
 
-/* FloatingIPsApiService Detach public IP from instance
+/*
+FloatingIPsApiService Detach public IP from instance
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param ipV4 IPv4 address identifier
 @param instanceId Instance identifier.
-@return Ticket*/
+@return Ticket
+*/
 func (a *FloatingIPsApiService) FloatingIpsPostDetachIpTicket(ctx context.Context, ipV4 string, instanceId int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -562,11 +584,13 @@ func (a *FloatingIPsApiService) FloatingIpsPostDetachIpTicket(ctx context.Contex
 	return successPayload, localVarHttpResponse, err
 }
 
-/* FloatingIPsApiService Updates IP address
+/*
+FloatingIPsApiService Updates IP address
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param ip
 @param command
-@return Object*/
+@return Object
+*/
 func (a *FloatingIPsApiService) FloatingIpsUpdateIp(ctx context.Context, ip string, command UpdateIpCommand) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")

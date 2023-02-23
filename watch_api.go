@@ -27,10 +27,12 @@ var (
 
 type WatchApiService service
 
-/* WatchApiService Add monitoring sensor
+/*
+WatchApiService Add monitoring sensor
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param station Station
-@return MonitoringSensor*/
+@return MonitoringSensor
+*/
 func (a *WatchApiService) WatchAddSelectedMonitoringStations(ctx context.Context, station AssignNewMonitoringSensorCommand) (MonitoringSensor, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -93,10 +95,12 @@ func (a *WatchApiService) WatchAddSelectedMonitoringStations(ctx context.Context
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Creates dns health check
+/*
+WatchApiService Creates dns health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create dns health check command
-@return HealthCheckDns*/
+@return HealthCheckDns
+*/
 func (a *WatchApiService) WatchCreateDnsHealthCheck(ctx context.Context, command CreateUpdateHealthCheckDnsCommand) (HealthCheckDns, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -159,10 +163,12 @@ func (a *WatchApiService) WatchCreateDnsHealthCheck(ctx context.Context, command
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Creates FullPage health check
+/*
+WatchApiService Creates FullPage health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create FullPage health check command
-@return HealthCheckFullPage*/
+@return HealthCheckFullPage
+*/
 func (a *WatchApiService) WatchCreateFullPageHealthCheck(ctx context.Context, command CreateUpdateHealthCheckFullPageCommand) (HealthCheckFullPage, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -225,10 +231,12 @@ func (a *WatchApiService) WatchCreateFullPageHealthCheck(ctx context.Context, co
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Creates FullPage Https health check
+/*
+WatchApiService Creates FullPage Https health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create FullPage health check command
-@return HealthCheckFullPage*/
+@return HealthCheckFullPage
+*/
 func (a *WatchApiService) WatchCreateFullPageHttpsHealthCheck(ctx context.Context, command CreateUpdateHealthCheckFullPageHttpsCommand) (HealthCheckFullPage, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -291,10 +299,12 @@ func (a *WatchApiService) WatchCreateFullPageHttpsHealthCheck(ctx context.Contex
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Creates health check notification
+/*
+WatchApiService Creates health check notification
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create health check notification command
-@return HealthCheckNotification*/
+@return HealthCheckNotification
+*/
 func (a *WatchApiService) WatchCreateHealthCheckNotification(ctx context.Context, command CreateUpdateHealthCheckNotificationCommand) (HealthCheckNotification, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -357,10 +367,12 @@ func (a *WatchApiService) WatchCreateHealthCheckNotification(ctx context.Context
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Creates http health check
+/*
+WatchApiService Creates http health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create http health check command
-@return HealthCheckHttp*/
+@return HealthCheckHttp
+*/
 func (a *WatchApiService) WatchCreateHttpHealthCheck(ctx context.Context, command CreateUpdateHealthCheckHttpCommand) (HealthCheckHttp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -423,10 +435,12 @@ func (a *WatchApiService) WatchCreateHttpHealthCheck(ctx context.Context, comman
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Creates https health check
+/*
+WatchApiService Creates https health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create https health check command
-@return HealthCheckHttp*/
+@return HealthCheckHttp
+*/
 func (a *WatchApiService) WatchCreateHttpsHealthCheck(ctx context.Context, command CreateUpdateHealthCheckHttpsCommand) (HealthCheckHttp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -489,10 +503,12 @@ func (a *WatchApiService) WatchCreateHttpsHealthCheck(ctx context.Context, comma
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Creates imap health check
+/*
+WatchApiService Creates imap health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create imap health check command
-@return HealthCheckImap*/
+@return HealthCheckImap
+*/
 func (a *WatchApiService) WatchCreateImapHealthCheck(ctx context.Context, command CreateUpdateHealthCheckImapCommand) (HealthCheckImap, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -555,10 +571,12 @@ func (a *WatchApiService) WatchCreateImapHealthCheck(ctx context.Context, comman
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Creates imap ssl health check
+/*
+WatchApiService Creates imap ssl health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create imap ssl health check command
-@return HealthCheckImap*/
+@return HealthCheckImap
+*/
 func (a *WatchApiService) WatchCreateImapSslHealthCheck(ctx context.Context, command CreateUpdateHealthCheckImapSslCommand) (HealthCheckImap, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -621,10 +639,12 @@ func (a *WatchApiService) WatchCreateImapSslHealthCheck(ctx context.Context, com
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Creates ping health check
+/*
+WatchApiService Creates ping health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create ping health check command
-@return HealthCheckPing*/
+@return HealthCheckPing
+*/
 func (a *WatchApiService) WatchCreatePingHealthCheck(ctx context.Context, command CreateUpdateHealthCheckPingCommand) (HealthCheckPing, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -687,10 +707,12 @@ func (a *WatchApiService) WatchCreatePingHealthCheck(ctx context.Context, comman
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Creates sip health check
+/*
+WatchApiService Creates sip health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create sip health check command
-@return HealthCheckSip*/
+@return HealthCheckSip
+*/
 func (a *WatchApiService) WatchCreateSipHealthCheck(ctx context.Context, command CreateUpdateHealthCheckSipCommand) (HealthCheckSip, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -753,10 +775,12 @@ func (a *WatchApiService) WatchCreateSipHealthCheck(ctx context.Context, command
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Creates smtp health check
+/*
+WatchApiService Creates smtp health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create smtp health check command
-@return HealthCheckSmtp*/
+@return HealthCheckSmtp
+*/
 func (a *WatchApiService) WatchCreateSmtpHealthCheck(ctx context.Context, command CreateUpdateHealthCheckSmtpCommand) (HealthCheckSmtp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -819,10 +843,12 @@ func (a *WatchApiService) WatchCreateSmtpHealthCheck(ctx context.Context, comman
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Creates Tcp health check
+/*
+WatchApiService Creates Tcp health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create Tcp health check command
-@return HealthCheckTcp*/
+@return HealthCheckTcp
+*/
 func (a *WatchApiService) WatchCreateTcpHealthCheck(ctx context.Context, command CreateUpdateHealthCheckTcpCommand) (HealthCheckTcp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -885,10 +911,12 @@ func (a *WatchApiService) WatchCreateTcpHealthCheck(ctx context.Context, command
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Deletes health check
+/*
+WatchApiService Deletes health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check
-@return */
+@return
+*/
 func (a *WatchApiService) WatchDeleteHealthCheck(ctx context.Context, id int32) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -940,10 +968,12 @@ func (a *WatchApiService) WatchDeleteHealthCheck(ctx context.Context, id int32) 
 	return localVarHttpResponse, err
 }
 
-/* WatchApiService Deletes health check notification
+/*
+WatchApiService Deletes health check notification
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check notification
-@return */
+@return
+*/
 func (a *WatchApiService) WatchDeleteHealthCheckNotification(ctx context.Context, id int32) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -995,10 +1025,12 @@ func (a *WatchApiService) WatchDeleteHealthCheckNotification(ctx context.Context
 	return localVarHttpResponse, err
 }
 
-/* WatchApiService Remove monitoring sensor
+/*
+WatchApiService Remove monitoring sensor
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Sensor id
-@return MonitoringSensor*/
+@return MonitoringSensor
+*/
 func (a *WatchApiService) WatchDeleteSelectedMonitoringStations(ctx context.Context, id int32) (MonitoringSensor, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -1060,11 +1092,15 @@ func (a *WatchApiService) WatchDeleteSelectedMonitoringStations(ctx context.Cont
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Gets all available monitoring sensors
+/*
+WatchApiService Gets all available monitoring sensors
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return MonitoringSensor*/
+
+	@param "fields" (string) Response fields filter
+
+@return MonitoringSensor
+*/
 func (a *WatchApiService) WatchGetAvailableMonitoringStations(ctx context.Context, localVarOptionals map[string]interface{}) (MonitoringSensor, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1132,12 +1168,16 @@ func (a *WatchApiService) WatchGetAvailableMonitoringStations(ctx context.Contex
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns dns health check details
+/*
+WatchApiService Returns dns health check details
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return HealthCheckDns*/
+
+	@param "fields" (string) Response fields filter
+
+@return HealthCheckDns
+*/
 func (a *WatchApiService) WatchGetDnsHealthCheck(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (HealthCheckDns, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1206,12 +1246,16 @@ func (a *WatchApiService) WatchGetDnsHealthCheck(ctx context.Context, id int32, 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns FullPage health check details
+/*
+WatchApiService Returns FullPage health check details
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return HealthCheckFullPage*/
+
+	@param "fields" (string) Response fields filter
+
+@return HealthCheckFullPage
+*/
 func (a *WatchApiService) WatchGetFullPageHealthCheck(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (HealthCheckFullPage, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1280,12 +1324,16 @@ func (a *WatchApiService) WatchGetFullPageHealthCheck(ctx context.Context, id in
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns FullPage Https health check details
+/*
+WatchApiService Returns FullPage Https health check details
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return HealthCheckFullPage*/
+
+	@param "fields" (string) Response fields filter
+
+@return HealthCheckFullPage
+*/
 func (a *WatchApiService) WatchGetFullPageHttpsHealthCheck(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (HealthCheckFullPage, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1354,12 +1402,16 @@ func (a *WatchApiService) WatchGetFullPageHttpsHealthCheck(ctx context.Context, 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns health check
+/*
+WatchApiService Returns health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return HealthCheck*/
+
+	@param "fields" (string) Response fields filter
+
+@return HealthCheck
+*/
 func (a *WatchApiService) WatchGetHealthCheck(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (HealthCheck, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1428,12 +1480,16 @@ func (a *WatchApiService) WatchGetHealthCheck(ctx context.Context, id int32, loc
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns health check notification details
+/*
+WatchApiService Returns health check notification details
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check notification
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return HealthCheckNotification*/
+
+	@param "fields" (string) Response fields filter
+
+@return HealthCheckNotification
+*/
 func (a *WatchApiService) WatchGetHealthCheckNotification(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (HealthCheckNotification, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1502,15 +1558,19 @@ func (a *WatchApiService) WatchGetHealthCheckNotification(ctx context.Context, i
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns a list of configured health check notifications
+/*
+WatchApiService Returns a list of configured health check notifications
 Acceptable order values are: Address, Id
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionHealthCheckNotification*/
+
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionHealthCheckNotification
+*/
 func (a *WatchApiService) WatchGetHealthCheckNotifications(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionHealthCheckNotification, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1596,15 +1656,19 @@ func (a *WatchApiService) WatchGetHealthCheckNotifications(ctx context.Context, 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns a list of configured health checks
+/*
+WatchApiService Returns a list of configured health checks
 Acceptable order values are: Name, Type
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionHealthCheck*/
+
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionHealthCheck
+*/
 func (a *WatchApiService) WatchGetHealthChecks(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionHealthCheck, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1690,12 +1754,16 @@ func (a *WatchApiService) WatchGetHealthChecks(ctx context.Context, localVarOpti
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns http health check details
+/*
+WatchApiService Returns http health check details
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return HealthCheckHttp*/
+
+	@param "fields" (string) Response fields filter
+
+@return HealthCheckHttp
+*/
 func (a *WatchApiService) WatchGetHttpHealthCheck(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (HealthCheckHttp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1764,12 +1832,16 @@ func (a *WatchApiService) WatchGetHttpHealthCheck(ctx context.Context, id int32,
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns https health check details
+/*
+WatchApiService Returns https health check details
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return HealthCheckHttp*/
+
+	@param "fields" (string) Response fields filter
+
+@return HealthCheckHttp
+*/
 func (a *WatchApiService) WatchGetHttpsHealthCheck(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (HealthCheckHttp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1838,12 +1910,16 @@ func (a *WatchApiService) WatchGetHttpsHealthCheck(ctx context.Context, id int32
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns imap health check details
+/*
+WatchApiService Returns imap health check details
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return HealthCheckImap*/
+
+	@param "fields" (string) Response fields filter
+
+@return HealthCheckImap
+*/
 func (a *WatchApiService) WatchGetImapHealthCheck(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (HealthCheckImap, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1912,12 +1988,16 @@ func (a *WatchApiService) WatchGetImapHealthCheck(ctx context.Context, id int32,
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns imap ssl health check details
+/*
+WatchApiService Returns imap ssl health check details
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return HealthCheckImap*/
+
+	@param "fields" (string) Response fields filter
+
+@return HealthCheckImap
+*/
 func (a *WatchApiService) WatchGetImapSslHealthCheck(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (HealthCheckImap, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1986,12 +2066,16 @@ func (a *WatchApiService) WatchGetImapSslHealthCheck(ctx context.Context, id int
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns ping health check details
+/*
+WatchApiService Returns ping health check details
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return HealthCheckPing*/
+
+	@param "fields" (string) Response fields filter
+
+@return HealthCheckPing
+*/
 func (a *WatchApiService) WatchGetPingHealthCheck(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (HealthCheckPing, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -2060,12 +2144,16 @@ func (a *WatchApiService) WatchGetPingHealthCheck(ctx context.Context, id int32,
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Gets selected monitoring sensor
+/*
+WatchApiService Gets selected monitoring sensor
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return MonitoringSensor*/
+
+	@param "fields" (string) Response fields filter
+
+@return MonitoringSensor
+*/
 func (a *WatchApiService) WatchGetSelectedMonitoringStation(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (MonitoringSensor, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -2134,11 +2222,15 @@ func (a *WatchApiService) WatchGetSelectedMonitoringStation(ctx context.Context,
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Gets selected monitoring sensors
+/*
+WatchApiService Gets selected monitoring sensors
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return MonitoringSensor*/
+
+	@param "fields" (string) Response fields filter
+
+@return MonitoringSensor
+*/
 func (a *WatchApiService) WatchGetSelectedMonitoringStations(ctx context.Context, localVarOptionals map[string]interface{}) (MonitoringSensor, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -2206,12 +2298,16 @@ func (a *WatchApiService) WatchGetSelectedMonitoringStations(ctx context.Context
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns sip health check details
+/*
+WatchApiService Returns sip health check details
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return HealthCheckSip*/
+
+	@param "fields" (string) Response fields filter
+
+@return HealthCheckSip
+*/
 func (a *WatchApiService) WatchGetSipHealthCheck(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (HealthCheckSip, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -2280,12 +2376,16 @@ func (a *WatchApiService) WatchGetSipHealthCheck(ctx context.Context, id int32, 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns smtp health check details
+/*
+WatchApiService Returns smtp health check details
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return HealthCheckSmtp*/
+
+	@param "fields" (string) Response fields filter
+
+@return HealthCheckSmtp
+*/
 func (a *WatchApiService) WatchGetSmtpHealthCheck(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (HealthCheckSmtp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -2354,12 +2454,16 @@ func (a *WatchApiService) WatchGetSmtpHealthCheck(ctx context.Context, id int32,
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Returns tcp health check details
+/*
+WatchApiService Returns tcp health check details
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a health check
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return HealthCheckTcp*/
+
+	@param "fields" (string) Response fields filter
+
+@return HealthCheckTcp
+*/
 func (a *WatchApiService) WatchGetTcpHealthCheck(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (HealthCheckTcp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -2428,11 +2532,13 @@ func (a *WatchApiService) WatchGetTcpHealthCheck(ctx context.Context, id int32, 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Updates dns health check
+/*
+WatchApiService Updates dns health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Health check id
 @param command Create dns health check command
-@return HealthCheckDns*/
+@return HealthCheckDns
+*/
 func (a *WatchApiService) WatchUpdateDnsHealthCheck(ctx context.Context, id int32, command CreateUpdateHealthCheckDnsCommand) (HealthCheckDns, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -2496,11 +2602,13 @@ func (a *WatchApiService) WatchUpdateDnsHealthCheck(ctx context.Context, id int3
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Updates FullPage health check
+/*
+WatchApiService Updates FullPage health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Health check id
 @param command Create FullPage health check command
-@return HealthCheckFullPage*/
+@return HealthCheckFullPage
+*/
 func (a *WatchApiService) WatchUpdateFullPageHealthCheck(ctx context.Context, id int32, command CreateUpdateHealthCheckFullPageCommand) (HealthCheckFullPage, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -2564,11 +2672,13 @@ func (a *WatchApiService) WatchUpdateFullPageHealthCheck(ctx context.Context, id
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Updates FullPage Https health check
+/*
+WatchApiService Updates FullPage Https health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Health check id
 @param command Create FullPage health check command
-@return HealthCheckFullPage*/
+@return HealthCheckFullPage
+*/
 func (a *WatchApiService) WatchUpdateFullPageHttpsHealthCheck(ctx context.Context, id int32, command CreateUpdateHealthCheckFullPageHttpsCommand) (HealthCheckFullPage, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -2632,11 +2742,13 @@ func (a *WatchApiService) WatchUpdateFullPageHttpsHealthCheck(ctx context.Contex
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Updates health check notification
+/*
+WatchApiService Updates health check notification
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Health check notification id
 @param command Create health check notification command
-@return HealthCheckNotification*/
+@return HealthCheckNotification
+*/
 func (a *WatchApiService) WatchUpdateHealthCheckNotification(ctx context.Context, id int32, command CreateUpdateHealthCheckNotificationCommand) (HealthCheckNotification, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -2700,11 +2812,13 @@ func (a *WatchApiService) WatchUpdateHealthCheckNotification(ctx context.Context
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Updates http health check
+/*
+WatchApiService Updates http health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Health check id
 @param command Create http health check command
-@return HealthCheckHttp*/
+@return HealthCheckHttp
+*/
 func (a *WatchApiService) WatchUpdateHttpHealthCheck(ctx context.Context, id int32, command CreateUpdateHealthCheckHttpCommand) (HealthCheckHttp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -2768,11 +2882,13 @@ func (a *WatchApiService) WatchUpdateHttpHealthCheck(ctx context.Context, id int
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Updates https health check
+/*
+WatchApiService Updates https health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Health check id
 @param command Create https health check command
-@return HealthCheckHttp*/
+@return HealthCheckHttp
+*/
 func (a *WatchApiService) WatchUpdateHttpsHealthCheck(ctx context.Context, id int32, command CreateUpdateHealthCheckHttpsCommand) (HealthCheckHttp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -2836,11 +2952,13 @@ func (a *WatchApiService) WatchUpdateHttpsHealthCheck(ctx context.Context, id in
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Updates imap health check
+/*
+WatchApiService Updates imap health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Health check id
 @param command Create imap health check command
-@return HealthCheckImap*/
+@return HealthCheckImap
+*/
 func (a *WatchApiService) WatchUpdateImapHealthCheck(ctx context.Context, id int32, command CreateUpdateHealthCheckImapCommand) (HealthCheckImap, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -2904,11 +3022,13 @@ func (a *WatchApiService) WatchUpdateImapHealthCheck(ctx context.Context, id int
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Updates sip health check
+/*
+WatchApiService Updates sip health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Health check id
 @param command Create sip health check command
-@return HealthCheckSip*/
+@return HealthCheckSip
+*/
 func (a *WatchApiService) WatchUpdateImapHealthCheck_1(ctx context.Context, id int32, command CreateUpdateHealthCheckSipCommand) (HealthCheckSip, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -2972,11 +3092,13 @@ func (a *WatchApiService) WatchUpdateImapHealthCheck_1(ctx context.Context, id i
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Updates imap ssl health check
+/*
+WatchApiService Updates imap ssl health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Health check id
 @param command Create imap ssl health check command
-@return HealthCheckImap*/
+@return HealthCheckImap
+*/
 func (a *WatchApiService) WatchUpdateImapSslHealthCheck(ctx context.Context, id int32, command CreateUpdateHealthCheckImapSslCommand) (HealthCheckImap, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -3040,11 +3162,13 @@ func (a *WatchApiService) WatchUpdateImapSslHealthCheck(ctx context.Context, id 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Updates ping health check
+/*
+WatchApiService Updates ping health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Health check id
 @param command Create ping health check command
-@return HealthCheckPing*/
+@return HealthCheckPing
+*/
 func (a *WatchApiService) WatchUpdatePingHealthCheck(ctx context.Context, id int32, command CreateUpdateHealthCheckPingCommand) (HealthCheckPing, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -3108,11 +3232,13 @@ func (a *WatchApiService) WatchUpdatePingHealthCheck(ctx context.Context, id int
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Updates smtp health check
+/*
+WatchApiService Updates smtp health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Health check id
 @param command Create smtp health check command
-@return HealthCheckSmtp*/
+@return HealthCheckSmtp
+*/
 func (a *WatchApiService) WatchUpdateSmtpHealthCheck(ctx context.Context, id int32, command CreateUpdateHealthCheckSmtpCommand) (HealthCheckSmtp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -3176,11 +3302,13 @@ func (a *WatchApiService) WatchUpdateSmtpHealthCheck(ctx context.Context, id int
 	return successPayload, localVarHttpResponse, err
 }
 
-/* WatchApiService Updates Tcp health check
+/*
+WatchApiService Updates Tcp health check
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Health check id
 @param command Create Tcp health check command
-@return HealthCheckTcp*/
+@return HealthCheckTcp
+*/
 func (a *WatchApiService) WatchUpdateTcpHealthCheck(ctx context.Context, id int32, command CreateUpdateHealthCheckTcpCommand) (HealthCheckTcp, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")

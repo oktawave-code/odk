@@ -39,8 +39,10 @@ Class | Method | HTTP request | Description
 *FloatingIPsApi* | [**FloatingIpsUpdateIp**](docs/FloatingIPsApi.md#floatingipsupdateip) | **Put** /floating_ips/{ip} | Updates IP address
 *NetworkingApi* | [**OpnsDelete**](docs/NetworkingApi.md#opnsdelete) | **Delete** /opns/{id} | Deletes an OPN
 *NetworkingApi* | [**OpnsGet**](docs/NetworkingApi.md#opnsget) | **Get** /opns | Returns OPNs
+*NetworkingApi* | [**OpnsGet_0**](docs/NetworkingApi.md#opnsget_0) | **Get** /opns/{id} | Gets Opn
 *NetworkingApi* | [**OpnsPost**](docs/NetworkingApi.md#opnspost) | **Post** /opns | Creates an OPN
 *NetworkingApi* | [**OpnsPut**](docs/NetworkingApi.md#opnsput) | **Put** /opns/{id} | Updates OPN
+*OCIApi* | [**InstancesChangeHotPlugSetting**](docs/OCIApi.md#instanceschangehotplugsetting) | **Post** /instances/{id}/change_hotplug_ticket | Change instance hotplug setting
 *OCIApi* | [**InstancesChangeName**](docs/OCIApi.md#instanceschangename) | **Post** /instances/{id}/change_name_ticket | Change instance name
 *OCIApi* | [**InstancesChangeSubregion**](docs/OCIApi.md#instanceschangesubregion) | **Post** /instances/{id}/change_subregion_ticket | Change instance subregion
 *OCIApi* | [**InstancesChangeType**](docs/OCIApi.md#instanceschangetype) | **Post** /instances/{id}/change_scsi_controllers_type_ticket | Change SCSI controllers type
@@ -60,6 +62,7 @@ Class | Method | HTTP request | Description
 *OCIApi* | [**InstancesGetScreenshot**](docs/OCIApi.md#instancesgetscreenshot) | **Get** /instances/{id}/screenshot | Returns instance screenshot
 *OCIApi* | [**InstancesGetSoftware**](docs/OCIApi.md#instancesgetsoftware) | **Get** /instances/software | Returns software
 *OCIApi* | [**InstancesGetSshKeys**](docs/OCIApi.md#instancesgetsshkeys) | **Get** /instances/{id}/ssh_keys | Returns SSH keys uploaded to instances
+*OCIApi* | [**InstancesGetTemplateByBaseVirtualMachineId**](docs/OCIApi.md#instancesgettemplatebybasevirtualmachineid) | **Get** /instances/{id}/template | Returns the template by source virtual machine id
 *OCIApi* | [**InstancesGetVncConnection**](docs/OCIApi.md#instancesgetvncconnection) | **Get** /instances/{id}/remote_console_connection | Returns remote console connection
 *OCIApi* | [**InstancesGet_0**](docs/OCIApi.md#instancesget_0) | **Get** /instances/{id} | Returns instance by identifier
 *OCIApi* | [**InstancesPost**](docs/OCIApi.md#instancespost) | **Post** /instances | Creates instance
@@ -258,6 +261,7 @@ Class | Method | HTTP request | Description
  - [ChangeContainerServiceStateCommand](docs/ChangeContainerServiceStateCommand.md)
  - [ChangeDiskTierCommand](docs/ChangeDiskTierCommand.md)
  - [ChangeFloatingIpSubregionCommand](docs/ChangeFloatingIpSubregionCommand.md)
+ - [ChangeHotPlugSettingCommand](docs/ChangeHotPlugSettingCommand.md)
  - [ChangeInstanceNameCommand](docs/ChangeInstanceNameCommand.md)
  - [ChangeInstanceScsiControllerTypeCommand](docs/ChangeInstanceScsiControllerTypeCommand.md)
  - [ChangeInstanceSubregionCommand](docs/ChangeInstanceSubregionCommand.md)

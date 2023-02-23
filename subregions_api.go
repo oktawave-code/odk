@@ -27,11 +27,15 @@ var (
 
 type SubregionsApiService service
 
-/* SubregionsApiService Gets subregions
+/*
+SubregionsApiService Gets subregions
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionSubregion*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionSubregion
+*/
 func (a *SubregionsApiService) SubregionsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionSubregion, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -99,12 +103,16 @@ func (a *SubregionsApiService) SubregionsGet(ctx context.Context, localVarOption
 	return successPayload, localVarHttpResponse, err
 }
 
-/* SubregionsApiService Gets subregion
+/*
+SubregionsApiService Gets subregion
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Subregion id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return Subregion*/
+
+	@param "fields" (string) Response fields filter
+
+@return Subregion
+*/
 func (a *SubregionsApiService) SubregionsGet_1(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Subregion, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")

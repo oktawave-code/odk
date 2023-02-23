@@ -27,11 +27,13 @@ var (
 
 type OCIGroupsApiService service
 
-/* OCIGroupsApiService Changes group assignments
+/*
+OCIGroupsApiService Changes group assignments
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a group
 @param command Change group assignments command
-@return ApiCollectionGroupAssignment*/
+@return ApiCollectionGroupAssignment
+*/
 func (a *OCIGroupsApiService) GroupsChangeAssignmentsInGroup(ctx context.Context, id int32, command ChangeContainerAssignmentsCommand) (ApiCollectionGroupAssignment, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -95,10 +97,12 @@ func (a *OCIGroupsApiService) GroupsChangeAssignmentsInGroup(ctx context.Context
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Creates group
+/*
+OCIGroupsApiService Creates group
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create group command
-@return Group*/
+@return Group
+*/
 func (a *OCIGroupsApiService) GroupsCreate(ctx context.Context, command CreateGroupCommand) (Group, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -161,11 +165,13 @@ func (a *OCIGroupsApiService) GroupsCreate(ctx context.Context, command CreateGr
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Creates a group scheduler
+/*
+OCIGroupsApiService Creates a group scheduler
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Group Id
 @param command Create group scheduler command
-@return GroupScheduler*/
+@return GroupScheduler
+*/
 func (a *OCIGroupsApiService) GroupsCreateContainerScheduler(ctx context.Context, id int32, command CreateUpdateGroupSchedulerCommand) (GroupScheduler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -229,10 +235,12 @@ func (a *OCIGroupsApiService) GroupsCreateContainerScheduler(ctx context.Context
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Deletes group
+/*
+OCIGroupsApiService Deletes group
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a group
-@return Object*/
+@return Object
+*/
 func (a *OCIGroupsApiService) GroupsDelete(ctx context.Context, id int32) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -294,10 +302,12 @@ func (a *OCIGroupsApiService) GroupsDelete(ctx context.Context, id int32) (Objec
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Deletes group scheduler
+/*
+OCIGroupsApiService Deletes group scheduler
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a group scheduler
-@return Object*/
+@return Object
+*/
 func (a *OCIGroupsApiService) GroupsDeleteGroupScheduler(ctx context.Context, id int32) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -359,12 +369,16 @@ func (a *OCIGroupsApiService) GroupsDeleteGroupScheduler(ctx context.Context, id
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Returns group assignments
+/*
+OCIGroupsApiService Returns group assignments
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a group
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionGroupAssignment*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionGroupAssignment
+*/
 func (a *OCIGroupsApiService) GroupsGetAssignmentsInGroup(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionGroupAssignment, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -433,12 +447,16 @@ func (a *OCIGroupsApiService) GroupsGetAssignmentsInGroup(ctx context.Context, i
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Returns group
+/*
+OCIGroupsApiService Returns group
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of group
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return Group*/
+
+	@param "fields" (string) Response fields filter
+
+@return Group
+*/
 func (a *OCIGroupsApiService) GroupsGetGroup(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Group, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -507,12 +525,16 @@ func (a *OCIGroupsApiService) GroupsGetGroup(ctx context.Context, id int32, loca
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Returns group autoscaler settings
+/*
+OCIGroupsApiService Returns group autoscaler settings
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a group
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return GroupAutoscaler*/
+
+	@param "fields" (string) Response fields filter
+
+@return GroupAutoscaler
+*/
 func (a *OCIGroupsApiService) GroupsGetGroupAutoscaler(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (GroupAutoscaler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -581,12 +603,16 @@ func (a *OCIGroupsApiService) GroupsGetGroupAutoscaler(ctx context.Context, id i
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Returns group scheduler
+/*
+OCIGroupsApiService Returns group scheduler
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Group scheduler Id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return GroupScheduler*/
+
+	@param "fields" (string) Response fields filter
+
+@return GroupScheduler
+*/
 func (a *OCIGroupsApiService) GroupsGetGroupScheduler(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (GroupScheduler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -655,12 +681,16 @@ func (a *OCIGroupsApiService) GroupsGetGroupScheduler(ctx context.Context, id in
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Returns group schedulers
+/*
+OCIGroupsApiService Returns group schedulers
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a group
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionGroupScheduler*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionGroupScheduler
+*/
 func (a *OCIGroupsApiService) GroupsGetGroupSchedulers(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionGroupScheduler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -729,15 +759,19 @@ func (a *OCIGroupsApiService) GroupsGetGroupSchedulers(ctx context.Context, id i
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Returns a list of groups
+/*
+OCIGroupsApiService Returns a list of groups
 Acceptable order values are: Name
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionGroup*/
+
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionGroup
+*/
 func (a *OCIGroupsApiService) GroupsGetGroups(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionGroup, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -823,15 +857,19 @@ func (a *OCIGroupsApiService) GroupsGetGroups(ctx context.Context, localVarOptio
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Gets load balancers
+/*
+OCIGroupsApiService Gets load balancers
 Acceptable order values are: GroupName
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionLoadBalancer*/
+
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionLoadBalancer
+*/
 func (a *OCIGroupsApiService) GroupsGetLoadBalancers(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionLoadBalancer, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -917,11 +955,13 @@ func (a *OCIGroupsApiService) GroupsGetLoadBalancers(ctx context.Context, localV
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Sets group autoscaler
+/*
+OCIGroupsApiService Sets group autoscaler
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a group
 @param command Set group autoscaler command
-@return GroupAutoscaler*/
+@return GroupAutoscaler
+*/
 func (a *OCIGroupsApiService) GroupsSetGroupAutoscaler(ctx context.Context, id int32, command SetGroupAutoscalerCommand) (GroupAutoscaler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -985,10 +1025,12 @@ func (a *OCIGroupsApiService) GroupsSetGroupAutoscaler(ctx context.Context, id i
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Turns off group autoscaler
+/*
+OCIGroupsApiService Turns off group autoscaler
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a group
-@return Object*/
+@return Object
+*/
 func (a *OCIGroupsApiService) GroupsTurnoffGroupAutoscaler(ctx context.Context, id int32) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -1050,11 +1092,13 @@ func (a *OCIGroupsApiService) GroupsTurnoffGroupAutoscaler(ctx context.Context, 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Updates group
+/*
+OCIGroupsApiService Updates group
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a group
 @param command Update group command
-@return Group*/
+@return Group
+*/
 func (a *OCIGroupsApiService) GroupsUpdate(ctx context.Context, id int32, command CreateGroupCommand) (Group, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -1118,11 +1162,13 @@ func (a *OCIGroupsApiService) GroupsUpdate(ctx context.Context, id int32, comman
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Updates a group scheduler
+/*
+OCIGroupsApiService Updates a group scheduler
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Group scheduler Id
 @param command Create group scheduler command
-@return GroupScheduler*/
+@return GroupScheduler
+*/
 func (a *OCIGroupsApiService) GroupsUpdateGroupScheduler(ctx context.Context, id int32, command CreateUpdateGroupSchedulerCommand) (GroupScheduler, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -1186,12 +1232,16 @@ func (a *OCIGroupsApiService) GroupsUpdateGroupScheduler(ctx context.Context, id
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Returns a list of instance groups
+/*
+OCIGroupsApiService Returns a list of instance groups
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionGroup*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionGroup
+*/
 func (a *OCIGroupsApiService) InstancesGetGroups(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionGroup, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1260,11 +1310,13 @@ func (a *OCIGroupsApiService) InstancesGetGroups(ctx context.Context, id int32, 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Changes load balancer service state
+/*
+OCIGroupsApiService Changes load balancer service state
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id of a group
 @param command Change service status command
-@return LoadBalancer*/
+@return LoadBalancer
+*/
 func (a *OCIGroupsApiService) LoadBalancersChangeServiceStatus(ctx context.Context, id int32, command ChangeContainerServiceStateCommand) (LoadBalancer, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -1328,11 +1380,13 @@ func (a *OCIGroupsApiService) LoadBalancersChangeServiceStatus(ctx context.Conte
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Create load balancer for group
+/*
+OCIGroupsApiService Create load balancer for group
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Group id
 @param command Create load balancer command
-@return LoadBalancer*/
+@return LoadBalancer
+*/
 func (a *OCIGroupsApiService) LoadBalancersCreate(ctx context.Context, id int32, command SetLoadBalancerCommand) (LoadBalancer, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -1396,10 +1450,12 @@ func (a *OCIGroupsApiService) LoadBalancersCreate(ctx context.Context, id int32,
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Delete load balancer
+/*
+OCIGroupsApiService Delete load balancer
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Group id
-@return Object*/
+@return Object
+*/
 func (a *OCIGroupsApiService) LoadBalancersDelete(ctx context.Context, id int32) (Object, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -1461,12 +1517,16 @@ func (a *OCIGroupsApiService) LoadBalancersDelete(ctx context.Context, id int32)
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Gets load balancer for group
+/*
+OCIGroupsApiService Gets load balancer for group
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Group id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return LoadBalancer*/
+
+	@param "fields" (string) Response fields filter
+
+@return LoadBalancer
+*/
 func (a *OCIGroupsApiService) LoadBalancersGetLoadBalancer(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (LoadBalancer, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1535,12 +1595,16 @@ func (a *OCIGroupsApiService) LoadBalancersGetLoadBalancer(ctx context.Context, 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Gets load balancer detail for group
+/*
+OCIGroupsApiService Gets load balancer detail for group
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Group id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return LoadBalancer*/
+
+	@param "fields" (string) Response fields filter
+
+@return LoadBalancer
+*/
 func (a *OCIGroupsApiService) LoadBalancersGetLoadBalancerDetails(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (LoadBalancer, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -1609,11 +1673,13 @@ func (a *OCIGroupsApiService) LoadBalancersGetLoadBalancerDetails(ctx context.Co
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCIGroupsApiService Update load balancer for group
+/*
+OCIGroupsApiService Update load balancer for group
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Group id
 @param command Update load balancer command
-@return LoadBalancer*/
+@return LoadBalancer
+*/
 func (a *OCIGroupsApiService) LoadBalancersUpdate(ctx context.Context, id int32, command SetLoadBalancerCommand) (LoadBalancer, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")

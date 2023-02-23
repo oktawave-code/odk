@@ -27,12 +27,16 @@ var (
 
 type OCISnapshotsApiService service
 
-/* OCISnapshotsApiService Returns instance snapshots
+/*
+OCISnapshotsApiService Returns instance snapshots
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance identifier
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionSnapshot*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionSnapshot
+*/
 func (a *OCISnapshotsApiService) InstancesGetSnapshots(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (ApiCollectionSnapshot, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -101,11 +105,13 @@ func (a *OCISnapshotsApiService) InstancesGetSnapshots(ctx context.Context, id i
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCISnapshotsApiService Creates snapshot
+/*
+OCISnapshotsApiService Creates snapshot
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Instance id
 @param command Create snapshot command
-@return Ticket*/
+@return Ticket
+*/
 func (a *OCISnapshotsApiService) InstancesPostSnapshot(ctx context.Context, id int32, command CreateUpdateSnapshotCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -169,10 +175,12 @@ func (a *OCISnapshotsApiService) InstancesPostSnapshot(ctx context.Context, id i
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCISnapshotsApiService Delete snapshot
+/*
+OCISnapshotsApiService Delete snapshot
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Snapshot id
-@return Ticket*/
+@return Ticket
+*/
 func (a *OCISnapshotsApiService) SnapshotsDelete(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -234,10 +242,12 @@ func (a *OCISnapshotsApiService) SnapshotsDelete(ctx context.Context, id int32) 
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCISnapshotsApiService Delete snapshots
+/*
+OCISnapshotsApiService Delete snapshots
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command
-@return Ticket*/
+@return Ticket
+*/
 func (a *OCISnapshotsApiService) SnapshotsDeleteSnapshots(ctx context.Context, command DeleteSnapshotsCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -300,17 +310,21 @@ func (a *OCISnapshotsApiService) SnapshotsDeleteSnapshots(ctx context.Context, c
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCISnapshotsApiService Returns snapshot collection
+/*
+OCISnapshotsApiService Returns snapshot collection
 Acceptable order values are: CreationDate, Description, IsCurrent, Name, Instance.
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "instanceId" (int32) Instance id
-    @param "query" (string) Query
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionSnapshot*/
+
+	@param "instanceId" (int32) Instance id
+	@param "query" (string) Query
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionSnapshot
+*/
 func (a *OCISnapshotsApiService) SnapshotsGet(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionSnapshot, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -408,12 +422,16 @@ func (a *OCISnapshotsApiService) SnapshotsGet(ctx context.Context, localVarOptio
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCISnapshotsApiService Gets snapshot
+/*
+OCISnapshotsApiService Gets snapshot
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Snapshot id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return Snapshot*/
+
+	@param "fields" (string) Response fields filter
+
+@return Snapshot
+*/
 func (a *OCISnapshotsApiService) SnapshotsGet_1(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Snapshot, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -482,11 +500,13 @@ func (a *OCISnapshotsApiService) SnapshotsGet_1(ctx context.Context, id int32, l
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCISnapshotsApiService Update snapshot
+/*
+OCISnapshotsApiService Update snapshot
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Snapshot id
 @param command Update snapshot command
-@return Snapshot*/
+@return Snapshot
+*/
 func (a *OCISnapshotsApiService) SnapshotsPut(ctx context.Context, id int32, command CreateUpdateSnapshotCommand) (Snapshot, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")
@@ -550,10 +570,12 @@ func (a *OCISnapshotsApiService) SnapshotsPut(ctx context.Context, id int32, com
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OCISnapshotsApiService Restore snapshot
+/*
+OCISnapshotsApiService Restore snapshot
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Snapshot id
-@return Ticket*/
+@return Ticket
+*/
 func (a *OCISnapshotsApiService) SnapshotsRestore(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")

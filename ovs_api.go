@@ -27,11 +27,13 @@ var (
 
 type OVSApiService service
 
-/* OVSApiService Attach disk to instance
+/*
+OVSApiService Attach disk to instance
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Disk id
 @param instanceId Instance id
-@return Ticket*/
+@return Ticket
+*/
 func (a *OVSApiService) DisksAttachToInstance(ctx context.Context, id int32, instanceId int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -94,11 +96,13 @@ func (a *OVSApiService) DisksAttachToInstance(ctx context.Context, id int32, ins
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OVSApiService Change disk subregion
+/*
+OVSApiService Change disk subregion
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Disk id
 @param subregionId Subregion id
-@return Ticket*/
+@return Ticket
+*/
 func (a *OVSApiService) DisksChangeSubregion(ctx context.Context, id int32, subregionId int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -161,11 +165,13 @@ func (a *OVSApiService) DisksChangeSubregion(ctx context.Context, id int32, subr
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OVSApiService Change disk tier
+/*
+OVSApiService Change disk tier
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Disk id
 @param tierId Tier id
-@return Ticket*/
+@return Ticket
+*/
 func (a *OVSApiService) DisksChangeTier(ctx context.Context, id int32, tierId int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -228,10 +234,12 @@ func (a *OVSApiService) DisksChangeTier(ctx context.Context, id int32, tierId in
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OVSApiService Delete disk
+/*
+OVSApiService Delete disk
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Disk id
-@return Ticket*/
+@return Ticket
+*/
 func (a *OVSApiService) DisksDelete(ctx context.Context, id int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -293,11 +301,13 @@ func (a *OVSApiService) DisksDelete(ctx context.Context, id int32) (Ticket, *htt
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OVSApiService Detach disk from instance
+/*
+OVSApiService Detach disk from instance
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Disk id
 @param instanceId Instance id
-@return Ticket*/
+@return Ticket
+*/
 func (a *OVSApiService) DisksDetachFromInstance(ctx context.Context, id int32, instanceId int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -360,11 +370,13 @@ func (a *OVSApiService) DisksDetachFromInstance(ctx context.Context, id int32, i
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OVSApiService Extend disk
+/*
+OVSApiService Extend disk
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Disk id
 @param spaceCapacity Disk space capacity in GB
-@return Ticket*/
+@return Ticket
+*/
 func (a *OVSApiService) DisksExtend(ctx context.Context, id int32, spaceCapacity int32) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -427,12 +439,16 @@ func (a *OVSApiService) DisksExtend(ctx context.Context, id int32, spaceCapacity
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OVSApiService Returns disk by identifier
+/*
+OVSApiService Returns disk by identifier
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Disk identifier
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return Disk*/
+
+	@param "fields" (string) Response fields filter
+
+@return Disk
+*/
 func (a *OVSApiService) DisksGet(ctx context.Context, id int32, localVarOptionals map[string]interface{}) (Disk, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -501,18 +517,22 @@ func (a *OVSApiService) DisksGet(ctx context.Context, id int32, localVarOptional
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OVSApiService Returns disk list
+/*
+OVSApiService Returns disk list
 Acceptable order values are: SpaceCapacity, Name, Tier, IsShared, Subregion
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "diskType" (string) Disk type
-    @param "showDeleted" (bool) Show deleted
-    @param "query" (string) Query
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionDisk*/
+
+	@param "diskType" (string) Disk type
+	@param "showDeleted" (bool) Show deleted
+	@param "query" (string) Query
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionDisk
+*/
 func (a *OVSApiService) DisksGetDisks(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionDisk, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -616,10 +636,12 @@ func (a *OVSApiService) DisksGetDisks(ctx context.Context, localVarOptionals map
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OVSApiService Creates disk
+/*
+OVSApiService Creates disk
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create disk command
-@return Ticket*/
+@return Ticket
+*/
 func (a *OVSApiService) DisksPost(ctx context.Context, command CreateDiskCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
@@ -682,11 +704,13 @@ func (a *OVSApiService) DisksPost(ctx context.Context, command CreateDiskCommand
 	return successPayload, localVarHttpResponse, err
 }
 
-/* OVSApiService Update disk
+/*
+OVSApiService Update disk
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Disk id
 @param command Update disk command
-@return Ticket*/
+@return Ticket
+*/
 func (a *OVSApiService) DisksPut(ctx context.Context, id int32, command UpdateDiskCommand) (Ticket, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Put")

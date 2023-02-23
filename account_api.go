@@ -27,10 +27,12 @@ var (
 
 type AccountApiService service
 
-/* AccountApiService Deletes SSH key
+/*
+AccountApiService Deletes SSH key
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param sshKeyId SSH key id
-@return */
+@return
+*/
 func (a *AccountApiService) AccountDeleteSshKey(ctx context.Context, sshKeyId int32) (*http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Delete")
@@ -82,11 +84,15 @@ func (a *AccountApiService) AccountDeleteSshKey(ctx context.Context, sshKeyId in
 	return localVarHttpResponse, err
 }
 
-/* AccountApiService Returns account details
+/*
+AccountApiService Returns account details
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return Account*/
+
+	@param "fields" (string) Response fields filter
+
+@return Account
+*/
 func (a *AccountApiService) AccountGet(ctx context.Context, localVarOptionals map[string]interface{}) (Account, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -154,12 +160,16 @@ func (a *AccountApiService) AccountGet(ctx context.Context, localVarOptionals ma
 	return successPayload, localVarHttpResponse, err
 }
 
-/* AccountApiService Returns SSH key
+/*
+AccountApiService Returns SSH key
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param sshKeyId SSH key id
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return SshKey*/
+
+	@param "fields" (string) Response fields filter
+
+@return SshKey
+*/
 func (a *AccountApiService) AccountGetSshKey(ctx context.Context, sshKeyId int32, localVarOptionals map[string]interface{}) (SshKey, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -228,15 +238,19 @@ func (a *AccountApiService) AccountGetSshKey(ctx context.Context, sshKeyId int32
 	return successPayload, localVarHttpResponse, err
 }
 
-/* AccountApiService Returns SSH keys
+/*
+AccountApiService Returns SSH keys
 Acceptable order values are: OwnerUser, Name, Id
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "pageSize" (int32) Page size
-    @param "pageNumber" (int32) Page number
-    @param "orderBy" (string) Order by
-    @param "fields" (string) Response fields filter
-@return ApiCollectionSshKey*/
+
+	@param "pageSize" (int32) Page size
+	@param "pageNumber" (int32) Page number
+	@param "orderBy" (string) Order by
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionSshKey
+*/
 func (a *AccountApiService) AccountGetSshKeys(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionSshKey, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -322,10 +336,12 @@ func (a *AccountApiService) AccountGetSshKeys(ctx context.Context, localVarOptio
 	return successPayload, localVarHttpResponse, err
 }
 
-/* AccountApiService Creates new SSH key for user
+/*
+AccountApiService Creates new SSH key for user
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param command Create SSH key command
-@return SshKey*/
+@return SshKey
+*/
 func (a *AccountApiService) AccountPostSshKey(ctx context.Context, command CreateSshKeyCommand) (SshKey, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")

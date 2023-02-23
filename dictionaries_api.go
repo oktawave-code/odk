@@ -27,11 +27,15 @@ var (
 
 type DictionariesApiService service
 
-/* DictionariesApiService Returns dictionaries
+/*
+DictionariesApiService Returns dictionaries
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionDictionary*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionDictionary
+*/
 func (a *DictionariesApiService) DictionariesGetDictionaries(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionDictionary, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -99,12 +103,16 @@ func (a *DictionariesApiService) DictionariesGetDictionaries(ctx context.Context
 	return successPayload, localVarHttpResponse, err
 }
 
-/* DictionariesApiService Returns dictionaries items
+/*
+DictionariesApiService Returns dictionaries items
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param ids Dictionaries ids
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionDictionaryItem*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionDictionaryItem
+*/
 func (a *DictionariesApiService) DictionariesGetDictionariesItems(ctx context.Context, ids string, localVarOptionals map[string]interface{}) (ApiCollectionDictionaryItem, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -173,11 +181,15 @@ func (a *DictionariesApiService) DictionariesGetDictionariesItems(ctx context.Co
 	return successPayload, localVarHttpResponse, err
 }
 
-/* DictionariesApiService Returns languages
+/*
+DictionariesApiService Returns languages
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionDictionaryItem*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionDictionaryItem
+*/
 func (a *DictionariesApiService) DictionariesGetLanguages(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionDictionaryItem, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")

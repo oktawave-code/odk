@@ -28,14 +28,18 @@ var (
 
 type StatisticsApiService service
 
-/* StatisticsApiService Gets client statistics
+/*
+StatisticsApiService Gets client statistics
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param dateFrom Date from (utc timezone)
 @param dateTo Date to (utc timezone)
 @param statisticTypes Statistic types
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionClientStatistics*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionClientStatistics
+*/
 func (a *StatisticsApiService) StatisticsGetClientStatistics(ctx context.Context, dateFrom time.Time, dateTo time.Time, statisticTypes []int32, localVarOptionals map[string]interface{}) (ApiCollectionClientStatistics, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -106,7 +110,8 @@ func (a *StatisticsApiService) StatisticsGetClientStatistics(ctx context.Context
 	return successPayload, localVarHttpResponse, err
 }
 
-/* StatisticsApiService Gets instance statistics
+/*
+StatisticsApiService Gets instance statistics
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param id Id
 @param statisticInterval Statistic interval
@@ -114,8 +119,11 @@ func (a *StatisticsApiService) StatisticsGetClientStatistics(ctx context.Context
 @param dateTo Date to (utc timezone)
 @param statisticTypes Statistic types
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionInstanceStatistics*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionInstanceStatistics
+*/
 func (a *StatisticsApiService) StatisticsGetInstanceStatistics(ctx context.Context, id int32, statisticInterval int32, dateFrom time.Time, dateTo time.Time, statisticTypes []int32, localVarOptionals map[string]interface{}) (ApiCollectionInstanceStatistics, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
@@ -188,11 +196,15 @@ func (a *StatisticsApiService) StatisticsGetInstanceStatistics(ctx context.Conte
 	return successPayload, localVarHttpResponse, err
 }
 
-/* StatisticsApiService Gets statistic interval types
+/*
+StatisticsApiService Gets statistic interval types
 * @param ctx context.Context for authentication, logging, tracing, etc.
 @param optional (nil or map[string]interface{}) with one or more of:
-    @param "fields" (string) Response fields filter
-@return ApiCollectionDictionaryItem*/
+
+	@param "fields" (string) Response fields filter
+
+@return ApiCollectionDictionaryItem
+*/
 func (a *StatisticsApiService) StatisticsGetStatisticIntervals(ctx context.Context, localVarOptionals map[string]interface{}) (ApiCollectionDictionaryItem, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
